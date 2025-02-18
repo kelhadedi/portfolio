@@ -1,22 +1,22 @@
 {
-    "title" : "Portfolio de Élie Copter",
-    "lastname": "Copter",
-    "firstname": "Élie",
-    "portrait" : "avatar.jpg",
+    "title": "Portfolio de Karim EL HADEDI",
+    "lastname": "EL HADEDI",
+    "firstname": "Karim",
+    "portrait": "avatar.jpg",
     "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "biography": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis ante in orci auctor pharetra. Duis interdum erat semper nunc faucibus maximus. Proin dapibus auctor sollicitudin. Nulla mattis volutpat enim, ac ultrices odio dignissim id. Morbi nisl nisi, consequat ut finibus non, convallis interdum velit. Maecenas congue diam dolor, non elementum ipsum tincidunt vel. Sed dui ipsum, finibus rhoncus sollicitudin sit amet, varius non nulla. Duis vestibulum facilisis ligula, vel bibendum mauris aliquam in. Etiam urna ligula, pharetra a dictum et, blandit nec leo. Donec consequat tincidunt nisi at consectetur.",
-    "cv" : "CV.pdf",
+    "cv": "CV.pdf",
     "trainings": [
         {
-            "name" : "BUT Métiers du Multimédia et de l'Internet",
-            "school" : "IUT de Lannion, Université de Rennes",
-            "start" : 2023,
-            "end" : 2026
+            "name": "BUT Métiers du Multimédia et de l'Internet",
+            "school": "IUT di Corsica, Universita di Corsica (2023-2024) et IUT de Lannion, Université de Rennes (2024-2026)",
+            "start": 2023,
+            "end": 2026
         },
         {
-            "name" : "Bac S, option Maths et Arts Plastiques",
-            "school" : "Lycée Félix Le Dantec( 22)",
-            "start" : 2023
+            "name": "Bac STI2D, option SIN",
+            "school": "Lycée Denis Diderot, Académie d'Aix-Marseille",
+            "start": 2020
         }
     ],
     "interests": [
@@ -26,57 +26,80 @@
     ],
     "projects": [
         {
-            "title": "Project 1 : Lorem ipsum dolor sit amet consecitur",
-            "context": "Lorem ipsum dolor sit amet consecitur",
-            "missions" : ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "outputs" :  ["Lorem ipsum dolor", "Lorem ipsum dolor"],
+            "title": "Alternance chez Restaurant l'Ardoise",
+            "context": "Responsable communiations",
+            "missions": [
+                "Accroître la visibilité du restaurant",
+                "Développer la clientèle"
+            ],
+            "outputs": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
             "skills": [
                 "3D",
                 "Dev Web"
             ],
-            "link" : "https://youtube.com",
+            "link": "https://youtube.com",
             "picture": "projet.jpg"
         },
         {
-            "title": "Project 2 : Lorem ipsum dolor sit amet consecitur",
+            "title": "Chef de projet Opération Crea-IUT",
             "context": "Lorem ipsum dolor sit amet consecitur",
-            "missions" : ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "outputs" :  ["Lorem ipsum dolor", "Lorem ipsum dolor"],
+            "missions": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
+            "outputs": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
             "skills": [
                 "Marketing",
                 "Comm"
             ],
-            "link" : "https://youtube.com",
+            "link": "https://youtube.com",
             "picture": "projet.jpg"
         },
         {
             "title": "Project 3 : Lorem ipsum dolor sit amet consecitur",
             "context": "Lorem ipsum dolor sit amet consecitur",
-            "missions" : ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "outputs" :  ["Lorem ipsum dolor", "Lorem ipsum dolor"],
+            "missions": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
+            "outputs": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
             "skills": [
                 "Réseaux sociaux",
                 "UI/UX",
                 "Entrepreneuriat"
             ],
-            "link" : "https://youtube.com",
+            "link": "https://youtube.com",
             "picture": "projet.jpg"
         },
         {
             "title": "Project 4 : Lorem ipsum dolor sit amet consecitur",
             "context": "Lorem ipsum dolor sit amet consecitur",
-            "missions" : ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "outputs" :  ["Lorem ipsum dolor", "Lorem ipsum dolor"],
+            "missions": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
+            "outputs": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
             "skills": [
                 "Anglais",
                 "Graphisme",
                 "Écriture multimédia"
             ],
-            "link" : "https://youtube.com",
+            "link": "https://youtube.com",
             "picture": "projet.jpg"
         }
     ],
-    
     "skills": [
         {
             "title": "Lorem ipsum dolor sit amet consecitur",
@@ -107,14 +130,20 @@
         }
     ],
     "contacts": [
-        {"name" : "Instagram", 
-        "url" : "https://instagram.com",
-        "icon" : "insta.svg"},
-        {"name" : "LinkedIn", 
-        "url" : "https://linkedin.com",
-        "icon" : "linkedin.svg"},
-        {"name" : "Mail", 
-        "url" : "mailto:elie.copter.titi@etudiant.univ-rennes.fr",
-        "icon" : "mail.svg"}
+        {
+            "name": "Instagram",
+            "url": "https://instagram.com",
+            "icon": "insta.svg"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/karim-el-hadedi-489587330/",
+            "icon": "linkedin.svg"
+        },
+        {
+            "name": "Mail",
+            "url": "karim.el-hadedi@etudiant.univ-rennes.fr",
+            "icon": "mail.svg"
+        }
     ]
 }
