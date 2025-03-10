@@ -1,82 +1,111 @@
 {
-    "title" : "Portfolio de Élie Copter",
-    "lastname": "Copter",
-    "firstname": "Élie",
-    "portrait" : "avatar.jpg",
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "biography": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis ante in orci auctor pharetra. Duis interdum erat semper nunc faucibus maximus. Proin dapibus auctor sollicitudin. Nulla mattis volutpat enim, ac ultrices odio dignissim id. Morbi nisl nisi, consequat ut finibus non, convallis interdum velit. Maecenas congue diam dolor, non elementum ipsum tincidunt vel. Sed dui ipsum, finibus rhoncus sollicitudin sit amet, varius non nulla. Duis vestibulum facilisis ligula, vel bibendum mauris aliquam in. Etiam urna ligula, pharetra a dictum et, blandit nec leo. Donec consequat tincidunt nisi at consectetur.",
-    "cv" : "CV.pdf",
+    "title": "Portfolio de Karim EL HADEDI",
+    "lastname": "EL HADEDI",
+    "firstname": "Karim",
+    "portrait": "avatar.jpg",
+    "intro": "Recherche d'un poste en tant que charge de projet e-tourisme",
+    "biography": "Responsable communication en alternance au restaurant L'Ardoise à Perros-Guirec et étudiant en BUT Métiers du Multimédia et de l'Internet à l'IUT de Lannion. Fort d'une expérience terrain dans le tourisme et formé aux métiers du numérique, je suis passionné par la valorisation des territoires et des projets locaux.",
+    "cv": "CV.pdf",
     "trainings": [
         {
-            "name" : "BUT Métiers du Multimédia et de l'Internet",
-            "school" : "IUT de Lannion, Université de Rennes",
-            "start" : 2023,
-            "end" : 2026
+            "name": "BUT Métiers du Multimédia et de l'Internet",
+            "school": "IUT di Corsica, Universita di Corsica (2023-2024) et IUT de Lannion, Université de Rennes (2024-2026)",
+            "start": 2023,
+            "end": 2026
         },
         {
-            "name" : "Bac S, option Maths et Arts Plastiques",
-            "school" : "Lycée Félix Le Dantec( 22)",
-            "start" : 2023
+            "name": "Bac STI2D, option SIN",
+            "school": "Lycée Denis Diderot, Académie d'Aix-Marseille",
+            "start": 2020
         }
     ],
     "interests": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "Projets numériques et innovation locale.",
+        "Stratégies de marketing dans le secteur du tourisme.",
+        "Communication digitale et valorisation des territoires."
     ],
     "projects": [
         {
-            "title": "Project 1 : Lorem ipsum dolor sit amet consecitur",
-            "context": "Lorem ipsum dolor sit amet consecitur",
-            "missions" : ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "outputs" :  ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "skills": [
-                "3D",
-                "Dev Web"
+            "title": "Mise en place d'une solution de système de réservation en ligne",
+            "context": "Zenchef, une solution de système de réservation en ligne, un logiciel pour les restaurants avec pour objectif, faciliter l’accessibilité et simplifier le parcours client, l’objectif est de « digitaliser le cahier de réservation ».",
+            "missions": [
+                "Gestion du panneau de contrôle de Zenchef pour optimiser les réservations en ligne",
+                "Création et gestion des fiches clients à l'aide d'une base de données Excel",
+                "Suivi et gestion des avis sur Google My Business et Zenchef, avec intégration sur le site internet",
+                "Actualisation de la fiche Google My Business en ajoutant des boutons d'appel à l'action pour inciter les clients à réserver directement via l'interface Google",
+                "Encouragement des clients à effectuer des réservations à travers des publications sur les réseaux sociaux"
             ],
-            "link" : "https://youtube.com",
+            "outputs": [
+                "Fiche clients du restaurant",
+                "Fiche Google My Business actualisée"
+            ],
+            "skills": [
+                "Comm",
+                "Marketing",
+                "Réseaux sociaux"
+            ],
+            "link": "https://youtube.com",
             "picture": "projet.jpg"
         },
         {
-            "title": "Project 2 : Lorem ipsum dolor sit amet consecitur",
-            "context": "Lorem ipsum dolor sit amet consecitur",
-            "missions" : ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "outputs" :  ["Lorem ipsum dolor", "Lorem ipsum dolor"],
+            "title": "Chef de projet Opération Crea-IUT",
+            "context": "Élaborer des stratégies de communication et de visibilité visant à attirer des sponsors et mécènes, tout en accroissant la notoriété du voilier Ruth, un navire de 1914 basé à Paimpol, afin de générer un financement annuel de 55 000 €.",
+            "missions": [
+                "",
+                "Création de logos",
+                "Produire une vidéo"
+            ],
+            "outputs": [
+                "Créer trois propositions d'identité visuelle",
+                "Création de logos",
+                "Produire une vidéo"
+            ],
             "skills": [
                 "Marketing",
                 "Comm"
             ],
-            "link" : "https://youtube.com",
+            "link": "https://youtube.com",
             "picture": "projet.jpg"
         },
         {
-            "title": "Project 3 : Lorem ipsum dolor sit amet consecitur",
-            "context": "Lorem ipsum dolor sit amet consecitur",
-            "missions" : ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "outputs" :  ["Lorem ipsum dolor", "Lorem ipsum dolor"],
+            "title": "Rennaissance d'un classique",
+            "context": "Conception d’une campagne de communication moderne avec création d’un logo, affiche, goodies, maquette de cinéma, bande annonce et solutions créatives pour un public contemporain.",
+            "missions": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
+            "outputs": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
             "skills": [
                 "Réseaux sociaux",
                 "UI/UX",
                 "Entrepreneuriat"
             ],
-            "link" : "https://youtube.com",
+            "link": "https://youtube.com",
             "picture": "projet.jpg"
         },
         {
             "title": "Project 4 : Lorem ipsum dolor sit amet consecitur",
             "context": "Lorem ipsum dolor sit amet consecitur",
-            "missions" : ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-            "outputs" :  ["Lorem ipsum dolor", "Lorem ipsum dolor"],
+            "missions": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
+            "outputs": [
+                "Lorem ipsum dolor",
+                "Lorem ipsum dolor"
+            ],
             "skills": [
                 "Anglais",
                 "Graphisme",
                 "Écriture multimédia"
             ],
-            "link" : "https://youtube.com",
+            "link": "https://youtube.com",
             "picture": "projet.jpg"
         }
     ],
-    
     "skills": [
         {
             "title": "Lorem ipsum dolor sit amet consecitur",
@@ -107,14 +136,20 @@
         }
     ],
     "contacts": [
-        {"name" : "Instagram", 
-        "url" : "https://instagram.com",
-        "icon" : "insta.svg"},
-        {"name" : "LinkedIn", 
-        "url" : "https://linkedin.com",
-        "icon" : "linkedin.svg"},
-        {"name" : "Mail", 
-        "url" : "mailto:elie.copter.titi@etudiant.univ-rennes.fr",
-        "icon" : "mail.svg"}
+        {
+            "name": "Instagram",
+            "url": "https://instagram.com",
+            "icon": "insta.svg"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/karim-el-hadedi-489587330/",
+            "icon": "linkedin.svg"
+        },
+        {
+            "name": "Mail",
+            "url": "karim.el-hadedi@etudiant.univ-rennes.fr",
+            "icon": "mail.svg"
+        }
     ]
 }
