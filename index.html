@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio - Pawan Kumavat</title>
+    <title>Portfolio - Karim EL HADEDI</title>
 
     <!-- bootstrap css cdn link  -->
     <link
@@ -45,7 +45,7 @@
       class="navbar navbar-expand-lg navbar-light bg-white sticky-top"
     >
       <div class="container-fluid px-5">
-        <a class="navbar-brand fw-bold fs-2" href="#" style="color: #3f396d"
+        <a class="navbar-brand fw-bold fs-2" href="#" style="color: #000000"
           >Portfolio</a
         >
         <button
@@ -62,26 +62,34 @@
         >
           <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="#">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#service">Service</a>
+              <a class="nav-link" href="#service">À propos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#about">Compétences</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
+              <a class="nav-link" href="#portfolio">Projets</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#testimonial">Testimonials</a>
+              <a class="nav-link" href="#testimonial">Expériences</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#blog">Blog</a>
             </li>
           </ul>
         </div>
-        <button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-block">Contact</button>
+        <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+          <a href="images/CV-portfolio.pdf" download="MonCV" style="text-decoration: none; color: inherit;">
+              CV
+          </a>
+      </button>
+      
+          </a>
+      </button>
+      
       </div>
     </nav>
     <!-- navbar ends here -->
@@ -91,20 +99,19 @@
       <div class="row justify-content-evenly align-middle">
         <!-- here data-aos is used for adding aos animation  -->
         <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
-          <h2 style="color: #3f396d">
-            Hello! I Am <br /><span class="c-orange">Pawan Kumavat</span>
+          <h2 style="color: #000000">
+            Bonjour et bienvenue 👋 <br /><span class="c-orange">Je suis Karim EL HADEDI</span>
           </h2>
           <p class="text-muted">
-            I'm A Web Developer having 5 years of experience in expertise of
-            creating website with fully responsive Also with backend part too.
+            Je suis un étudiant en BUT MMI 2 en recherche d'un post en tant que charge de projet e-tourisme
           </p>
           <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
-            Hire Me
+            En savoir plus
           </button>
           <a href="" class="link ms-4 d-none">See My Work</a>
         </div>
         <div class="col-10 col-md-4 d-none d-md-block">
-          <img src="images/banner-01.webp" class="img-fluid" alt="" />
+          <img src="images/img_pdp.png" class="img-fluid" alt="Photo de profil" />
         </div>
       </div>
     </section>
@@ -113,10 +120,8 @@
     <!-- expertise section starts -->
     <section class="expertise mt-5" id="service">
       <div class="heading text-center">
-        <small>My Expertise</small>
         <h3>
-          Provide Wide Range of <br />
-          Digital Services
+          À propos de moi<br />
         </h3>
       </div>
       <div class="row justify-content-evenly mt-5">
@@ -124,13 +129,13 @@
           <div class="service-card">
             <div class="img">
               <img
-                src="images/service-icon1.png"
+                src="images/hand-house.svg"
                 class="w-25 img-fluid img"
                 alt=""
               />
             </div>
             <div class="content mt-3">
-              <h4>Web Design</h4>
+              <h4>Une passion pour le tourisme</h4>
               <p class="text-muted">
                 Dolor repellendus temporibus autem quibusdam officiis debitis
                 rerum neces aibus minima veniam.
@@ -143,13 +148,13 @@
           <div class="service-card">
             <div class="img">
               <img
-                src="images/service-icon2.png"
+                src="images/health.svg"
                 class="w-25 img-fluid img"
-                alt=""
+                alt="logo de belambra"
               />
             </div>
             <div class="content mt-3">
-              <h4>Web Development</h4>
+              <h4>Receptionniste</h4>
               <p class="text-muted">
                 Dolor repellendus temporibus autem quibusdam officiis debitis
                 rerum neces aibus minima veniam.
@@ -162,7 +167,7 @@
           <div class="service-card">
             <div class="img">
               <img
-                src="images/service-icon3.png"
+                src="images/hand-leaves.svg"
                 class="w-25 img-fluid img"
                 alt=""
               />
@@ -257,44 +262,43 @@
     <!-- portfolio section starts here -->
     <section class="portfolio" id="portfolio">
       <div class="heading text-center pt-5">
-        <small>Creative Work</small>
-        <h3>Check My Portfolio</h3>
+        <h3>Mes Projets</h3>
       </div>
 
       <div id="myBtnContainer" class="text-center mt-4">
         <!-- here we will create custom attribute using data- for filtering -->
-        <button class="filter-item" data-filter="all">All</button>
-        <button class="filter-item" data-filter="game">Game</button>
-        <button class="filter-item" data-filter="webapp">Web App</button>
-        <button class="filter-item" data-filter="website">Website</button>
-        <button class="filter-item" data-filter="brand">Brand</button>
+        <button class="filter-item" data-filter="all">Tout</button>
+        <button class="filter-item" data-filter="game">Communication</button>
+        <button class="filter-item" data-filter="webapp">Audiovisuel</button>
+        <button class="filter-item" data-filter="website">Graphisme</button>
+        <button class="filter-item" data-filter="brand">Dev</button>
       </div>
       <div class="portfolio-body">
         <div class="row justify-content-evenly px-4">
-          <div class="post col-md-4 game all col-10 mt-3 mt-md-0" data-aos="fade-up">
+          <div class="post col-md-2 game all col-10 mt-3 mt-md-0" data-aos="fade-up">
             <div class="card">
-              <img src="images/2048game.png" class="card-img-top" alt="..." />
+              <img src="images/elhadedi_karim_recto_affiche_le_septième_sceau.jpg" class="card-img-top" alt="..." />
               <div class="card-body text-center">
-                <h4 class="card-title">2048 Game</h4>
+                <h4 class="card-title">Le septième sceau</h4>
                 <span class="badge bg-secondary badge-pill">HTML&CSS</span>
                 <span class="badge bg-secondary badge-pill">JavaScript</span>
-                <span class="badge bg-secondary badge-pill mb-2">Game</span
+                <span class="badge bg-secondary badge-pill mb-2"></span
                 ><br />
                 <a href="#" class="link">Read More</a>
               </div>
             </div>
           </div>
-          <div class="post col-md-4 website all col-10 mt-3 mt-md-0" data-aos="fade-up">
+          <div class="post col-md-2 website all col-10 mt-3 mt-md-0" data-aos="fade-up">
             <div class="card">
               <img
-                src="images/currency-converter.png"
+                src="images/Affiche-LPDS-R3.07-Karim_ELHADEDI-MMI2B1.jpg"
                 class="card-img-top"
                 alt="..."
               />
               <div class="card-body text-center">
-                <h4 class="card-title">Converter App</h4>
-                <span class="badge bg-secondary badge-pill">HTML&CSS</span>
-                <span class="badge bg-secondary badge-pill">JavaScript</span>
+                <h4 class="card-title">La planète des singes</h4>
+                <span class="badge bg-secondary badge-pill">Graphisme</span>
+                <span class="badge bg-secondary badge-pill">Comm</span>
                 <span class="badge bg-secondary badge-pill mb-2">Website</span
                 ><br />
                 <a href="#" class="read-more-btn link">Read More</a>
@@ -749,8 +753,7 @@
     <!-- contact section starts -->
     <section class="contact py-5" id="contact">
       <div class="heading text-center">
-        <small>Get in Touch</small>
-        <h3>Any Questions? Feel Free to Contact</h3>
+        <h3>Des questions ? Contactez moi !</h3>
       </div>
       <div class="row justify-content-evenly mt-5">
         <div class="col-md-5 col-10 contact-details" data-aos="slide-right">
@@ -759,7 +762,7 @@
               <i class="bi bi-geo-alt-fill"></i>
             </div>
             <div class="col-11">
-              <p>121 King Street Melbourne, 3000, Australia</p>
+              <p>4 Hent Kerouandener, 22300 Lannion</p>
             </div>
           </div>
           <div class="row justify-content-evenly">
@@ -767,7 +770,7 @@
               <i class="bi bi-telephone-fill"></i>
             </div>
             <div class="col-11">
-              <p>+91 9527818693</p>
+              <p>+33 6 83 89 55 81</p>
             </div>
           </div>
           <div class="row justify-content-evenly">
@@ -775,7 +778,7 @@
               <i class="bi bi-send-fill"></i>
             </div>
             <div class="col-11">
-              <p>codewithpawan@gmail.com</p>
+              <p>karim.el-hadedi@etudiant.univ-rennes.fr</p>
             </div>
           </div>
           <div class="row justify-content-evenly">
@@ -783,7 +786,7 @@
               <i class="bi bi-globe-americas"></i>
             </div>
             <div class="col-11">
-              <p>codingpawan.com</p>
+              <p>https://github.com/kelhadedi/portfolio.git</p>
             </div>
           </div>
         </div>
@@ -794,7 +797,7 @@
                 type="text"
                 class="form-control"
                 id="exampleFormControlInput1"
-                placeholder="Name"
+                placeholder="Nom"
               />
             </div>
             <div class="mb-3">
@@ -810,7 +813,7 @@
                 type="text"
                 class="form-control"
                 id="exampleFormControlInput1"
-                placeholder="Mobile No."
+                placeholder="Numéro de téléphone"
               />
             </div>
             <div class="mb-3">
@@ -822,7 +825,7 @@
               ></textarea>
             </div>
             <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
-              Submit
+              Envoyer
             </button>
           </div>
         </div>
@@ -856,8 +859,8 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="social-links mt-5" data-aos="fade-up">
-        <button href="" class="rounded-pill dribble">
-          <i class="bi bi-dribbble"></i>
+        <button href="https://www.linkedin.com/in/karim-el-hadedi-489587330/" class="rounded-pill dribble">
+          <i class="bi bi-linkedin"></i>
         </button>
         <button href="" class="rounded-pill whatsapp">
           <i class="bi bi-whatsapp"></i>
@@ -868,7 +871,7 @@
       </div>
       <hr class="text-muted my-4" />
 
-      <p>Copyright 2022 Portfolio | All Rights Reserved.</p>
+      <p>Portfolio réalisé par Karim EL HADEDI avec ❤️ | Tous droit réservés.</p>
     </footer>
     <!-- footer section ends here -->
 

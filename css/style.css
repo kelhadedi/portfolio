@@ -38,7 +38,7 @@ body{
   /* styling contact btn  */
 .c-btn{
     border: none;
-    background: #fca61f;
+    background: #d71c77;
     color: #fff;
     font-size: 1.2rem;
 }
@@ -52,9 +52,9 @@ body{
     line-height: 4rem;
 }
 .c-orange{
-    color: #6f34fe;
+    color: #000000;
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .home p{
     width: fit-content;
