@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Karim EL HADEDI</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand fw-bold fs-2" href="#" style="color: #000000">Portfolio</a>
+      <button class="nav-menu d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="bi bi-menu-button-fill"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
+          <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#service">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Parcours</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+        <a href="images/CV-portfolio.pdf" download="Karim_ELHADEDI_CV" style="text-decoration:none; color:inherit;">CV</a>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ACCUEIL -->
+  <section class="home pt-5 pb-5" id="home">
+    <div class="row justify-content-evenly align-middle">
+      <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
+        <h2 style="color: #000000">
+          Karim EL HADEDI<br /><span class="c-orange">Chargé de mission santé junior</span>
+        </h2>
+        <p class="text-muted">
+          En alternance à la <b>CPTS du Trégor</b>, j’interviens sur des missions de communication santé, 
+          design graphique et production audiovisuelle.  
+          Mon objectif : valoriser les actions de prévention et améliorer la visibilité des acteurs de santé du territoire.
+        </p>
+        <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">En savoir plus</button>
+      </div>
+      <div class="col-10 col-md-4 d-none d-md-block">
+        <img src="images/accueil.webp" alt="Photo de profil" />
+      </div>
+    </div>
+  </section>
+
+  <!-- A PROPOS -->
+  <section class="expertise mt-5" id="service">
+    <div class="heading text-center">
+      <h3>À propos de moi</h3>
+    </div>
+    <div class="row justify-content-evenly mt-5">
+      <div class="col-10 col-md-4" data-aos="fade-up">
+        <div class="service-card">
+          <div class="img"><img src="images/ICONE-AIDE.svg" class="w-25 img-fluid" alt="santé" /></div>
+          <div class="content mt-3">
+            <h4>Communication en santé</h4>
+            <p class="text-muted">
+              Conception d’affiches, visuels et supports institutionnels pour promouvoir les actions de santé publique.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-10" data-aos="fade-up">
+        <div class="service-card">
+          <div class="img"><img src="images/ICONE-BIEN_ETRE.svg" class="w-25 img-fluid" alt="design" /></div>
+          <div class="content mt-3">
+            <h4>Design & Audiovisuel</h4>
+            <p class="text-muted">
+              Réalisation de vidéos, affiches et identités visuelles adaptées aux événements et publics variés.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-10" data-aos="fade-up">
+        <div class="service-card">
+          <div class="img"><img src="images/ICONE-TOURISME.svg" class="w-25 img-fluid" alt="ia" /></div>
+          <div class="content mt-3">
+            <h4>Innovation et IA</h4>
+            <p class="text-muted">
+              Veille et expérimentation d’outils numériques et IA pour faciliter la production de comptes rendus et supports internes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section projets commence ici -->
+<section class="portfolio" id="portfolio">
+  <div class="heading text-center pt-5">
+    <h3>Mes Projets</h3>
+  </div>
+
+  <div id="myBtnContainer" class="text-center mt-4">
+    <!-- filtres -->
+    <button class="filter-item" data-filter="all">Tout</button>
+    <button class="filter-item" data-filter="pro">Professionnel (CPTS)</button>
+    <button class="filter-item" data-filter="mmi">Universitaire (MMI)</button>
+  </div>
+
+  <div class="portfolio-body">
+    <div class="row justify-content-evenly px-4">
+
+      <!-- 🌐 CPTS - Étude IA -->
+      <div class="post col-md-3 pro all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/plaud.png" class="card-img-top" alt="Étude de marché IA - Plaud Note" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Étude de marché IA – PLAUD Note</h4>
+            <span class="badge bg-secondary badge-pill">Analyse</span>
+            <span class="badge bg-secondary badge-pill">Santé</span>
+            <p class="text-muted mt-2">
+              Comparaison de solutions de retranscription IA (PLAUD, Notta, Otter) selon les besoins terrain et le RGPD.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎯 CPTS - Rugby Girl Académie -->
+      <div class="post col-md-3 pro all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/rga.png" class="card-img-top" alt="Rugby Girl Académie" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Rugby Girl Académie</h4>
+            <span class="badge bg-secondary badge-pill">Audiovisuel</span>
+            <span class="badge bg-secondary badge-pill">Communication</span>
+            <p class="text-muted mt-2">
+              Création de badges, captation photo/vidéo et diffusion RS (+500 vues). Action santé féminine et prévention.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🩺 CPTS - Cabines de téléconsultation -->
+      <div class="post col-md-3 pro all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/ltc_cpts_teleconsult.svg" class="card-img-top" alt="Cabines de téléconsultation" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Cabines de téléconsultation</h4>
+            <span class="badge bg-secondary badge-pill">Design</span>
+            <span class="badge bg-secondary badge-pill">Cartographie</span>
+            <p class="text-muted mt-2">
+              Refonte d’une affiche territoriale et création d’une base de données (19 cabines, 120 destinataires).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-evenly px-4 mt-4">
+      <!-- 🎥 CPTS - RDV Santé -->
+      <div class="post col-md-3 pro all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/rdvsanté.png" class="card-img-top" alt="Les RDV Santé" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Les RDV Santé en Côtes d’Armor</h4>
+            <span class="badge bg-secondary badge-pill">Montage</span>
+            <span class="badge bg-secondary badge-pill">Prévention</span>
+            <p class="text-muted mt-2">
+              Réalisation vidéo (1h, sous-titrée) + affiche “Top 10 conseils des pros” pour valoriser la prévention santé.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🧠 Zenchef -->
+      <div class="post col-md-3 mmi all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/zenchef.avif" class="card-img-top" alt="Zenchef" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Zenchef</h4>
+            <span class="badge bg-secondary badge-pill">Webmarketing</span>
+            <span class="badge bg-secondary badge-pill">UX/UI</span>
+            <p class="text-muted mt-2">
+              Étude UX du parcours client d’un outil de réservation pour restaurateurs indépendants.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📊 Datalogy -->
+      <div class="post col-md-3 mmi all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/Datalogy_SAE4ALT_Corbel_Elhadedi_2B2.png" class="card-img-top" alt="Datalogy" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Datalogy</h4>
+            <span class="badge bg-secondary badge-pill">DataViz</span>
+            <span class="badge bg-secondary badge-pill">Santé publique</span>
+            <p class="text-muted mt-2">
+              Datavisualisation interactive sur le taux de décès liés à l’obésité (Chart.js, TopoJSON, D3.js).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-evenly px-4 mt-4">
+      <!-- 📰 Magazine IUT -->
+      <div class="post col-md-3 mmi all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/ContinIUT_Magazine.jpg" class="card-img-top" alt="Magazine IUT" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Magazine IUT</h4>
+            <span class="badge bg-secondary badge-pill">Édition</span>
+            <span class="badge bg-secondary badge-pill">PAO</span>
+            <p class="text-muted mt-2">
+              Conception d’une charte graphique et d’une maquette de magazine étudiant sur InDesign.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎬 Le Septième Sceau -->
+      <div class="post col-md-3 mmi all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/elhadedi_karim_recto_affiche_le_septième_sceau.jpg" class="card-img-top" alt="Affiche cinéma" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Le Septième Sceau</h4>
+            <span class="badge bg-secondary badge-pill">Graphisme</span>
+            <span class="badge bg-secondary badge-pill">Culture</span>
+            <p class="text-muted mt-2">
+              Reproduction typographique et composition visuelle autour du film d’Ingmar Bergman.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎥 Affiche LPDS -->
+      <div class="post col-md-3 mmi all col-10 mt-3 mt-md-0" data-aos="fade-up">
+        <div class="card">
+          <img src="images/Affiche-LPDS-R3.07-Karim_ELHADEDI-MMI2B1.jpg" class="card-img-top" alt="Affiche LPDS" />
+          <div class="card-body text-center">
+            <h4 class="card-title">Affiche “La Planète des Singes”</h4>
+            <span class="badge bg-secondary badge-pill">Affiche</span>
+            <span class="badge bg-secondary badge-pill">Création</span>
+            <p class="text-muted mt-2">
+              Travail sur l’équilibre visuel, la typographie et la composition d’un visuel d’exposition.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section projets fin ici -->
+
+<!-- section parcours / mon cheminement -->
+<section class="blog mt-5 pb-5" id="blog">
+  <div class="heading text-center pt-5">
+    <h3>Mon Parcours</h3>
+  </div>
+
+  <div class="row justify-content-evenly px-4 mt-4" data-aos="fade-up">
+    <!-- Expérience actuelle / CPTS -->
+    <div class="blogpost col-md-4 col-10 mt-2 mt-md-0">
+      <div class="card">
+        <img src="images/logo_cpts.svg" class="card-img-top rounded-4" alt="CPTS du Trégor" />
+        <div class="card-body px-4">
+          <span class="ms-1">Chargé de mission santé (alternance)</span>
+          <h4 class="card-title">CPTS du Trégor – Juin 2025 à Août 2026</h4>
+          <p class="text-muted">
+            Missions : communication santé, design graphique, production audiovisuelle, intégration d’outils numériques et IA, coordination de projets territoriaux.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formation BUT MMI -->
+    <div class="blogpost col-md-4 col-10 mt-2 mt-md-0">
+      <div class="card">
+        <img src="images/IUT_Rennes.svg" class="card-img-top rounded-4" alt="IUT de Lannion / Université de Rennes" />
+        <div class="card-body px-4">
+          <span class="ms-1">BUT MMI – Parcours Strat-UX</span>
+          <h4 class="card-title">IUT de Lannion / Université de Rennes</h4>
+          <p class="text-muted">
+            Formation axée sur la stratégie de communication, UX, multimédia et technologies.  
+            Acquisition de compétences en design, audiovisuel, web, IA et gestion de projet.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projet d'études futures -->
+     <div class="blogpost col-md-4 col-10 mt-5 mt-md-0">
+  <div class="card">
+    <img src="images/EPISEN_logo-RVB.jpg" class="card-img-top rounded-4" alt="Diplôme d’ingénieur Technologies pour la Santé – UPEC" />
+    <div class="card-body px-4">
+      <span class="ms-1">Projet d’études supérieures</span>
+      <h4 class="card-title">Ingénieur Technologies pour la Santé (UPEC / EPISEN)</h4>
+      <p class="text-muted">
+        Diplôme d’ingénieur (Bac+5) spécialité « Ingénierie et technologie pour la santé », proposé par Université Paris Est Créteil (UPEC) – EPISEN.  
+        Objectif : développer une triple compétence — informatique / réseaux & sécurité / électronique et instrumentation — au service de la santé connectée.
+        Débouchés : ingénieur R&D e-santé, chef de projet systèmes d’information santé, expert sécurité & IoT santé.
+      </p>
+    </div>
+  </div>
+</div>
+    <div class="blogpost col-md-4 col-10 mt-5 mt-md-0">
+      <div class="card">
+        <img src="images/Logo_de_l'école_d'ingénieurs_ISIS.png" class="card-img-top rounded-4" alt="Ingénieur ISIS – Informatique pour la santé" />
+        <div class="card-body px-4">
+          <span class="ms-1">Projet d’études supérieures</span>
+          <h4 class="card-title">Ingénieur ISIS – Informatique pour la Santé</h4>
+          <p class="text-muted">
+            Formation d’ingénieur (Bac+5) à ISIS Castres, spécialité « numérique & santé ».  
+            Objectif : combiner expertise informatique, intelligence artificielle et connaissance du système de santé.  
+            Débouchés : ingénieur e-santé, chef de projet numérique santé, consultant en systèmes d’information de santé.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <!-- contact section starts --> <section class="contact py-5" id="contact"> 
+    <div class="heading text-center"> 
+    <h3>Des questions ? Contactez moi !</h3> 
+  </div> 
+  <div class="row justify-content-evenly mt-5"> 
+    <div class="col-md-5 col-10 contact-details" data-aos="slide-right"> 
+      <div class="row justify-content-evenly"> <div class="col-1"> <i class="bi bi-geo-alt-fill"></i> 
+      </div> <div class="col-11"> <p>22300 Lannion</p> </div> </div> <div class="row justify-content-evenly"> <div class="col-1"> <i class="bi bi-telephone-fill"></i> </div> <div class="col-11"> <p>+33 6 83 89 55 81</p> </div> </div> <div class="row justify-content-evenly"> <div class="col-1"> <i class="bi bi-send-fill"></i> </div> <div class="col-11"> <p>karim.el-hadedi@etudiant.univ-rennes.fr</p> </div> </div> <div class="row justify-content-evenly"> <div class="col-1"> <i class="bi bi-globe-americas"></i> </div> <div class="col-11"> <p>https://github.com/kelhadedi/portfolio.git</p> </div> </div> </div> <div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="slide-left"> <div class="contact-form"> <div class="mb-3"> <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom" /> </div> <div class="mb-3"> <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail" /> </div> <div class="mb-3"> <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Numéro de téléphone" /> </div> <div class="mb-3"> <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Message" rows="5"></textarea> </div> <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill"> Envoyer </button> </div> </div> </div> </section> <!-- contact section ends here -->
+
+  <!-- FOOTER -->
+  <footer class="text-center text-muted py-4">
+    <h3 class="text-white pt-4" data-aos="fade-up">Portfolio</h3>
+    <div class="social-links mt-5" data-aos="fade-up">
+      <button class="rounded-pill linkedin" onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')"><i class="bi bi-linkedin"></i></button>
+      <button class="rounded-pill whatsapp" onclick="window.open('https://wa.me/33683895581', '_blank')"><i class="bi bi-whatsapp"></i></button>
+    </div>
+    <hr class="text-muted my-4" />
+    <p>Portfolio réalisé par Karim EL HADEDI © 2025 – Tous droits réservés.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 50 });
+  </script>
+</body>
+</html>
