@@ -5,6 +5,61 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.8rem;
   color: #212120;
 }
+body {
+  cursor: url("/images/Cursor_figma.svg") 200 200,
+          url("/images/Cursor-figma.png") 200 200,
+          auto;
+}
+:root {
+  --color-navy: #211e39;   /* fond sombre */
+  --color-green: #2ecc71;  /* accent vert CV */
+  --color-bg: #f5f5f7;     /* fond général */
+  --color-text: #1f2933;   /* texte principal */
+}
+
+/* Texte blanc dans la section d'accueil */
+.home,
+.home h1,
+.home h2,
+.home h3,
+.home p,
+.home span,
+.home .c-highlight,
+.home .text-muted {
+  color: #ffffff !important;
+}
+
+/* Lien du bouton : texte noir comme avant */
+.home .c-btn a,
+.home .btn-link-reset {
+  color: #000000 !important;
+}
+
+
+.home {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;  /* prend tout l’écran */
+}
+
+.home-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+
+
+/* Contenu au-dessus de l’image */
+.home .container {
+  position: relative;
+  z-index: 1;
+}
+
 
 h1 {
   font-size: 3rem;
@@ -23,7 +78,7 @@ h3 {
 
 p {
   font-family: 'Poppins', sans-serif;
-  color: #4a4a4a;
+  color: #000000;
 }
 
 /* RESET LIEN DANS BOUTONS */
@@ -32,27 +87,36 @@ p {
   color: inherit;
 }
 
-/* NAVBAR */
+/* NAVBAR (fond #211e39, texte blanc) */
+.navbar {
+  background-color: #211e39 !important;
+}
+
+/* bouton menu mobile */
 .nav-menu {
   border: none;
-  background-color: #fff;
+  background-color: transparent;
   font-size: 1.5rem;
-  color: #4c4c79;
+  color: #ffffff;
 }
 
+/* logo / titre */
 .navbar-brand {
-  color: #000000;
+  color: #ffffff;
 }
 
+/* liens */
 .navbar-nav a {
-  color: #212120;
+  color: #ffffff;
   position: relative;
 }
 
+/* survol des liens */
 .navbar-nav a:hover {
-  color: #4c4c79;
+  color: #ffffff;
 }
 
+/* soulignement animé (blanc) */
 .navbar-nav a::after {    
   content: "";
   position: absolute;
@@ -60,7 +124,7 @@ p {
   top: 30px;
   height: 2px;
   width: 0;
-  background: #6f34fe;
+  background: #ffffff;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -69,33 +133,67 @@ p {
   left: 0; 
 }
 
-/* BOUTON PRINCIPAL */
+/* lien actif (scroll spy) */
+.navbar-nav .active-section {
+  color: #ffffff;
+}
+
+/* Logo / titre : style et hover séparés des liens */
+.brand-title {
+  color: #ffffff;
+}
+
+.brand-title:hover {
+  color: #2ecc71;   /* par exemple ton vert d’accent */
+  text-decoration: none;
+}
+
+/* BOUTON PRINCIPAL (fond vert – call-to-action) */
 .c-btn {
   border: none;
-  background: #6f34fe;
-  color: #fff;
+  background: #2ecc71;   /* vert de ton CV */
+  color: #000000;
   font-size: 1rem;
 }
 
-.c-btn .btn-link-reset {
-  color: #ffffff;          /* couleur du texte par défaut */
+/* variante outline pour le bouton CV de la navbar */
+.c-btn-outline {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
 }
 
-/* survol du bouton : le lien garde la même couleur */
-.c-btn:hover .btn-link-reset {
-  color: #ffffff;          
+/* texte dans les boutons */
+.c-btn .btn-link-reset,
+.c-btn-outline .btn-link-reset {
+  color: inherit;
 }
 
+/* survol boutons */
 .h-btn:hover {
-  background: #3f2bb8;
-  color: #fff;
+  background: #ffffff;
+  color: #211e39;
   transform: translateY(-3px);
   transition: 0.3s ease;
 }
 
+/* survol bouton principal vert : on garde un vert un peu plus foncé */
+.c-btn.h-btn:hover {
+  background: #27ae60;
+  color: #ffffff;
+}
+
+/* survol bouton CV outline */
+.c-btn-outline.h-btn:hover {
+  background: #ffffff;
+  color: #211e39;
+}
+
+
+
 /* ACCUEIL */
 .home {
-  background: linear-gradient(33deg, #f2f2ff 0%, #ebf9ff 100%);
+    background: linear-gradient(33deg, #f7f7fb 0%, #edf3ff 100%);
 }
 
 .home-intro {
@@ -126,8 +224,8 @@ p {
   background-color: #ffffff;
 }
 
+/* Carte projet */
 .project-cv-card {
-  position: relative; /* pour l'image overlay et curseur */
   background-color: #f9fafc;
   border-radius: 0.8rem;
   padding: 1.5rem 1.8rem;
@@ -136,16 +234,19 @@ p {
   cursor: pointer;
 }
 
-/* header texte à gauche */
+/* HEADER : texte à gauche, image à droite */
 .project-cv-header-row {
-  margin-bottom: 0.8rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;  /* colonne texte plus large */
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
+/* bloc logo + titres */
 .project-cv-header-left {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  flex: 1 1 auto;
 }
 
 /* logo (tous les projets) */
@@ -155,22 +256,85 @@ p {
   object-fit: contain;
 }
 
-.project-cv-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
+/* image à droite */
 .project-cv-header-right {
-  position: static;      /* ou supprime la propriété position */
+  display: flex;
+  justify-content: flex-end;
 }
 
 .project-cv-header-right img {
-  max-width: 220px;      /* tu ajustes la largeur pour que ça tienne */
+  max-width: 260px;
+  height: auto;
   border-radius: 0.5rem;
   object-fit: cover;
 }
+
+/* Container du carousel dans la colonne droite */
+.project-cv-header-right .carousel {
+  max-width: 260px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;         /* référence pour les flèches */
+}
+
+/* image */
+.project-cv-header-right .carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* zones cliquables gauche/droite */
+.project-cv-header-right .carousel-control-prev,
+.project-cv-header-right .carousel-control-next {
+  width: 60px;                /* largeur de la zone cliquable */
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* centré verticalement */
+}
+
+/* fixer aux extrémités */
+.project-cv-header-right .carousel-control-prev {
+  left: 8px;                  /* marge par rapport au bord gauche */
+}
+
+.project-cv-header-right .carousel-control-next {
+  right: 8px;                 /* marge par rapport au bord droit */
+}
+
+/* on supprime l’icône Bootstrap */
+.project-cv-header-right .carousel-control-prev-icon,
+.project-cv-header-right .carousel-control-next-icon {
+  display: none;
+}
+
+/* bulle verte + chevron */
+.project-cv-header-right .carousel-control-prev::before,
+.project-cv-header-right .carousel-control-next::before {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(46, 204, 113, 0.9);
+  color: #000000;
+  font-size: 26px;
+}
+
+/* chevrons */
+.project-cv-header-right .carousel-control-prev::before {
+  content: '‹';
+}
+
+.project-cv-header-right .carousel-control-next::before {
+  content: '›';
+}
+
+
+
 
 /* titre et sous-titre */
 .project-cv-title {
@@ -179,23 +343,24 @@ p {
 }
 
 .project-cv-subtitle {
-  font-size: 1.1rem;
-  color: #6c6c6c;
+  font-size: 1.05rem;
+  color: #000000;
   margin-bottom: 0;
 }
 
+/* CORPS : texte juste sous le header, sur toute la largeur */
 .project-cv-body {
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
 }
 
 .project-cv-body p {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
   font-size: 0.95rem;
 }
 
 .project-label {
   font-weight: 600;
-  color: #3f396d;
+  color: #211e39;
 }
 
 .project-tools img {
@@ -206,7 +371,7 @@ p {
   vertical-align: middle;
 }
 
-/* lien cliquable dans le titre (carte "cliquable") */
+/* lien cliquable dans le titre */
 .project-link {
   position: relative;
   color: inherit;
@@ -219,11 +384,38 @@ p {
   inset: 0;  /* étend la zone cliquable sur tout le h3 */
 }
 
+/* image d’aperçu pleine largeur si tu l’utilises dans les pages projets */
 .project-hero {
-  max-width: 590px;   /* adapte la valeur : 400–600px */
+  max-width: 590px;
   width: 100%;
   height: auto;
 }
+
+/* RESPONSIVE : empiler texte + image sur mobile */
+@media (max-width: 767.98px) {
+  .project-cv-header-row {
+    display: block;
+  }
+
+  .project-cv-header-right {
+    justify-content: center;
+    margin-top: 0.8rem;
+  }
+
+  .project-cv-header-right img {
+    max-width: 100%;
+  }
+
+  .project-cv-logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .project-cv-title {
+    font-size: 1.2rem;
+  }
+}
+
 
 /* EXPÉRIENCES / FORMATIONS */
 .exp-card {
@@ -267,7 +459,7 @@ p {
 
 .contact-details i {
   font-size: 1.5rem;
-  color: #6f34fe;
+  color: #2ecc71;
 }
 
 .contact-details p {
@@ -300,7 +492,7 @@ p {
   height: 2px;
   bottom: -3px;
   left: 0;
-  background-color: #6f34fe;
+  background-color: #211e39;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -358,7 +550,7 @@ footer p {
   right: 40px;
   display: none;
   font-size: 1.3rem;
-  background-color: #6f34fe;
+  background-color: #2ecc71;
   color: #fff;
   border-radius: 50%;
   border: none;
@@ -400,4 +592,14 @@ footer p {
   .project-cv-title {
     font-size: 1.2rem;
   }
+  .project-screenshot {
+  max-width: 600px;   /* largeur max en pixels */
+  width: 100%;        /* prend 100% de la largeur dispo, sans dépasser 600px */
+  height: auto;
+  border-radius: 0.8rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  display: block;
+  margin: 0 auto;     /* centrer l’image */
+}
+
 }

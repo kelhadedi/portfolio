@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dataviz – Immigration en Europe | Karim EL HADEDI</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+</head>
+<body>
+
+  <header class="py-4 border-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html#projects" class="link d-inline-flex align-items-center">
+        <i class="bi bi-arrow-left me-2"></i> Retour aux projets
+      </a>
+      <span class="text-muted">Projet Datalogy – Immigration</span>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+
+      <section class="mb-4">
+        <h1>Dataviz – Immigration en Europe</h1>
+        <p class="text-muted">
+          Projet de datavisualisation pour confronter perception et réalité de l’immigration en Europe
+          (flux migratoires, emploi, écart entre chiffres réels et estimations).
+        </p>
+      </section>
+
+      <section class="mb-4">
+        <h2>Contexte & message</h2>
+        <p>
+          En France comme ailleurs, l’immigration est souvent au centre du débat, mais les chiffres sont mal connus et fréquemment
+          surestimés. L’idée du projet était de proposer une interface qui permette de visualiser les données réelles
+          (nombre de migrants, impact sur l’emploi, perception) de façon claire.
+        </p>
+      </section>
+
+      <section class="mb-4">
+        <h2>Mon rôle</h2>
+        <ul>
+          <li>Intégration front (HTML/CSS) de la page principale.</li>
+          <li>Implémentation des cartes et graphiques (Chart.js, D3.js) à partir de fichiers CSV/JSON.</li>
+          <li>Structuration de l’interface (carte, sliders, info box, graphiques, section d’explication).</li>
+        </ul>
+      </section>
+
+      <section class="mb-4">
+        <h2>Interface & parcours utilisateur</h2>
+        <p>
+          L’interface est organisée autour de quelques éléments clés :
+        </p>
+        <ul>
+          <li>Une carte de l’Europe cliquable (D3 + TopoJSON) pour sélectionner un pays.</li>
+          <li>Une “info box” qui affiche, pour le pays sélectionné : nombre de migrants, emploi lié à l’immigration,
+              comparaison avec les natifs et courbe d’évolution (graphique en ligne).</li>
+          <li>Un slider d’année qui met à jour les données affichées (courbes tronquées à l’année choisie).</li>
+          <li>Un graphique en barres qui compare les chiffres réels et la perception ESS (statistique vs estimation).</li>
+        </ul>
+        <p>
+          L’idée est de guider l’utilisateur : sélection d’un pays → lecture de quelques indicateurs clairs → zoom sur l’évolution
+          dans le temps → comparaison perception / réalité.
+        </p>
+      </section>
+
+      <section class="mb-4">
+        <h2>Tech et données</h2>
+        <ul>
+          <li>Données d’immigration : fichiers CSV/JSON dérivés d’Eurostat / OCDE (nombre de migrants, emploi, etc...)</li>
+          <li>Données perception/réalité : JSON pour les graphiques barres (statistique vs estimation ESS).</li>
+          <li>Code JavaScript : chargement des données avec <code>fetch</code>, gestion d’un état <code>selectedCountryKey</code>
+              et mise à jour des graphiques Chart.js et des éléments de l’info box en fonction des interactions.</li>
+        </ul>
+      </section>
+
+      <section class="mb-4">
+        <h2>Approche UI/UX</h2>
+        <ul>
+          <li>Limiter le nombre d’éléments visibles en même temps : carte, quelques chiffres, un graphique principal.</li>
+          <li>Utiliser des couleurs cohérentes entre carte et graphiques pour garder un repère visuel par pays.</li>
+          <li>Faire apparaître les explications en dessous (texte de contexte) plutôt que surcharger la zone de carte.</li>
+        </ul>
+        <p>
+          (Tu peux ici ajouter une capture d’écran de ton interface ou un lien vers la version hébergée si tu la déploies quelque part.)
+        </p>
+      </section>
+
+      <section class="mb-4">
+        <h2>Ce que j’ai appris</h2>
+        <ul>
+          <li>Gérer une interface avec beaucoup de données sans perdre l’utilisateur.</li>
+          <li>Concevoir des légendes, tooltips et labels qui expliquent vraiment ce que l’utilisateur voit.</li>
+          <li>Faire dialoguer dataviz, récit (texte de contexte) et interaction (clic sur carte, slider).</li>
+        </ul>
+      </section>
+
+      <section class="mb-4">
+  <h2>Tester la dataviz</h2>
+  <p class="text-muted">
+    Vous pouvez manipuler directement la carte, le slider d’année et les graphiques dans cet aperçu.
+  </p>
+  <div style="border-radius: 0.8rem; overflow: hidden; box-shadow: 0 6px 16px rgba(0,0,0,0.08);">
+    <iframe
+      src="https://kelhadedi.github.io/dataviz-immigration-europe/"
+      style="width: 100%; height: 600px; border: 0;"
+      title="Dataviz immigration en Europe">
+    </iframe>
+  </div>
+  <p class="mt-2">
+    Ouvrir en plein écran :
+    <a href="https://kelhadedi.github.io/dataviz-immigration-europe/" class="link" target="_blank" rel="noopener noreferrer">
+      voir la dataviz immigration
+    </a>
+  </p>
+</section>
+
+    </div>
+  </main>
+
+  <footer class="text-center text-muted py-4">
+    <p>Portfolio réalisé par Karim EL HADEDI © 2025 – Tous droits réservés.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

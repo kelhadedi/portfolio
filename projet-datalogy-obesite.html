@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dataviz – Décès liés à l’obésité | Karim EL HADEDI</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+</head>
+<body>
+
+  <header class="py-4 border-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html#projects" class="link d-inline-flex align-items-center">
+        <i class="bi bi-arrow-left me-2"></i> Retour aux projets
+      </a>
+      <span class="text-muted">Projet Datalogy – Santé</span>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+
+      <section class="mb-4">
+        <h1>Dataviz – Taux de décès liés à l’obésité</h1>
+        <p class="text-muted">
+          Projet de visualisation des taux de décès liés à l’obésité à l’échelle mondiale, avec une interface orientée
+          comparaison entre pays.
+        </p>
+      </section>
+
+      <section class="mb-4">
+        <h2>Contexte & enjeux</h2>
+        <p>
+          Le but était d’aborder un sujet lourd de façon pédagogique : montrer les disparités entre pays et la place de l’obésité
+          parmi les causes de décès, sans stigmatiser, ni perdre l’utilisateur dans les chiffres.
+        </p>
+      </section>
+
+      <section class="mb-4">
+        <h2>Mon rôle</h2>
+        <ul>
+          <li>Intégration front (structure HTML/CSS) du tableau de bord. [file:3]</li>
+          <li>Implémentation des visualisations interactives (Chart.js, D3.js). [file:3]</li>
+          <li>Participation au choix des palettes et des légendes pour garder une bonne lisibilité. [file:3]</li>
+        </ul>
+      </section>
+
+      <section class="mb-4">
+        <h2>Approche UI/UX</h2>
+        <ul>
+          <li>Organisation de la page autour de quelques questions simples (“Où la mortalité liée à l’obésité est-elle la plus forte ?”).</li>
+          <li>Carte choroplèthe pour une vue globale, complétée par des graphiques plus détaillés pour quelques pays sélectionnés.</li>
+          <li>Filtres limités volontairement pour éviter l’effet “tableau de bord professionnel” (interface plus accessible pour un étudiant ou un citoyen curieux).</li>
+        </ul>
+      </section>
+
+      <section class="mb-4">
+        <h2>Implémentation technique</h2>
+        <p>
+          Les données sont chargées depuis des fichiers CSV/JSON, traitées en JavaScript puis passées aux composants Chart.js et D3.js.
+          Le code gère les interactions de base (survol, sélection de pays) et la mise à jour des graphiques en conséquence. [file:3]
+        </p>
+      </section>
+
+      <section class="mb-4">
+        <h2>Ce que j’ai appris</h2>
+        <ul>
+          <li>Adapter une visualisation pour un public qui n’est pas expert en data.</li>
+          <li>Faire des compromis entre précision des données et lisibilité de l’interface.</li>
+          <li>Collaborer avec l’équipe sur le choix des indicateurs vraiment utiles à mettre en avant.</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="text-center text-muted py-4">
+    <p>Portfolio réalisé par Karim EL HADEDI © 2025 – Tous droits réservés.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
