@@ -1,0 +1,184 @@
+[
+  {
+    "id": "orange",
+    "title": "Workshop « Future Deskless Worker »",
+    "subtitle": "ORANGE INNOVATION - Intégration de l'IA dans un métier \"deskless\"",
+    "logoImages": ["images/Orange_logo.svg", "images/mmi.svg"],
+    "goals": "Explorer comment l’IA peut soulager les tâches administratives d’une infirmière sans nuire à la relation patient.",
+    "role": "Chef de projet suite au départ d'un collègue et designer UI/UX.",
+    "missions": [
+      "Entretien utilisateur avec une infirmière.",
+      "User Journey Map détaillée.",
+      "Priorisation des pain points et définition de scénarios IA.",
+      "Mise en forme des supports de présentation pour la phase 1 du projet."
+    ],
+    "tools": [
+      { "icon": "images/word.svg", "label": "Word" },
+      { "icon": "images/figma.svg", "label": "Figma" },
+      { "icon": "images/Miro.svg", "label": "Miro" }
+    ],
+    "gallery": [
+      "images/PDG_Orange.jpg"
+    ],
+    "links": [
+      {
+        "label": "Voir le dossier de la phase 1",
+        "url": "https://www.figma.com/design/M53fPhObzDKEikfsJLogZH/Moodboard-et-maquettes-ui-ux?node-id=0-1&t=N5bpibmqC1p5zZSI-1"
+      }
+    ]
+  },
+  {
+    "id": "locfit",
+    "title": "LocFit – Site de location de matériel sportif",
+    "subtitle": "Parcours de location & design system",
+    "logoImages": ["images/mmi.svg"],
+    "goals": "Permettre à un utilisateur peu à l’aise avec le numérique de réserver un équipement sportif en 3–4 clics, sans se perdre.",
+    "role": "Designer UI/UX & développeur front end et back end.",
+    "missions": [
+      "Définition de user flows (utilisateur, agent, admin).",
+      "Design system Figma.",
+      "Maquettes responsive des étapes catalogue → panier → paiement."
+    ],
+    "tools": [
+      { "icon": "images/figma.svg", "label": "Figma" },
+      { "icon": "images/html.svg", "label": "HTML" },
+      { "icon": "images/css.svg", "label": "CSS" },
+      { "icon": "images/javascript.svg", "label": "JavaScript" },
+      { "icon": "images/github_desktop.svg", "label": "GitHub Desktop" }
+    ],
+    "gallery": [
+      "images/SAÉ 3.UX 01-LocFit_home_page.jpg",
+      "images/Wireframe_lp_locfit.jpg",
+      "images/DesignSystem_locfit.jpg"
+    ],
+    "links": [
+      {
+        "label": "Voir le Figma",
+        "url": "https://www.figma.com/design/gLr5CgE8RDcmEh968Gb0VF/SA%C3%89-3.UX-01?node-id=0-1&t=Fe9XokD2jZz5Amnw-1"
+      }
+    ]
+  },
+  {
+    "id": "keyswitch",
+    "title": "KeySwitch – Le clavier custom, tout simplement",
+    "subtitle": "R5.06 Webmarketing – Projet e‑commerce",
+    "logoImages": ["images/mmi.svg"],
+    "goals": "Imaginer une marque e‑commerce dédiée aux claviers mécaniques custom pour francophones, avec un configurateur simple et rassurant.",
+    "role": "Travail sur le positionnement UX et la structure des pages.",
+    "missions": [
+      "Veille UX/UI.",
+      "Définition de l’univers de marque.",
+      "Réflexion sur le configurateur.",
+      "Contribution à la structure des pages (landing, catalogue, fiche produit)."
+    ],
+    "tools": [
+      { "icon": "images/figma.svg", "label": "Figma" },
+      { "icon": "images/prestashop.svg", "label": "Prestashop" },
+      { "icon": "images/excel.svg", "label": "Excel" }
+    ],
+    "gallery": [
+      "images/lp_desk.svg",
+      "images/product.svg",
+      "images/keyswitch-configurateur.png"
+    ],
+    "links": []
+  },
+  {
+    "id": "roche-jagu",
+    "title": "Signalétique biomimétique du Domaine de la Roche‑Jagu",
+    "subtitle": "Projet UX/UI & graphisme – Parc naturel départemental (en cours)",
+    "logoImages": ["images/mmi.svg", "images/côtes d'armor.svg"],
+    "goals": "Repenser la signalétique du domaine pour mieux guider les visiteurs tout en respectant le paysage et l’ambiance du site.",
+    "role": "Conception graphique et réflexion sur le parcours visiteur.",
+    "missions": [
+      "Inventaire des signalétiques nécessaires.",
+      "Réflexion sur l’implantation dans le parcours.",
+      "Création de maquettes de panneaux inspirés de l’Art nouveau."
+    ],
+    "tools": [
+      { "icon": "images/figma.svg", "label": "Figma" },
+      { "icon": "images/adobe-illustrator.svg", "label": "Illustrator" }
+    ],
+    "gallery": [
+      "images/RocheJagu.jpg",
+      "images/Inventaire.png",
+      "images/ImplantationSignalétiques.png",
+      "images/Pictogramme.png",
+      "images/Graphique.png"
+    ],
+    "links": [
+      {
+        "label": "Voir le Figma (en cours)",
+        "url": "https://www.figma.com/design/M53fPhObzDKEikfsJLogZH/Moodboard-et-maquettes-ui-ux?node-id=0-1&t=N5bpibmqC1p5zZSI-1"
+      }
+    ]
+  },
+  {
+    "id": "datalogy-sida",
+    "title": "Dataviz – Enfants orphelins en raison du SIDA",
+    "subtitle": "Projet Datalogy – Visualisation pour la santé publique",
+    "logoImages": ["images/mmi.svg"],
+    "goals": "Comparer la part d’enfants orphelins à cause du SIDA entre l’Afrique et l’Europe avec une interface compréhensible sans être statisticien.",
+    "role": "Concepteur du ruban et du shooting photo, postproduction sur Illustrator.",
+    "missions": [
+      "Structuration de la page.",
+      "Intégration des cartes et graphiques.",
+      "Travail sur la lisibilité des légendes et des infobulles."
+    ],
+    "tools": [
+      { "icon": "images/adobe-illustrator.svg", "label": "Illustrator" }
+    ],
+    "gallery": [
+      "images/Datalogy_SIDA_SAE4ALT.png"
+    ],
+    "links": [
+      { "label": "Voir le projet", "url": "projet-datalogy-sida.html" }
+    ]
+  },
+  {
+    "id": "datalogy-obesite",
+    "title": "Dataviz – Taux de décès liés à l’obésité",
+    "subtitle": "Projet Datalogy – Interface de comparaison internationale",
+    "logoImages": ["images/mmi.svg"],
+    "goals": "Visualiser les taux de décès liés à l’obésité et permettre une comparaison rapide entre plusieurs pays.",
+    "role": "Intégration front & datavisualisation.",
+    "missions": [
+      "Conception d’une représentation originale et simple.",
+      "Appui sur des données sourcées et fiables."
+    ],
+    "tools": [
+      { "icon": "images/javascript.svg", "label": "JavaScript" },
+      { "icon": "images/Chart.js_logo.svg", "label": "Chart.js" },
+      { "icon": "images/logo_d3.svg", "label": "D3.js" }
+    ],
+    "gallery": [
+      "images/Datalogy_Taux_Deces_Lies_Obesite_MMI_2B1-SAE_3.03.jpg"
+    ],
+    "links": [
+      { "label": "Voir le projet", "url": "projet-datalogy-obesite.html" }
+    ]
+  },
+  {
+    "id": "datalogy-immigration",
+    "title": "Dataviz – Immigration en Europe",
+    "subtitle": "Interface de visualisation interactive – Projet universitaire",
+    "logoImages": ["images/mmi.svg"],
+    "goals": "Confronter perception et réalité de l’immigration en Europe via une interface web utilisable par un public non spécialiste.",
+    "role": "Intégration front, datavisualisation et structuration de l’interface.",
+    "missions": [
+      "Intégration de la carte interactive, du slider d’année et des graphiques.",
+      "Conception de l’info box synthétisant les indicateurs par pays."
+    ],
+    "tools": [
+      { "icon": "images/javascript.svg", "label": "JavaScript" },
+      { "icon": "images/Chart.js_logo.svg", "label": "Chart.js" },
+      { "icon": "images/logo_d3.svg", "label": "D3.js" }
+    ],
+    "gallery": [
+      "images/Capture_Interface1.png"
+    ],
+    "links": [
+      { "label": "Voir le projet", "url": "projet-datalogy-immigration.html" }
+    ]
+  }
+]

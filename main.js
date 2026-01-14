@@ -28,6 +28,61 @@ backToTopBtn.addEventListener("click", () => {
 });
 
 // ============================
+// Lightbox image projets
+// ============================
+const zoomImages = document.querySelectorAll(".project-zoom-img");
+const lightbox = document.getElementById("image-lightbox");
+const lightboxImg = document.getElementById("image-lightbox-img");
+const lightboxContent = document.querySelector(".image-lightbox-content");
+
+if (zoomImages.length && lightbox && lightboxImg && lightboxContent) {
+  zoomImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+
+      // Réinitialise la taille
+      lightboxContent.classList.remove("image-lightbox-content--small");
+
+      // Si l'image appartient à LocFit / KeySwitch / Roche-Jagu, on met la variante small
+      if (
+        img.alt.includes("LocFit") ||
+        img.alt.includes("KeySwitch") ||
+        img.alt.includes("La Roche-Jagu")
+      ) {
+        lightboxContent.classList.add("image-lightbox-content--small");
+      }
+
+      lightbox.classList.remove("d-none");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (
+      e.target.classList.contains("image-lightbox-backdrop") ||
+      e.target.classList.contains("image-lightbox-close")
+    ) {
+      lightbox.classList.add("d-none");
+      lightboxImg.src = "";
+      lightboxContent.classList.remove("image-lightbox-content--small");
+      document.body.style.overflow = "";
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lightbox.classList.contains("d-none")) {
+      lightbox.classList.add("d-none");
+      lightboxImg.src = "";
+      lightboxContent.classList.remove("image-lightbox-content--small");
+      document.body.style.overflow = "";
+    }
+  });
+}
+
+
+
+// ============================
 // Scroll spy - lien de nav actif
 // ============================
 const sections = document.querySelectorAll("section");

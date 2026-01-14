@@ -14,6 +14,75 @@ body {
           url("../images/Cursor-figma.png") 200 200,
           auto;
 }
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: flex;
+  align-items: flex-start;      /* on aligne en haut */
+  justify-content: center;
+  padding-top: 8vh;             /* marge constante en haut */
+}
+
+
+.image-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.image-lightbox-content {
+  position: relative;
+  max-width: 60vw;
+  max-height: 40vh;
+  z-index: 1;
+  animation: lightbox-zoom-in 0.25s ease-out;
+  /* plus de transform ici */
+}
+
+/* Variante plus petite pour certains projets */
+.image-lightbox-content.image-lightbox-content--small {
+  max-width: 30vw;
+  max-height: 30vh;
+}
+
+
+.image-lightbox-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.image-lightbox-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* animation d'apparition */
+@keyframes lightbox-zoom-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* utilitaire bootstrap d-none si tu l'utilises déjà */
+.d-none {
+  display: none !important;
+}
+
 :root {
   --color-navy: #211e39;   /* fond sombre */
   --color-green: #2ecc71;  /* accent vert CV */
@@ -273,71 +342,15 @@ p {
   object-fit: cover;
 }
 
-/* Container du carousel dans la colonne droite */
-.project-cv-header-right .carousel {
-  max-width: 260px;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  position: relative;         /* référence pour les flèches */
+.project-zoom-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: zoom-in;
 }
 
-/* image */
-.project-cv-header-right .carousel-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.project-zoom-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
-
-/* zones cliquables gauche/droite */
-.project-cv-header-right .carousel-control-prev,
-.project-cv-header-right .carousel-control-next {
-  width: 60px;                /* largeur de la zone cliquable */
-  opacity: 1;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* centré verticalement */
-}
-
-/* fixer aux extrémités */
-.project-cv-header-right .carousel-control-prev {
-  left: 8px;                  /* marge par rapport au bord gauche */
-}
-
-.project-cv-header-right .carousel-control-next {
-  right: 8px;                 /* marge par rapport au bord droit */
-}
-
-/* on supprime l’icône Bootstrap */
-.project-cv-header-right .carousel-control-prev-icon,
-.project-cv-header-right .carousel-control-next-icon {
-  display: none;
-}
-
-/* bulle verte + chevron */
-.project-cv-header-right .carousel-control-prev::before,
-.project-cv-header-right .carousel-control-next::before {
-  content: '';
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: rgba(46, 204, 113, 0.9);
-  color: #000000;
-  font-size: 26px;
-}
-
-/* chevrons */
-.project-cv-header-right .carousel-control-prev::before {
-  content: '‹';
-}
-
-.project-cv-header-right .carousel-control-next::before {
-  content: '›';
-}
-
-
 
 
 /* titre et sous-titre */
@@ -608,3 +621,78 @@ footer p {
 
 }
 
+/* ========================= */
+/* Vue détail projet         */
+/* ========================= */
+
+#project-detail {
+  display: block !important;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #0b0416;   /* même ton que ton fond */
+  color: #ffffff;
+}
+
+.project-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-detail-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.project-detail-close {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.project-detail-body {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-missions {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-tools-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-tools-list li img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.project-detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-detail-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}

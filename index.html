@@ -18,6 +18,16 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
+<div id="image-lightbox" class="image-lightbox d-none">
+  <div class="image-lightbox-backdrop"></div>
+  <div class="image-lightbox-content">
+    <button type="button" class="image-lightbox-close" aria-label="Fermer l'aperçu">
+      ✕
+    </button>
+    <img src="" alt="" id="image-lightbox-img">
+  </div>
+</div>
+
 <body>
   <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm"
     aria-label="Navigation principale">
@@ -50,35 +60,31 @@
 
 
 
-<!-- ACCUEIL -->
-<section class="home pt-5 pb-5" id="home" aria-labelledby="home-title">
-  <img
-    src="images/accueil.webp"
-    alt="Portrait de Karim EL HADEDI"
-    class="home-bg-img"
-  />
+  <!-- ACCUEIL -->
+  <section class="home pt-5 pb-5" id="home" aria-labelledby="home-title">
+    <img src="images/accueil.webp" alt="Portrait de Karim EL HADEDI" class="home-bg-img" />
 
-  <div class="container">
-    <div class="row justify-content-between align-items-center">
-      <div class="col-12 col-md-7 text-center text-md-start" data-aos="fade-right">
-        <h1 id="home-title">
-          Karim EL HADEDI<br />
-          <span class="c-highlight">Designer UX/UI junior</span>
-        </h1>
-        <p class="text-muted home-intro">
-          Étudiant en BUT MMI – parcours Stratégie & UX, je conçois des interfaces web et des maquettes Figma
-          en pensant d’abord à l’usage : parcours clairs, composants cohérents et contenus accessibles,
-          même pour quelqu’un qui n’est pas “tech”. Ce qui me motive : utiliser l’UI/UX pour aider celles et ceux
-          qui aident les autres, par exemple en simplifiant le quotidien d’une infirmière, d’un visiteur ou d’un
-          patient.
-        </p>
-        <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
-          <a href="#projects" class="btn-link-reset">Voir mes projets</a>
-        </button>
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-12 col-md-7 text-center text-md-start" data-aos="fade-right">
+          <h1 id="home-title">
+            Karim EL HADEDI<br />
+            <span class="c-highlight">Designer UX/UI junior</span>
+          </h1>
+          <p class="text-muted home-intro">
+            Étudiant en BUT MMI – parcours Stratégie & UX, je conçois des interfaces web et des maquettes Figma
+            en pensant d’abord à l’usage : parcours clairs, composants cohérents et contenus accessibles,
+            même pour quelqu’un qui n’est pas “tech”. Ce qui me motive : utiliser l’UI/UX pour aider celles et ceux
+            qui aident les autres, par exemple en simplifiant le quotidien d’une infirmière, d’un visiteur ou d’un
+            patient.
+          </p>
+          <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+            <a href="#projects" class="btn-link-reset">Voir mes projets</a>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- PROJETS -->
@@ -125,7 +131,7 @@
 
           <!-- Colonne droite : image seule -->
           <div class="project-cv-header-right">
-            <img src="images/PDG_Orange.jpg" alt="Aperçu du workshop Future Deskless Worker" />
+            <img src="images/PDG_Orange.jpg" class="project-screenshot project-zoom-img" alt="Aperçu du workshop Future Deskless Worker" />
           </div>
         </div>
       </article>
@@ -163,28 +169,9 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <div id="carousel-locfit" class="carousel slide" data-bs-ride="false">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="images/SAÉ 3.UX 01-LocFit_home_page.jpg" class="d-block w-100" alt="Landing LocFit">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/Wireframe_lp_locfit.jpg" class="d-block w-100" alt="Wireframe LocFit">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/DesignSystem_locfit.jpg" class="d-block w-100" alt="Design System LocFit">
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-locfit"
-                data-bs-slide="prev" aria-label="Image précédente">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel-locfit"
-                data-bs-slide="next" aria-label="Image suivante">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              </button>
-            </div>
+            <img src="images/Mockup_LocFit.jpg" class="project-screenshot project-zoom-img" alt="Mockup LocFit">
           </div>
+
         </div>
       </article>
 
@@ -215,30 +202,13 @@
                 <img src="images/prestashop.svg" alt="Prestashop" />
                 <img src="images/excel.svg" alt="Excel" />
               </p>
+              <p><a class="link"
+                  href="https://www.figma.com/design/Ydjh1xcgi8nja8PrUtjL5Z/R5.06?node-id=106-2&t=T27T4foWbvjPJiWZ-1"
+                  target="_blank" rel="noopener noreferrer">Voir le Figma (en cours)</a></p>
             </div>
           </div>
           <div class="project-cv-header-right">
-            <div id="carousel-keyswitch" class="carousel slide" data-bs-ride="false">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="images/lp_desk.svg" class="d-block w-100" alt="Landing KeySwitch">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/product.svg" class="d-block w-100" alt="Produit KeySwitch">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/keyswitch-configurateur.png" class="d-block w-100" alt="Configurateur KeySwitch">
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-keyswitch"
-                data-bs-slide="prev" aria-label="Image précédente">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel-keyswitch"
-                data-bs-slide="next" aria-label="Image suivante">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              </button>
-            </div>
+            <img src="images/Mockup_KeySwitch.jpg" class="project-screenshot project-zoom-img" alt="Mockup KeySwitch">
           </div>
         </div>
       </article>
@@ -278,34 +248,7 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <div id="carousel-keyswitch" class="carousel slide" data-bs-ride="false">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="images/RocheJagu.jpg" class="d-block w-100" alt="RocheJagu">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/Inventaire.png" class="d-block w-100" alt="Inventaire">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/ImplantationSignalétiques.png" class="d-block w-100"
-                    alt="ImplantationSignalétiques">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/Pictogramme.png" class="d-block w-100" alt="Pictogramme">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/Graphique.png" class="d-block w-100" alt="Graphique">
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-keyswitch"
-                data-bs-slide="prev" aria-label="Image précédente">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel-keyswitch"
-                data-bs-slide="next" aria-label="Image suivante">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              </button>
-            </div>
+            <img src="images/Mockup_LaRocheJagu.jpg" class="project-screenshot project-zoom-img" alt="Mockup La Roche-Jagu">
           </div>
         </div>
       </article>
@@ -339,7 +282,7 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Datalogy_SIDA_SAE4ALT.png" alt="Aperçu du projet Datalogy – SIDA" />
+            <img src="images/Datalogy_SIDA_SAE4ALT.png" class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – SIDA" />
           </div>
         </div>
       </article>
@@ -374,8 +317,7 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Datalogy_Taux_Deces_Lies_Obesite_MMI_2B1-SAE_3.03.jpg"
-              alt="Aperçu du projet Datalogy – obésité" />
+            <img src="images/Datalogy_Taux_Deces_Lies_Obesite_MMI_2B1-SAE_3.03.jpg" class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – obésité" />
           </div>
         </div>
       </article>
@@ -411,7 +353,7 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Capture_Interface1.png" alt="Aperçu du projet Datalogy – obésité" />
+            <img src="images/Capture_Interface1.png" class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – obésité" />
           </div>
         </div>
       </article>
@@ -587,60 +529,60 @@
       </section>
 
       <!-- FORMATIONS -->
-<section class="education py-5" id="education" aria-labelledby="edu-title">
-  <div class="container">
-    <div class="heading text-center mb-4">
-      <h2 id="edu-title">Formations</h2>
-    </div>
-
-    <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
-      <!-- BUT MMI -->
-      <div class="col-md-5 col-10 mb-4">
-        <article class="card exp-card">
-          <img src="images/iut_rennes_mmi.svg" class="card-img-top exp-img"
-               alt="IUT de Lannion / Université de Rennes" />
-          <div class="card-body">
-            <span class="text-muted">2023 – 2026</span>
-            <h3 class="card-title">BUT MMI – Parcours Stratégie & UX</h3>
-            <p class="card-subtitle mb-2">IUT de Lannion – Université de Rennes</p>
-            <p class="text-muted">
-              Parcours centré sur la stratégie de communication numérique et le
-              design d’expérience : recherche utilisateur, maquettes Figma, prototypage,
-              accessibilité et gestion de projets web orientés usages.
-            </p>
-            <p class="text-muted mb-0">
-              Projets marquants : datavisualisation en santé (Datalogy) et workshop
-              sur les parcours infirmiers et l’IA avec Orange.
-            </p>
+      <section class="education py-5" id="education" aria-labelledby="edu-title">
+        <div class="container">
+          <div class="heading text-center mb-4">
+            <h2 id="edu-title">Formations</h2>
           </div>
-        </article>
-      </div>
 
-      <!-- Master visé UI/UX -->
-      <div class="col-md-5 col-10 mb-4">
-        <article class="card exp-card">
-          <img src="images/Logo_of_Sorbonne_University.svg" class="card-img-top exp-img"
-               alt="Sorbonne Université" />
-          <div class="card-body">
-            <span class="text-muted">Projet d’études</span>
-            <h3 class="card-title">Master Création Numérique – Design d’interface</h3>
-            <p class="card-subtitle mb-2">Sorbonne Université (envisagé)</p>
-            <p class="text-muted">
-              Master axé sur le design et l’ergonomie d’interfaces, l’UX design,
-              l’accessibilité et la conception d’expériences numériques complexes
-              (web, applications, services).
-            </p>
-            <p class="text-muted mb-0">
-              <strong>Objectif :</strong> approfondir la recherche UX, le design d’interaction et la
-              conduite de projets en équipe pour des produits digitaux centrés
-              utilisateurs.
-            </p>
+          <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
+            <!-- BUT MMI -->
+            <div class="col-md-5 col-10 mb-4">
+              <article class="card exp-card">
+                <img src="images/iut_rennes_mmi.svg" class="card-img-top exp-img"
+                  alt="IUT de Lannion / Université de Rennes" />
+                <div class="card-body">
+                  <span class="text-muted">2023 – 2026</span>
+                  <h3 class="card-title">BUT MMI – Parcours Stratégie & UX</h3>
+                  <p class="card-subtitle mb-2">IUT de Lannion – Université de Rennes</p>
+                  <p class="text-muted">
+                    Parcours centré sur la stratégie de communication numérique et le
+                    design d’expérience : recherche utilisateur, maquettes Figma, prototypage,
+                    accessibilité et gestion de projets web orientés usages.
+                  </p>
+                  <p class="text-muted mb-0">
+                    Projets marquants : datavisualisation en santé (Datalogy) et workshop
+                    sur les parcours infirmiers et l’IA avec Orange.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Master visé UI/UX -->
+            <div class="col-md-5 col-10 mb-4">
+              <article class="card exp-card">
+                <img src="images/Logo_of_Sorbonne_University.svg" class="card-img-top exp-img"
+                  alt="Sorbonne Université" />
+                <div class="card-body">
+                  <span class="text-muted">Projet d’études</span>
+                  <h3 class="card-title">Master Création Numérique – Design d’interface</h3>
+                  <p class="card-subtitle mb-2">Sorbonne Université (envisagé)</p>
+                  <p class="text-muted">
+                    Master axé sur le design et l’ergonomie d’interfaces, l’UX design,
+                    l’accessibilité et la conception d’expériences numériques complexes
+                    (web, applications, services).
+                  </p>
+                  <p class="text-muted mb-0">
+                    <strong>Objectif :</strong> approfondir la recherche UX, le design d’interaction et la
+                    conduite de projets en équipe pour des produits digitaux centrés
+                    utilisateurs.
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
       <!-- CONTACT -->
