@@ -5,6 +5,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.8rem;
   color: #212120;
 }
+
+* {
+  scroll-margin: 100px;  /* pour le scroll spy avec la navbar fixe */
+}
 body {
   cursor: url("../images/Cursor_figma.svg") 200 200,
           url("../images/Cursor-figma.png") 200 200,
