@@ -6,8 +6,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #212120;
 }
 body {
-  cursor: url("/images/Cursor_figma.svg") 200 200,
-          url("/images/Cursor-figma.png") 200 200,
+  cursor: url("../images/Cursor_figma.svg") 200 200,
+          url("../images/Cursor-figma.png") 200 200,
           auto;
 }
 :root {
@@ -603,3 +603,4 @@ footer p {
 }
 
 }
+
