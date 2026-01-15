@@ -7,6 +7,33 @@ AOS.init({
   once: false,   // les animations se rejouent si on revient dans la section
   mirror: false  // pas d'anim "en sortie" en remontant
 });
+const contactToggle = document.getElementById('contactToggle');
+const contactPanel  = document.getElementById('contactPanel');
+
+contactToggle.addEventListener('click', () => {
+  const isOpen = contactPanel.classList.toggle('open');
+  contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+const contactToggle = document.getElementById('contactToggle');
+const contactPanel  = document.getElementById('contactPanel');
+
+contactToggle.addEventListener('click', (e) => {
+  e.stopPropagation(); // empêche le clic de remonter au document
+  const isOpen = contactPanel.classList.toggle('open');
+  contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+contactPanel.addEventListener('click', (e) => {
+  e.stopPropagation(); // pour pouvoir cliquer dans le panneau sans le fermer
+});
+
+document.addEventListener('click', () => {
+  if (contactPanel.classList.contains('open')) {
+    contactPanel.classList.remove('open');
+    contactToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
 
 // ============================
 // Bouton "retour haut"
@@ -115,4 +142,27 @@ window.addEventListener("scroll", () => {
   const offset = window.pageYOffset;
   // Parallax très subtil pour rester sobre
   homeSection.style.backgroundPositionY = offset * 0.2 + "px";
+});
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards  = document.querySelectorAll('.project-cv-card');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // active state
+    document.querySelector('.filter-btn.active')?.classList.remove('active');
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    projectCards.forEach(card => {
+      const cats = card.dataset.category.split(' ');
+
+      if (filter === 'all' || cats.includes(filter)) {
+        card.classList.remove('is-hidden');
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+  });
 });

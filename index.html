@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Portfolio - Karim EL HADEDI</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -27,6 +29,19 @@
     <img src="" alt="" id="image-lightbox-img">
   </div>
 </div>
+
+<div class="contact-fab" aria-label="Me contacter">
+  <button class="contact-fab-btn" id="contactToggle" aria-expanded="false">
+    ?
+  </button>
+
+  <div class="contact-fab-panel" id="contactPanel">
+    <p class="contact-fab-title">Vous souhaitez me contacter&nbsp;?</p>
+    <a href="tel:+33683895581" class="contact-fab-link">📞 06 83 89 66 81</a>
+    <a href="mailto:karimelhadedi@gmail.com" class="contact-fab-link">✉️ karimelhadedi@gmail.com</a>
+  </div>
+</div>
+
 
 <body>
   <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm"
@@ -62,7 +77,7 @@
 
   <!-- ACCUEIL -->
   <section class="home pt-5 pb-5" id="home" aria-labelledby="home-title">
-    <img src="images/accueil.webp" alt="Portrait de Karim EL HADEDI" class="home-bg-img" />
+    <img src="images/pics/accueil.webp" alt="Portrait de Karim EL HADEDI" class="home-bg-img" />
 
     <div class="container">
       <div class="row justify-content-between align-items-center">
@@ -71,12 +86,10 @@
             Karim EL HADEDI<br />
             <span class="c-highlight">Designer UX/UI junior</span>
           </h1>
-          <p class="text-muted home-intro">
-            Étudiant en BUT MMI – parcours Stratégie & UX, je conçois des interfaces web et des maquettes Figma
-            en pensant d’abord à l’usage : parcours clairs, composants cohérents et contenus accessibles,
-            même pour quelqu’un qui n’est pas “tech”. Ce qui me motive : utiliser l’UI/UX pour aider celles et ceux
-            qui aident les autres, par exemple en simplifiant le quotidien d’une infirmière, d’un visiteur ou d’un
-            patient.
+          <p class="home-tagline">
+            Bienvenue, ici Karim EL HADEDI.<br>
+            Je conçois des expériences numériques pour faciliter la vie des autres.<br>
+            Découvrez mon univers.
           </p>
           <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
             <a href="#projects" class="btn-link-reset">Voir mes projets</a>
@@ -91,17 +104,26 @@
   <section class="projects-cv py-5" id="projects" aria-labelledby="projects-title">
     <div class="container">
       <div class="heading text-center mb-4">
-        <h2 id="projects-title">Projets universitaires</h2>
+        <h2 id="projects-title">Projets</h2>
       </div>
+      <div class="portfolio-filters" aria-label="Filtrer les projets par thématique">
+  <button class="filter-btn active" data-filter="all">TOUT</button>
+  <button class="filter-btn" data-filter="uxui">UX/UI DESIGN</button>
+  <button class="filter-btn" data-filter="web">WEB DESIGNER</button>
+  <button class="filter-btn" data-filter="graphisme">GRAPHISTE</button>
+  <button class="filter-btn" data-filter="comm">COMMUNICANT</button>
+</div>
 
       <!-- Projet ORANGE – Future Deskless Worker -->
-      <article class="project-cv-card" data-aos="fade-up">
+      <article class="project-cv-card" data-category="uxui web" data-aos="fade-up">
+        <!-- Bulle année -->
+        <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <!-- Colonne gauche : logo + titres + texte -->
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
-              <img src="images/Orange_logo.svg" alt="Logo Orange Innovation" />
-              <img src="images/mmi.svg" alt="Logo IUT de Lannion MMI" />
+              <img src="images/icons/Orange_logo.svg" alt="Logo Orange Innovation" />
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
             </div>
             <div>
               <h3 class="project-cv-title">
@@ -118,30 +140,36 @@
                 présentation pour la phase 1 du projet.</p>
               <p class="project-tools">
                 <span class="project-label">Outils :</span>
-                <img src="images/word.svg" alt="Word" />
-                <img src="images/figma.svg" alt="Figma" />
-                <img src="images/Miro.svg" alt="Miro" />
+                <img src="images/icons/word.svg" alt="Word" />
+                <img src="images/icons/figma.svg" alt="Figma" />
+                <img src="images/icons/Miro.svg" alt="Miro" />
               </p>
-              <p><a class="link"
+              <p>
+                <a class="link"
                   href="https://www.figma.com/design/M53fPhObzDKEikfsJLogZH/Moodboard-et-maquettes-ui-ux?node-id=0-1&t=N5bpibmqC1p5zZSI-1"
-                  target="_blank" rel="noopener noreferrer">Voir le dossier de la phase 1</a></p>
-
+                  target="_blank" rel="noopener noreferrer">
+                  Voir le dossier de la phase 1
+                </a>
+              </p>
             </div>
           </div>
 
           <!-- Colonne droite : image seule -->
           <div class="project-cv-header-right">
-            <img src="images/PDG_Orange.jpg" class="project-screenshot project-zoom-img" alt="Aperçu du workshop Future Deskless Worker" />
+            <img src="images/projets/PDG_Orange.jpg" class="project-screenshot project-zoom-img"
+              alt="Aperçu du workshop Future Deskless Worker" />
           </div>
         </div>
       </article>
 
       <!-- Projet LocFit – Site de location -->
       <article class="project-cv-card" data-aos="fade-up">
+        <!-- Bulle année -->
+        <div class="year-badge">2024</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
-              <img src="images/mmi.svg" alt="Logo IUT de Lannion MMI" />
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
             </div>
             <div>
               <h3 class="project-cv-title">
@@ -156,11 +184,11 @@
                 design system Figma, maquettes responsive des étapes catalogue → panier → paiement.</p>
               <p class="project-tools">
                 <span class="project-label">Outils :</span>
-                <img src="images/figma.svg" alt="Figma" />
-                <img src="images/html.svg" alt="HTML" />
-                <img src="images/css.svg" alt="CSS" />
-                <img src="images/javascript.svg" alt="JavaScript" />
-                <img src="images/github_desktop.svg" alt="Github Desktop" />
+                <img src="images/icons/figma.svg" alt="Figma" />
+                <img src="images/icons/html.svg" alt="HTML" />
+                <img src="images/icons/css.svg" alt="CSS" />
+                <img src="images/icons/javascript.svg" alt="JavaScript" />
+                <img src="images/icons/github_desktop.svg" alt="Github Desktop" />
               </p>
               <p><a class="link"
                   href="https://www.figma.com/design/gLr5CgE8RDcmEh968Gb0VF/SA%C3%89-3.UX-01?node-id=0-1&t=Fe9XokD2jZz5Amnw-1"
@@ -169,7 +197,7 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Mockup_LocFit.jpg" class="project-screenshot project-zoom-img" alt="Mockup LocFit">
+            <img src="images/projets/Mockup_LocFit.jpg" class="project-screenshot project-zoom-img" alt="Mockup LocFit">
           </div>
 
         </div>
@@ -177,10 +205,12 @@
 
       <!-- Projet KeySwitch – Webmarketing & UX e-commerce -->
       <article class="project-cv-card" data-aos="fade-up">
+        <!-- Bulle année -->
+        <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
-              <img src="images/mmi.svg" alt="Logo IUT de Lannion MMI" />
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
             </div>
             <div>
               <h3 class="project-cv-title">
@@ -198,9 +228,9 @@
                 le configurateur et contribution à la structure des pages (landing, catalogue, fiche produit).</p>
               <p class="project-tools">
                 <span class="project-label">Outils :</span>
-                <img src="images/figma.svg" alt="Figma" />
-                <img src="images/prestashop.svg" alt="Prestashop" />
-                <img src="images/excel.svg" alt="Excel" />
+                <img src="images/icons/figma.svg" alt="Figma" />
+                <img src="images/icons/prestashop.svg" alt="Prestashop" />
+                <img src="images/icons/excel.svg" alt="Excel" />
               </p>
               <p><a class="link"
                   href="https://www.figma.com/design/Ydjh1xcgi8nja8PrUtjL5Z/R5.06?node-id=106-2&t=T27T4foWbvjPJiWZ-1"
@@ -208,18 +238,21 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Mockup_KeySwitch.jpg" class="project-screenshot project-zoom-img" alt="Mockup KeySwitch">
+            <img src="images/projets/Mockup_KeySwitch.jpg" class="project-screenshot project-zoom-img"
+              alt="Mockup KeySwitch">
           </div>
         </div>
       </article>
 
       <!-- Projet La Roche-Jagu -->
       <article class="project-cv-card" data-aos="fade-up">
+        <!-- Bulle année -->
+        <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
-              <img src="images/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
-              <img src="images/côtes d'armor.svg" alt="Logo IUT de Lannion MMI" />
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
+              <img src="images/icons/côtes d'armor.svg" alt="Logo IUT de Lannion MMI" />
 
             </div>
             <div>
@@ -239,8 +272,8 @@
                 dans le parcours et création de maquettes de panneaux inspirés de l’Art nouveau.</p>
               <p class="project-tools">
                 <span class="project-label">Outils :</span>
-                <img src="images/figma.svg" alt="Figma" />
-                <img src="images/adobe-illustrator.svg" alt="Illustrator" />
+                <img src="images/icons/figma.svg" alt="Figma" />
+                <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
               </p>
               <p><a class="link"
                   href="https://www.figma.com/design/M53fPhObzDKEikfsJLogZH/Moodboard-et-maquettes-ui-ux?node-id=0-1&t=N5bpibmqC1p5zZSI-1"
@@ -248,17 +281,20 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Mockup_LaRocheJagu.jpg" class="project-screenshot project-zoom-img" alt="Mockup La Roche-Jagu">
+            <img src="images/projets/Mockup_LaRocheJagu.jpg" class="project-screenshot project-zoom-img"
+              alt="Mockup La Roche-Jagu">
           </div>
         </div>
       </article>
 
       <!-- Projet Datalogy – Enfants orphelins (SIDA) -->
       <article class="project-cv-card" data-aos="fade-up">
+        <!-- Bulle année -->
+        <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
-              <img src="images/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
             </div>
             <div>
               <h3 class="project-cv-title">
@@ -277,22 +313,25 @@
                 travail sur la lisibilité des légendes et des infobulles.</p>
               <p class="project-tools">
                 <span class="project-label">Outils :</span>
-                <img src="images/adobe-illustrator.svg" alt="Illustrator" />
+                <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
               </p>
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Datalogy_SIDA_SAE4ALT.png" class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – SIDA" />
+            <img src="images/projets/Datalogy_SIDA_SAE4ALT.png" class="project-screenshot project-zoom-img"
+              alt="Aperçu du projet Datalogy – SIDA" />
           </div>
         </div>
       </article>
 
       <!-- Projet Datalogy – Taux de décès liés à l'obésité -->
       <article class="project-cv-card" data-aos="fade-up">
+        <!-- Bulle année -->
+        <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
-              <img src="images/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
             </div>
             <div>
               <h3 class="project-cv-title">
@@ -310,24 +349,27 @@
                 condition de s'appuyer sur des données sourcées et fiables.</p>
               <p class="project-tools">
                 <span class="project-label">Outils :</span>
-                <img src="images/javascript.svg" alt="JavaScript" />
-                <img src="images/Chart.js_logo.svg" alt="Chart.js" />
-                <img src="images/logo_d3.svg" alt="D3.js" />
+                <img src="images/icons/javascript.svg" alt="JavaScript" />
+                <img src="images/icons/Chart.js_logo.svg" alt="Chart.js" />
+                <img src="images/icons/Logo_D3.svg" alt="D3.js" />
               </p>
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Datalogy_Taux_Deces_Lies_Obesite_MMI_2B1-SAE_3.03.jpg" class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – obésité" />
+            <img src="images/projets/Datalogy_Taux_Deces_Lies_Obesite_MMI_2B1-SAE_3.03.jpg"
+              class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – obésité" />
           </div>
         </div>
       </article>
 
       <!-- Projet Dataviz Immigration -->
       <article class="project-cv-card" data-aos="fade-up">
+        <!-- Bulle année -->
+        <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
-              <img src="images/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
             </div>
             <div>
               <h3 class="project-cv-title">
@@ -346,14 +388,15 @@
                 des graphiques et de l’“info box” qui synthétise les indicateurs par pays.</p>
               <p class="project-tools">
                 <span class="project-label">Outils :</span>
-                <img src="images/javascript.svg" alt="JavaScript" />
-                <img src="images/Chart.js_logo.svg" alt="Chart.js" />
-                <img src="images/logo_d3.svg" alt="D3.js" />
+                <img src="images/icons/javascript.svg" alt="JavaScript" />
+                <img src="images/icons/Chart.js_logo.svg" alt="Chart.js" />
+                <img src="images/icons/Logo_D3.svg" alt="D3.js" />
               </p>
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/Capture_Interface1.png" class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – obésité" />
+            <img src="images/projets/Capture_Interface1.png" class="project-screenshot project-zoom-img"
+              alt="Aperçu du projet Datalogy – obésité" />
           </div>
         </div>
       </article>
@@ -368,7 +411,7 @@
           <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
             <div class="col-md-5 col-10 mb-4">
               <article class="card exp-card">
-                <img src="images/logo cpts.svg" class="card-img-top exp-img" alt="Logo CPTS du Trégor" />
+                <img src="images/icons/logo cpts.svg" class="card-img-top exp-img" alt="Logo CPTS du Trégor" />
                 <div class="card-body">
                   <span class="text-muted">Juin 2025 – Août 2026 · Alternance</span>
                   <h3 class="card-title">Chargé de communication en santé</h3>
@@ -383,7 +426,7 @@
             </div>
             <div class="col-md-5 col-10 mb-4">
               <article class="card exp-card">
-                <img src="images/ARDOISE.png" class="card-img-top exp-img" alt="Restaurant L'Ardoise" />
+                <img src="images/icons/ARDOISE.png" class="card-img-top exp-img" alt="Restaurant L'Ardoise" />
                 <div class="card-body">
                   <span class="text-muted">Janvier – Avril 2025 · Alternance</span>
                   <h3 class="card-title">Responsable communication en restauration</h3>
@@ -399,279 +442,344 @@
         </div>
       </section>
 
-      <!-- AUTRES EXPÉRIENCES -->
-      <section class="extra-experience py-5" id="extra-experience" aria-labelledby="extra-exp-title">
-        <div class="container">
-          <div class="heading text-center mb-4">
-            <h2 id="extra-exp-title">Autres expériences</h2>
-            <p class="text-muted">Jobs étudiants et saisonniers ou j'ai pu monter en compétence sur mon sens de
-              l’effort, de l’organisation et du contact.</p>
-          </div>
-          <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
-            <!-- Intermarché -->
-            <div class="col-md-4 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/intermarche.svg" class="card-img-top exp-img" alt="Intermarché" />
-                <div class="card-body">
-                  <span class="text-muted">Week-ends · Job étudiant</span>
-                  <h3 class="card-title">Employé libre-service</h3>
-                  <p class="card-subtitle mb-2">Intermarché</p>
-                  <p class="text-muted">
-                    Mise en rayon, gestion de la marchandise et tenue des linéaires dans un contexte de forte affluence,
-                    tout en conciliant études et travail. Renforce sens de l’effort, ponctualité et travail en équipe.
-                  </p>
-                </div>
-              </article>
-            </div>
+    <!-- AUTRES EXPÉRIENCES -->
+<section class="extra-experience py-5" id="extra-experience" aria-labelledby="extra-exp-title">
+  <div class="container">
+    <div class="heading text-center mb-4">
+      <h2 id="extra-exp-title">Autres expériences</h2>
+      <p class="text-muted">
+        Jobs étudiants et saisonniers ou j'ai pu monter en compétence sur mon sens de
+        l’effort, de l’organisation et du contact.
+      </p>
+    </div>
 
-            <!-- Belambra -->
-            <div class="col-md-4 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/belambra.svg" class="card-img-top exp-img" alt="Belambra" />
-                <div class="card-body">
-                  <span class="text-muted">Saisons · Job saisonnier</span>
-                  <h3 class="card-title">Réceptionniste</h3>
-                  <p class="card-subtitle mb-2">Belambra</p>
-                  <p class="text-muted">
-                    Accueil des clients, service en restauration et gestion de situations variées en village vacances.
-                    Développe réactivité, gestion du stress et sens du service.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <!-- Miléade -->
-            <div class="col-md-4 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/mileade.svg" class="card-img-top exp-img" alt="Miléade" />
-                <div class="card-body">
-                  <span class="text-muted">Saisons · Job saisonnier</span>
-                  <h3 class="card-title">Réceptionniste / serveur</h3>
-                  <p class="card-subtitle mb-2">Miléade</p>
-                  <p class="text-muted">
-                    Accueil, renseignement des vacanciers et service en salle dans un contexte touristique.
-                    Renforce adaptabilité, communication et travail en horaires décalés.
-                  </p>
-                </div>
-              </article>
-            </div>
+    <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
+      <!-- Intermarché -->
+      <div class="col-md-4 col-lg-3 col-10 mb-4">
+        <article class="card exp-card">
+          <img src="images/icons/intermarche.svg" class="card-img-top exp-img" alt="Intermarché" />
+          <div class="card-body">
+            <span class="text-muted">Week-ends depuis mai 2025 · Job étudiant</span>
+            <h3 class="card-title">Employé libre-service</h3>
+            <p class="card-subtitle mb-2">Intermarché</p>
+            <p class="text-muted">
+              Mise en rayon, gestion de la marchandise et tenue des linéaires dans un contexte de forte affluence,
+              tout en conciliant études et travail. Renforce sens de l’effort, ponctualité et travail en équipe.
+            </p>
           </div>
+        </article>
+      </div>
+
+      <!-- Belambra -->
+      <div class="col-md-4 col-lg-3 col-10 mb-4">
+        <article class="card exp-card">
+          <img src="images/icons/belambra.svg" class="card-img-top exp-img" alt="Belambra" />
+          <div class="card-body">
+            <span class="text-muted">Saison 2024 de mai à août · Job saisonnier</span>
+            <h3 class="card-title">Réceptionniste</h3>
+            <p class="card-subtitle mb-2">Belambra</p>
+            <p class="text-muted">
+              Accueil des clients, service en restauration et gestion de situations variées en village vacances.
+              Développe réactivité, gestion du stress et sens du service.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Miléade -->
+      <div class="col-md-4 col-lg-3 col-10 mb-4">
+        <article class="card exp-card">
+          <img src="images/icons/mileade.svg" class="card-img-top exp-img" alt="Miléade" />
+          <div class="card-body">
+            <span class="text-muted">Saison 2023 de juin à août · Job saisonnier</span>
+            <h3 class="card-title">Serveur</h3>
+            <p class="card-subtitle mb-2">Miléade</p>
+            <p class="text-muted">
+              Accueil, renseignement des vacanciers et service en salle dans un contexte touristique.
+              Renforce adaptabilité, communication et travail en horaires décalés.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Yelloh Village -->
+      <div class="col-md-4 col-lg-3 col-10 mb-4">
+        <article class="card exp-card">
+          <img src="images/icons/yellovillage.svg" class="card-img-top exp-img" alt="Yelloh Village" />
+          <div class="card-body">
+            <span class="text-muted">Renfort sur le site de Plobannalec-Lesconil en mai 2025</span>
+            <h3 class="card-title">Hôte d'accueil</h3>
+            <p class="card-subtitle mb-2">Yelloh Village</p>
+            <p class="text-muted">
+            Prise de commandes et gestion
+            des réservations. Développe sens du service, organisation et gestion du stress.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- FabLab de Lannion -->
+      <div class="col-md-4 col-lg-3 col-10 mb-4">
+        <article class="card exp-card">
+          <img src="images/icons/fablab_lannion.png" class="card-img-top exp-img" alt="FabLab de Lannion" />
+          <div class="card-body">
+            <span class="text-muted">Depuis 2025 · Bénévolat</span>
+            <h3 class="card-title">Bénévole</h3>
+            <p class="card-subtitle mb-2">FabLab de Lannion</p>
+            <p class="text-muted">
+              Accueil des membres, accompagnement sur les projets et prise en main des machines
+              (impression 3D, découpe laser, électronique). Développe pédagogie, curiosité
+              technique et travail collaboratif.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div>
+  </div>
+  </section>
+
+  <section class="skills py-5" id="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <div class="heading text-center mb-4">
+        <h2 id="skills-title">Compétences</h2>
+      </div>
+
+      <div class="row justify-content-center px-2 px-md-4">
+        <!-- UX/UI design -->
+        <div class="col-lg-3 col-md-6 col-10 mb-4">
+          <article class="card exp-card skills-card">
+            <div class="card-body">
+              <h3 class="card-title">UX/UI design</h3>
+              <ul class="skills-list">
+                <li>Maquettage, wireframing, user flows, personae.</li>
+                <li>Design system, UI responsive, accessibilité.</li>
+                <li>Typographie, branding, prototypage interactif.</li>
+              </ul>
+            </div>
+          </article>
         </div>
-      </section>
 
-
-      <!-- BÉNÉVOLAT -->
-      <section class="volunteering py-5" id="volunteering" aria-labelledby="vol-title">
-        <div class="container">
-          <div class="heading text-center mb-4">
-            <h2 id="vol-title">Bénévolat</h2>
-          </div>
-          <div class="row justify-content-center px-2 px-md-4" data-aos="fade-up">
-            <div class="col-md-8 col-10 mb-4">
-              <article class="card exp-card">
-                <div class="card-body">
-                  <span class="text-muted">Depuis 2025 · Bénévolat</span>
-                  <h3 class="card-title">Bénévole – Fablab de Lannion</h3>
-                  <p class="text-muted">
-                    Participation tout les samedi entre 10:00 et 12:00 à la vie du fablab (accueil, accompagnement des
-                    projets, prise en main des machines)
-                    et expérimentation autour de la fabrication numérique et de l’électronique.
-                  </p>
-                  <p class="text-muted">
-                    Ce bénévolat illustre mon intérêt pour les technologies, le prototypage et le travail collaboratif,
-                    en cohérence avec un projet d’études en technologies pour la santé.
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- COMPÉTENCES -->
-      <section class="skills py-5" id="skills" aria-labelledby="skills-title">
-        <div class="container">
-          <div class="heading text-center mb-4">
-            <h2 id="skills-title">Compétences</h2>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-md-5 col-10 mb-4">
-              <h3>Hard skills</h3>
-              <ul class="list-unstyled skills-list">
-                <li><strong>Santé & numérique :</strong> communication santé, prévention, e‑santé, datavisualisation.
+        <!-- Développement web -->
+        <div class="col-lg-3 col-md-6 col-10 mb-4">
+          <article class="card exp-card skills-card">
+            <div class="card-body">
+              <h3 class="card-title">Développement web</h3>
+              <ul class="skills-list icons-list">
+                <li>
+                  <img src="images/icons/html.svg" alt="HTML" />
+                  <img src="images/icons/css.svg" alt="CSS" />
+                  <img src="images/icons/javascript.svg" alt="JavaScript" />
+                  <span>HTML / CSS / JavaScript</span>
                 </li>
-                <li><strong>Web :</strong> HTML/CSS, JS, intégration, UX/UI (Figma).</li>
-                <li><strong>IA & outils :</strong> expérimentation d’outils IA (retranscription, résumé), benchmark
-                  d’outils
-                  numériques.</li>
-                <li><strong>Sécurité :</strong> bases en réseaux & cybersécurité issues du bac STI2D.</li>
-                <li><strong>Graphisme & audiovisuel :</strong> InDesign, Illustrator, Premiere Pro, DaVinci Resolve,
-                  Canva.
+                <li>
+                  <img src="images/icons/php.svg" alt="PHP" />
+                  <img src="images/icons/mysql.svg" alt="MySQL" />
+                  <span>PHP / MySQL</span>
+                </li>
+                <li>
+                  <img src="images/icons/wordpress.svg" alt="WordPress" />
+                  <span>Intégration sous WordPress (CMS)</span>
                 </li>
               </ul>
             </div>
-            <div class="col-md-5 col-10 mb-4">
-              <h3>Soft skills</h3>
-              <ul class="list-unstyled skills-list">
-                <li><strong>Gestion de projet :</strong> chef de projet (Orange, Ruth), coordination, respect des
-                  délais.
+          </article>
+        </div>
+
+        <!-- Logiciels maîtrisés -->
+        <div class="col-lg-3 col-md-6 col-10 mb-4">
+          <article class="card exp-card skills-card">
+            <div class="card-body">
+              <h3 class="card-title">Logiciels maîtrisés</h3>
+              <ul class="skills-list icons-list">
+                <li>
+                  <img src="images/icons/figma.svg" alt="Figma" />
+                  <span>Figma</span>
                 </li>
-                <li><strong>Relationnel santé :</strong> travail avec professionnels de santé (CPTS, EHPAD), écoute,
-                  adaptation.</li>
-                <li><strong>Communication :</strong> vulgarisation, présentation orale, travail en équipe
-                  pluridisciplinaire.</li>
-                <li><strong>Autonomie & adaptabilité :</strong> prise d’initiative, ajustement aux besoins terrain.</li>
+                <li>
+                  <img src="images/icons/photoshop.svg" alt="Adobe Photoshop" />
+                  <img src="images/icons/adobe-illustrator.svg" alt="Adobe Illustrator" />
+                  <span>Photoshop, Illustrator</span>
+                </li>
+                <li>
+                  <img src="images/icons/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve" />
+                  <span>DaVinci Resolve</span>
+                </li>
+                <li>
+                  <img src="images/icons/github_desktop.svg" alt="GitHub" />
+                  <span>GitHub et outils collaboratifs</span>
+                </li>
               </ul>
             </div>
-          </div>
+          </article>
         </div>
-      </section>
 
-      <!-- FORMATIONS -->
-      <section class="education py-5" id="education" aria-labelledby="edu-title">
-        <div class="container">
-          <div class="heading text-center mb-4">
-            <h2 id="edu-title">Formations</h2>
-          </div>
-
-          <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
-            <!-- BUT MMI -->
-            <div class="col-md-5 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/iut_rennes_mmi.svg" class="card-img-top exp-img"
-                  alt="IUT de Lannion / Université de Rennes" />
-                <div class="card-body">
-                  <span class="text-muted">2023 – 2026</span>
-                  <h3 class="card-title">BUT MMI – Parcours Stratégie & UX</h3>
-                  <p class="card-subtitle mb-2">IUT de Lannion – Université de Rennes</p>
-                  <p class="text-muted">
-                    Parcours centré sur la stratégie de communication numérique et le
-                    design d’expérience : recherche utilisateur, maquettes Figma, prototypage,
-                    accessibilité et gestion de projets web orientés usages.
-                  </p>
-                  <p class="text-muted mb-0">
-                    Projets marquants : datavisualisation en santé (Datalogy) et workshop
-                    sur les parcours infirmiers et l’IA avec Orange.
-                  </p>
-                </div>
-              </article>
+        <!-- Soft skills -->
+        <div class="col-lg-3 col-md-6 col-10 mb-4">
+          <article class="card exp-card skills-card">
+            <div class="card-body">
+              <h3 class="card-title">Soft skills</h3>
+              <ul class="skills-list">
+                <li>Communication orale et visuelle, pitch.</li>
+                <li>Gestion de projet, respect des délais.</li>
+                <li>Cohérence graphique entre supports.</li>
+                <li>Empathie utilisateur, curiosité, veille design.</li>
+              </ul>
             </div>
-
-            <!-- Master visé UI/UX -->
-            <div class="col-md-5 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/Logo_of_Sorbonne_University.svg" class="card-img-top exp-img"
-                  alt="Sorbonne Université" />
-                <div class="card-body">
-                  <span class="text-muted">Projet d’études</span>
-                  <h3 class="card-title">Master Création Numérique – Design d’interface</h3>
-                  <p class="card-subtitle mb-2">Sorbonne Université (envisagé)</p>
-                  <p class="text-muted">
-                    Master axé sur le design et l’ergonomie d’interfaces, l’UX design,
-                    l’accessibilité et la conception d’expériences numériques complexes
-                    (web, applications, services).
-                  </p>
-                  <p class="text-muted mb-0">
-                    <strong>Objectif :</strong> approfondir la recherche UX, le design d’interaction et la
-                    conduite de projets en équipe pour des produits digitaux centrés
-                    utilisateurs.
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
+          </article>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
 
-      <!-- CONTACT -->
-      <section class="contact py-5" id="contact" aria-labelledby="contact-title">
-        <div class="container">
-          <div class="heading text-center">
-            <h2 id="contact-title">Des questions ? Contactez-moi</h2>
-          </div>
-          <div class="row justify-content-evenly mt-5">
-            <div class="col-md-5 col-10 contact-details" data-aos="fade-right">
-              <div class="row justify-content-evenly mb-3">
-                <div class="col-1"><i class="bi bi-geo-alt-fill"></i></div>
-                <div class="col-11">
-                  <p>22300 Lannion</p>
-                </div>
-              </div>
-              <div class="row justify-content-evenly mb-3">
-                <div class="col-1"><i class="bi bi-telephone-fill"></i></div>
-                <div class="col-11">
-                  <p>+33 6 83 89 55 81</p>
-                </div>
-              </div>
-              <div class="row justify-content-evenly mb-3">
-                <div class="col-1"><i class="bi bi-send-fill"></i></div>
-                <div class="col-11">
-                  <p>karim.el-hadedi@etudiant.univ-rennes.fr</p>
-                </div>
-              </div>
-              <div class="row justify-content-evenly mb-3">
-                <div class="col-1"><i class="bi bi-globe-americas"></i></div>
-                <div class="col-11">
-                  <p><a href="https://github.com/kelhadedi/portfolio" class="link" target="_blank"
-                      rel="noopener noreferrer">GitHub du portfolio</a></p>
-                </div>
-              </div>
+  <!-- FORMATIONS -->
+  <section class="education py-5" id="education" aria-labelledby="edu-title">
+    <div class="container">
+      <div class="heading text-center mb-4">
+        <h2 id="edu-title">Formations</h2>
+      </div>
+
+      <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
+        <!-- BUT MMI -->
+        <div class="col-md-5 col-10 mb-4">
+          <article class="card exp-card">
+            <img src="images/icons/iut_rennes_mmi.svg" class="card-img-top exp-img"
+              alt="IUT de Lannion / Université de Rennes" />
+            <div class="card-body">
+              <span class="text-muted">2023 – 2026</span>
+              <h3 class="card-title">BUT MMI – Parcours Stratégie & UX</h3>
+              <p class="card-subtitle mb-2">IUT de Lannion – Université de Rennes</p>
+              <p class="text-muted">
+                Parcours centré sur la stratégie de communication numérique et le
+                design d’expérience : recherche utilisateur, maquettes Figma, prototypage,
+                accessibilité et gestion de projets web orientés usages.
+              </p>
+              <p class="text-muted mb-0">
+                Projets marquants : datavisualisation en santé (Datalogy) et workshop
+                sur les parcours infirmiers et l’IA avec Orange.
+              </p>
             </div>
+          </article>
+        </div>
 
-            <div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="fade-left">
-              <form class="contact-form" aria-label="Formulaire de contact">
-                <div class="mb-3">
-                  <label for="contact-name" class="form-label">Nom</label>
-                  <input type="text" class="form-control" id="contact-name" placeholder="Votre nom" />
-                </div>
-                <div class="mb-3">
-                  <label for="contact-email" class="form-label">E-mail</label>
-                  <input type="email" class="form-control" id="contact-email" placeholder="Votre e-mail" />
-                </div>
-                <div class="mb-3">
-                  <label for="contact-phone" class="form-label">Numéro de téléphone</label>
-                  <input type="text" class="form-control" id="contact-phone" placeholder="Votre numéro" />
-                </div>
-                <div class="mb-3">
-                  <label for="contact-message" class="form-label">Message</label>
-                  <textarea class="form-control" id="contact-message" placeholder="Votre message" rows="5"></textarea>
-                </div>
-                <button type="submit" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">Envoyer</button>
-              </form>
+        <!-- Master visé UI/UX -->
+        <div class="col-md-5 col-10 mb-4">
+          <article class="card exp-card">
+            <img src="images/icons/Logo_of_Sorbonne_University.svg" class="card-img-top exp-img" alt="Sorbonne Université" />
+            <div class="card-body">
+              <span class="text-muted">Projet d’études</span>
+              <h3 class="card-title">Master Création Numérique – Design d’interface</h3>
+              <p class="card-subtitle mb-2">Sorbonne Université (envisagé)</p>
+              <p class="text-muted">
+                Master axé sur le design et l’ergonomie d’interfaces, l’UX design,
+                l’accessibilité et la conception d’expériences numériques complexes
+                (web, applications, services).
+              </p>
+              <p class="text-muted mb-0">
+                <strong>Objectif :</strong> approfondir la recherche UX, le design d’interaction et la
+                conduite de projets en équipe pour des produits digitaux centrés
+                utilisateurs.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact py-5" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="heading text-center">
+        <h2 id="contact-title">Des questions ? Contactez-moi</h2>
+      </div>
+      <div class="row justify-content-evenly mt-5">
+        <div class="col-md-5 col-10 contact-details" data-aos="fade-right">
+          <div class="row justify-content-evenly mb-3">
+            <div class="col-1"><i class="bi bi-geo-alt-fill"></i></div>
+            <div class="col-11">
+              <p>22300 Lannion</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly mb-3">
+            <div class="col-1"><i class="bi bi-telephone-fill"></i></div>
+            <div class="col-11">
+              <p>+33 6 83 89 55 81</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly mb-3">
+            <div class="col-1"><i class="bi bi-send-fill"></i></div>
+            <div class="col-11">
+              <p>karim.el-hadedi@etudiant.univ-rennes.fr</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly mb-3">
+            <div class="col-1"><i class="bi bi-globe-americas"></i></div>
+            <div class="col-11">
+              <p><a href="https://github.com/kelhadedi/portfolio" class="link" target="_blank"
+                  rel="noopener noreferrer">GitHub du portfolio</a></p>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- BOUTON RETOUR HAUT -->
-      <button type="button" class="btn btn-lg" id="btn-back-to-top" aria-label="Revenir en haut">
-        <i class="bi bi-arrow-up"></i>
+        <div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="fade-left">
+          <form class="contact-form" aria-label="Formulaire de contact">
+            <div class="mb-3">
+              <label for="contact-name" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="contact-name" placeholder="Votre nom" />
+            </div>
+            <div class="mb-3">
+              <label for="contact-email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="contact-email" placeholder="Votre e-mail" />
+            </div>
+            <div class="mb-3">
+              <label for="contact-phone" class="form-label">Numéro de téléphone</label>
+              <input type="text" class="form-control" id="contact-phone" placeholder="Votre numéro" />
+            </div>
+            <div class="mb-3">
+              <label for="contact-message" class="form-label">Message</label>
+              <textarea class="form-control" id="contact-message" placeholder="Votre message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTON RETOUR HAUT -->
+  <button type="button" class="btn btn-lg" id="btn-back-to-top" aria-label="Revenir en haut">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-muted py-4">
+    <h2 class="text-white pt-3">Portfolio</h2>
+    <div class="social-links mt-3 mb-3">
+      <button class="rounded-pill linkedin" aria-label="Profil LinkedIn de Karim EL HADEDI"
+        onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')">
+        <i class="bi bi-linkedin"></i>
       </button>
+      <button class="rounded-pill whatsapp" aria-label="Contacter Karim EL HADEDI sur WhatsApp"
+        onclick="window.open('https://wa.me/33683895581', '_blank')">
+        <i class="bi bi-whatsapp"></i>
+      </button>
+    </div>
+    <hr class="text-muted my-3" />
+    <p>Portfolio réalisé par Karim EL HADEDI © 2025 – Tous droits réservés.</p>
+  </footer>
 
-      <!-- FOOTER -->
-      <footer class="text-center text-muted py-4">
-        <h2 class="text-white pt-3">Portfolio</h2>
-        <div class="social-links mt-3 mb-3">
-          <button class="rounded-pill linkedin" aria-label="Profil LinkedIn de Karim EL HADEDI"
-            onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')">
-            <i class="bi bi-linkedin"></i>
-          </button>
-          <button class="rounded-pill whatsapp" aria-label="Contacter Karim EL HADEDI sur WhatsApp"
-            onclick="window.open('https://wa.me/33683895581', '_blank')">
-            <i class="bi bi-whatsapp"></i>
-          </button>
-        </div>
-        <hr class="text-muted my-3" />
-        <p>Portfolio réalisé par Karim EL HADEDI © 2025 – Tous droits réservés.</p>
-      </footer>
-
-      <!-- SCRIPTS -->
-      <!-- SCRIPTS -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script src="main.js"></script>
+  <!-- SCRIPTS -->
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
