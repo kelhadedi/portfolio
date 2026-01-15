@@ -49,6 +49,20 @@ if (backToTopBtn) {
   });
 }
 
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.getElementById('navbarNav');
+
+if (navbarToggler && navbarCollapse) {
+  document.addEventListener('click', (event) => {
+    const isClickInsideNav = event.target.closest('#navbar-top');
+
+    // si clic en dehors de la navbar et menu ouvert
+    if (!isClickInsideNav && navbarCollapse.classList.contains('show')) {
+      navbarToggler.click();
+    }
+  });
+}
+
 // ============================
 // Lightbox image projets
 // ============================
