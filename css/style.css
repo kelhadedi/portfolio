@@ -476,6 +476,15 @@ p {
   color: #211e39;
 }
 
+@media (max-width: 576px) {
+  .c-btn-outline.h-btn {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.7rem;  /* moins haut et moins large */
+  }
+
+  .nav-right-actions {
+    gap: 0.25rem;  /* rapproche un peu le CV et le LinkedIn */
+  }
 
 
 /* ACCUEIL */
