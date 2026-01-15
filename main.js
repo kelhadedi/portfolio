@@ -14,26 +14,6 @@ contactToggle.addEventListener('click', () => {
   const isOpen = contactPanel.classList.toggle('open');
   contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
-const contactToggle = document.getElementById('contactToggle');
-const contactPanel  = document.getElementById('contactPanel');
-
-contactToggle.addEventListener('click', (e) => {
-  e.stopPropagation(); // empêche le clic de remonter au document
-  const isOpen = contactPanel.classList.toggle('open');
-  contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
-
-contactPanel.addEventListener('click', (e) => {
-  e.stopPropagation(); // pour pouvoir cliquer dans le panneau sans le fermer
-});
-
-document.addEventListener('click', () => {
-  if (contactPanel.classList.contains('open')) {
-    contactPanel.classList.remove('open');
-    contactToggle.setAttribute('aria-expanded', 'false');
-  }
-});
-
 
 // ============================
 // Bouton "retour haut"

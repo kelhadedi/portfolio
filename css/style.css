@@ -520,7 +520,6 @@ p {
 }
 
 .project-link::before {
-  content: "";
   position: absolute;
   inset: 0;  /* étend la zone cliquable sur tout le h3 */
 }
@@ -556,6 +555,18 @@ p {
     font-size: 1.2rem;
   }
 }
+
+.project-figure {
+  margin: 1.2rem 0;
+}
+
+.project-figure img {
+  width: 40%;
+  height: auto;
+  display: block;
+  border-radius: 1.2rem;
+}
+
 
 
 /* EXPÉRIENCES / FORMATIONS */
