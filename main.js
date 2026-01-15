@@ -1,46 +1,61 @@
 // ============================
 // AOS - animations au scroll
 // ============================
-AOS.init({
-  duration: 400,
-  offset: 120,
-  once: false,   // les animations se rejouent si on revient dans la section
-  mirror: false  // pas d'anim "en sortie" en remontant
-});
+if (window.AOS) {
+  AOS.init({
+    duration: 400,
+    offset: 120,
+    once: false,
+    mirror: false
+  });
+}
+
+// ============================
+// Bulle contact ( ? en bas )
+// ============================
 const contactToggle = document.getElementById('contactToggle');
 const contactPanel  = document.getElementById('contactPanel');
 
-contactToggle.addEventListener('click', () => {
-  const isOpen = contactPanel.classList.toggle('open');
-  contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
+if (contactToggle && contactPanel) {
+  contactToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = contactPanel.classList.toggle('open');
+    contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  contactPanel.addEventListener('click', (e) => e.stopPropagation());
+
+  document.addEventListener('click', () => {
+    if (contactPanel.classList.contains('open')) {
+      contactPanel.classList.remove('open');
+      contactToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
 
 // ============================
 // Bouton "retour haut"
 // ============================
 const backToTopBtn = document.getElementById("btn-back-to-top");
 
-window.addEventListener("scroll", () => {
-  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+if (backToTopBtn) {
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    backToTopBtn.style.display = scrollTop > 200 ? "block" : "none";
+  });
 
-  if (scrollTop > 200) {
-    backToTopBtn.style.display = "block";
-  } else {
-    backToTopBtn.style.display = "none";
-  }
-});
-
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 // ============================
 // Lightbox image projets
 // ============================
-const zoomImages = document.querySelectorAll(".project-zoom-img");
-const lightbox = document.getElementById("image-lightbox");
-const lightboxImg = document.getElementById("image-lightbox-img");
-const lightboxContent = document.querySelector(".image-lightbox-content");
+const zoomImages     = document.querySelectorAll(".project-zoom-img");
+const lightbox       = document.getElementById("image-lightbox");
+const lightboxImg    = document.getElementById("image-lightbox-img");
+const lightboxContent= document.querySelector(".image-lightbox-content");
 
 if (zoomImages.length && lightbox && lightboxImg && lightboxContent) {
   zoomImages.forEach((img) => {
@@ -48,10 +63,8 @@ if (zoomImages.length && lightbox && lightboxImg && lightboxContent) {
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
 
-      // Réinitialise la taille
       lightboxContent.classList.remove("image-lightbox-content--small");
 
-      // Si l'image appartient à LocFit / KeySwitch / Roche-Jagu, on met la variante small
       if (
         img.alt.includes("LocFit") ||
         img.alt.includes("KeySwitch") ||
@@ -87,62 +100,80 @@ if (zoomImages.length && lightbox && lightboxImg && lightboxContent) {
   });
 }
 
-
-
 // ============================
 // Scroll spy - lien de nav actif
 // ============================
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-window.addEventListener("scroll", () => {
-  let current = "";
+if (sections.length && navLinks.length) {
+  window.addEventListener("scroll", () => {
+    let current = "";
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 140; // marge pour la navbar
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 140;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
 
-  navLinks.forEach(link => {
-    link.classList.remove("active-section");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active-section");
-    }
+    navLinks.forEach(link => {
+      link.classList.remove("active-section");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active-section");
+      }
+    });
   });
-});
+}
 
 // ============================
 // Parallax léger sur la section home
 // ============================
 const homeSection = document.querySelector(".home");
 
-window.addEventListener("scroll", () => {
-  const offset = window.pageYOffset;
-  // Parallax très subtil pour rester sobre
-  homeSection.style.backgroundPositionY = offset * 0.2 + "px";
-});
+if (homeSection) {
+  window.addEventListener("scroll", () => {
+    const offset = window.pageYOffset;
+    homeSection.style.backgroundPositionY = offset * 0.2 + "px";
+  });
+}
 
+// ============================
+// Filtres projets par domaine
+// ============================
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards  = document.querySelectorAll('.project-cv-card');
+const emptyMsg      = document.getElementById('portfolio-empty-msg');
 
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // active state
-    document.querySelector('.filter-btn.active')?.classList.remove('active');
-    btn.classList.add('active');
+if (filterButtons.length && projectCards.length) {
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.filter-btn.active')?.classList.remove('active');
+      btn.classList.add('active');
 
-    const filter = btn.dataset.filter;
+      const filter = btn.dataset.filter;
+      let visibleCount = 0;
 
-    projectCards.forEach(card => {
-      const cats = card.dataset.category.split(' ');
+      projectCards.forEach(card => {
+        const cats = (card.dataset.category || '')
+          .split(' ')
+          .filter(Boolean);
 
-      if (filter === 'all' || cats.includes(filter)) {
-        card.classList.remove('is-hidden');
-      } else {
-        card.classList.add('is-hidden');
+        if (filter === 'all' || cats.includes(filter)) {
+          card.classList.remove('is-hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+
+      if (emptyMsg) {
+        if (visibleCount === 0 && filter !== 'all') {
+          emptyMsg.style.display = 'block';
+        } else {
+          emptyMsg.style.display = 'none';
+        }
       }
     });
   });
-});
+}
