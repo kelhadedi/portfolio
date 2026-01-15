@@ -233,13 +233,6 @@ p {
   align-items: center;
 }
 
-.nav-right-wrapper,
-.nav-right-actions {
-  display: flex;
-  align-items: center;
-}
-
-
 /* NAVBAR (fond #211e39, texte blanc) */
 .navbar {
   background-color: #211e39 !important;
@@ -326,8 +319,8 @@ p {
 #navbar-top .container-fluid {
   display: flex;
   align-items: center;
-  padding-inline: 1rem;  /* pas plus large */
-  overflow-x: hidden;    /* sécurité supplémentaire */
+  justify-content: space-between;  /* brand à gauche, reste à droite */
+  padding-block: 0.4rem;          /* même hauteur partout */
 }
 
 
@@ -383,6 +376,8 @@ p {
   background-color: transparent;
   color: #ffffff;
   font-size: 0.95rem;
+  line-height: 1.2;   /* fixe la hauteur de ligne */
+
 }
 
 .c-btn-outline.h-btn .btn-link-reset {
@@ -489,9 +484,12 @@ p {
 
 @media (max-width: 576px) {
   .c-btn-outline.h-btn {
-    font-size: 0.6rem;
-    padding: 0.25rem 0.7rem;  /* moins haut et moins large */
+    font-size: 0.75rem;
+    line-height: 1.2;
+    padding: 0.35rem 0.7rem;
   }
+}
+
 
   .nav-right-actions {
     gap: 0.25rem;  /* rapproche un peu le CV et le LinkedIn */
