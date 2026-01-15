@@ -64,6 +64,12 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   margin-top: 0.25rem;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 body {
   background-color: #f5f5f7;
@@ -175,6 +181,11 @@ section {
   min-height: 100vh;  /* prend tout l’écran */
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .home-bg-img {
   position: absolute;
   inset: 0;
@@ -184,8 +195,6 @@ section {
   object-position: center;
   z-index: 0;
 }
-
-
 
 /* Contenu au-dessus de l’image */
 .home .container {
@@ -306,7 +315,10 @@ p {
 #navbar-top .container-fluid {
   display: flex;
   align-items: center;
+  padding-inline: 1rem;  /* pas plus large */
+  overflow-x: hidden;    /* sécurité supplémentaire */
 }
+
 
 /* Logo */
 #navbar-top .navbar-brand {
@@ -367,7 +379,7 @@ p {
   text-decoration: none;
 }
 
-/* LinkedIn dans la navbar (reprend ton style footer) */
+/* LinkedIn dans la navbar */
 .navbar-linkedin {
   border: none;
   font-size: 1.2rem;
