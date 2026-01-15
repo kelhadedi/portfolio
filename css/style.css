@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 * {
-  scroll-margin: 100px;  /* pour le scroll spy avec la navbar fixe */
+  scroll-margin: -15px;  /* pour le scroll spy avec la navbar fixe */
 }
 .contact-fab {
   position: fixed;
@@ -178,7 +178,7 @@ section {
 .home {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;  /* prend tout l’écran */
+  min-height: 100vh;
 }
 
 img {
@@ -656,13 +656,16 @@ p {
 /* titre et sous-titre */
 .project-cv-title {
   font-size: 1.5rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.4rem;
 }
 
 .project-cv-subtitle {
-  font-size: 1.05rem;
-  color: #000000;
-  margin-bottom: 0;
+  font-size: 1.2rem;
+  color: #555555;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 
 /* CORPS : texte juste sous le header, sur toute la largeur */
