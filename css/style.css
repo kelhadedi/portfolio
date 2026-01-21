@@ -33,7 +33,7 @@ body {
 /* offset ajusté pour petits écrans */
 @media (max-width: 767.98px) {
   body {
-    padding-top: 76px; /* ajustable selon hauteur réelle de la navbar mobile */
+    padding-top: 60px; /* ajustable selon hauteur réelle de la navbar mobile */
   }
 }
 
