@@ -283,7 +283,7 @@ img {
 
 .home {
   padding-inline: 1.5rem;
-  padding-top: 1.5rem; /* espace sous navbar */
+  padding-top: 1.5rem;        /* espace sous navbar */
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -320,12 +320,22 @@ img {
 
 /* contenu au-dessus de l'image */
 .home .container {
-  text-align: left;
   position: relative;
   z-index: 1;
+  text-align: left;
 }
 
-/* lignes du titre héro */
+/* ========================= */
+/* TITRE HERO                */
+/* ========================= */
+
+/* structure : 
+   <h1 class="hero-title">
+     <span class="hero-line nowrap">Karim EL HADEDI</span>
+     <span class="hero-line nowrap">Designer UX/UI junior</span>
+   </h1>
+*/
+
 .hero-title {
   margin-bottom: 1rem;
 }
@@ -334,65 +344,21 @@ img {
   display: block;
 }
 
-/* empêche les coupures moches dans nom / intitulé */
+/* évite la coupure moche au milieu */
 .nowrap {
   white-space: nowrap;
 }
 
-/* taille desktop du héro (un peu réduite) */
+/* taille par défaut (desktop / tablette) */
 .home h1.hero-title {
   font-size: 2.6rem;
   line-height: 2.9rem;
 }
 
-/* tagline / intro alignée sous le nom */
-.home .home-tagline,
-.home-intro {
-  text-align: left;
-}
+/* ========================= */
+/* TEXTE SOUS LE TITRE       */
+/* ========================= */
 
-/* ----------------------------- */
-/*  MOBILE (iPhone & petits tel) */
-/* ----------------------------- */
-
-@media (max-width: 576px) {
-  /* titre héro compact, 2 lignes max chacune */
-  .home h1.hero-title {
-    font-size: 2rem;
-    line-height: 2.3rem;
-  }
-
-  /* tagline / paragraphe plus petit et bien ferré à gauche */
-  .home .home-tagline,
-  .home-intro {
-    font-size: 0.98rem;
-    line-height: 1.4rem;
-    max-width: 32ch; /* colonne lisible alignée au titre */
-  }
-}
-
-@media (max-width: 576px) {
-  .home {
-    text-align: left !important;
-  }
-
-  .home .container,
-  .home .hero-title,
-  .home .home-tagline,
-  .home .home-intro {
-    text-align: left !important;
-    margin-left: 0;
-  }
-}
-
-
-/* titre accueil spécifique */
-.home h1 {
-  font-size: 3.4rem;
-  line-height: 3.9rem;
-}
-
-/* tagline / intro */
 .home .home-tagline {
   font-size: 1.3rem;
   line-height: 1.7rem;
@@ -402,6 +368,7 @@ img {
   margin-top: 1rem;
   font-size: 1.05rem;
   max-width: 50ch;
+  text-align: left;
 }
 
 /* accent texte */
@@ -411,27 +378,49 @@ img {
   font-size: 1.8rem;
 }
 
-/* home responsive */
 @media (max-width: 576px) {
-  h1 {
-    font-size: 2.3rem;
-    line-height: 2.8rem;
+
+  .home h1.hero-title {
+    font-size: 1.5rem;   /* n’hésite pas à descendre à 1.4rem si tu veux encore moins */
+    line-height: 1.9rem;
   }
 
-  .home h1 {
-    font-size: 2.4rem;
-    line-height: 2.9rem;
+  .hero-line.nowrap {
+    white-space: nowrap;
   }
 
-  .home .home-tagline {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-  }
-
+  /* paragraphe plus discret et court */
+  .home .home-tagline,
   .home-intro {
-    max-width: 100%;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    max-width: 28ch;     /* 2–3 lignes max */
+    text-align: left;
   }
 }
+@media (max-width: 576px) {
+
+  /* forcer l’alignement à gauche du conteneur */
+  .home,
+  .home .container {
+    text-align: left !important;
+  }
+
+  /* forcer le h1 et les lignes du titre à gauche */
+  .home h1.hero-title,
+  .home .hero-line {
+    text-align: left !important;
+    margin-left: 0;
+  }
+
+  /* tagline / intro aussi à gauche */
+  .home .home-tagline,
+  .home-intro {
+    text-align: left !important;
+    margin-left: 0;
+  }
+}
+
 
 /* ========================= */
 /* CONTACT FAB FLOTTANT      */
