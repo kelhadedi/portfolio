@@ -1,42 +1,414 @@
-/* TYPO GLOBALE */
-h1, h2, h3, h4, h5, h6 {
+/* ========================= */
+/* RESET & VARIABLES         */
+/* ========================= */
+
+:root {
+  --color-navy: #211e39;
+  --color-green: #2ecc71;
+  --color-bg: #f5f5f7;
+  --color-text: #1f2933;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-margin: 85px; /* offset pour scroll avec navbar fixe */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+}
+
+/* offset global sous navbar fixe (desktop) */
+body {
+  padding-top: 72px;
+  cursor: url("../images/icons/Cursor_figma.svg") 200 200,
+          url("../images/icons/Cursor_figma.png") 200 200,
+          auto;
+}
+
+/* offset ajusté pour petits écrans */
+@media (max-width: 767.98px) {
+  body {
+    padding-top: 76px; /* ajustable selon hauteur réelle de la navbar mobile */
+  }
+}
+
+/* sections pleine largeur */
+section,
+.container,
+.container-fluid,
+.row {
+  max-width: 100%;
+}
+
+/* ========================= */
+/* TYPOGRAPHIE               */
+/* ========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Boldonse', sans-serif;
   font-weight: 700;
+  margin-top: 0;          /* évite la barre blanche sous la navbar */
   margin-bottom: 0.8rem;
   color: #212120;
 }
 
-* {
-  scroll-margin: 85px;  /* pour le scroll spy avec la navbar fixe */
-}
-.contact-fab {
-  position: fixed;
-  bottom: 1.6rem;
-  left: 1.6rem;
-  z-index: 999;
+h1 {
+  font-size: 3rem;
+  line-height: 3.6rem;
 }
 
-/* bouton rond avec ? */
-.contact-fab-btn {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: none;
-  background: #2ecc71;
+h2 {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
   color: #000000;
-  font-size: 1.3rem;   /* un peu plus petit */
-  font-weight: 500;    /* moins gras */
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* ========================= */
+/* IMAGES GENERIQUES         */
+/* ========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========================= */
+/* NAVBAR FIXE               */
+/* ========================= */
+
+#navbar-top {
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1030;
+  background-color: var(--color-navy);
 }
+
+#navbar-top .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.4rem;
+}
+
+/* branding */
+#navbar-top .navbar-brand,
+.brand-title {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.brand-title:hover {
+  color: var(--color-green);
+  text-decoration: none;
+}
+
+/* liens */
+#navbar-top .nav-link {
+  color: #ffffff;
+  position: relative;
+}
+
+#navbar-top .nav-link:hover,
+#navbar-top .nav-link.active-section {
+  color: var(--color-green);
+}
+
+/* soulignement animé */
+.navbar-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  height: 2px;
+  width: 0;
+  background: #ffffff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* burger icon */
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.4rem;
+  border: none;
+}
+
+.navbar-toggler-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* bloc à droite : CV + LinkedIn */
+.nav-right-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* bouton CV */
+.c-btn,
+.c-btn-outline {
+  border: none;
+  font-size: 1rem;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.c-btn {
+  background: var(--color-green);
+  color: #000000;
+}
+
+.c-btn-outline {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.c-btn .btn-link-reset,
+.c-btn-outline .btn-link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* hover boutons */
+.h-btn:hover {
+  transform: translateY(-3px);
+}
+
+.c-btn.h-btn:hover {
+  background: #27ae60;
+  color: #ffffff;
+}
+
+.c-btn-outline.h-btn:hover {
+  background: #ffffff;
+  color: var(--color-navy);
+}
+
+/* bouton LinkedIn */
+.navbar-linkedin {
+  border: none;
+  font-size: 1.2rem;
+  background-color: #fff;
+  padding: 8px 10px 6px 10px;
+  border-radius: 50%;
+  color: #0A66C2;
+  transition: 0.3s ease;
+}
+
+.navbar-linkedin:hover {
+  background-color: #0A66C2;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* navbar responsive */
+@media (max-width: 991.98px) {
+  #navbar-top .container-fluid {
+    gap: 0.5rem;
+  }
+
+  #navbarNav {
+    order: 4;
+    width: 100%;
+  }
+
+  #navbar-top .navbar-brand {
+    order: 1;
+  }
+
+  .nav-right-wrapper {
+    order: 2;
+    margin-left: 0;
+  }
+
+  .nav-right-actions {
+    margin: 0 auto;
+  }
+
+  .navbar-toggler {
+    order: 3;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #navbarNav {
+    justify-content: center;
+  }
+
+  .nav-right-wrapper {
+    gap: 0.5rem;
+  }
+
+  .nav-right-actions {
+    margin-right: 0.25rem;
+  }
+}
+
+/* bouton CV plus petit sur très petit écran */
+@media (max-width: 576px) {
+  .c-btn-outline.h-btn {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+/* ========================= */
+/* HOME / ACCUEIL            */
+/* ========================= */
+
+.home {
+  padding-inline: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: linear-gradient(33deg, #f7f7fb 0%, #edf3ff 100%);
+}
+
+/* variante texte blanc sur fond image si utilisée */
+.home,
+.home h1,
+.home h2,
+.home h3,
+.home p,
+.home span,
+.home .c-highlight,
+.home .text-muted {
+  color: #ffffff;
+}
+
+.home .c-btn a,
+.home .btn-link-reset {
+  color: #000000;
+}
+
+/* image de fond home */
+.home-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* contenu au-dessus de l'image */
+.home .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* titre accueil spécifique */
+.home h1 {
+  font-size: 3.4rem;
+  line-height: 3.9rem;
+}
+
+/* tagline / intro */
+.home .home-tagline {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+}
+
+.home-intro {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  max-width: 50ch;
+}
+
+/* accent texte */
+.c-highlight {
+  color: #212120;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* home responsive */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+  }
+
+  .home h1 {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+  }
+
+  .home .home-tagline {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  .home-intro {
+    max-width: 100%;
+  }
+}
+
+/* ========================= */
+/* CONTACT FAB FLOTTANT      */
+/* ========================= */
+
 .contact-fab {
   position: fixed;
   bottom: 40px;
   left: 40px;
   z-index: 999;
+}
+
+.contact-fab-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-green);
+  color: #000000;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* panneau contact */
@@ -66,44 +438,32 @@ h1, h2, h3, h4, h5, h6 {
 .contact-fab-link {
   display: block;
   font-size: 0.9rem;
-  color: #2ecc71;
+  color: var(--color-green);
   text-decoration: none;
   margin-top: 0.25rem;
 }
 
-html,
-body {
-  overflow-x: hidden;
+/* contact fab responsive */
+@media (max-width: 576px) {
+  .contact-fab {
+    bottom: 24px;
+    left: 16px;
+  }
 }
 
-section,
-.container,
-.container-fluid,
-.row {
-  max-width: 100%;
-}
-
-body {
-  background-color: #f5f5f7;
-  padding-top: 72px;  /* ajuste la valeur à la hauteur réelle de ta navbar */
-  cursor: url("../images/icons/Cursor_figma.svg") 200 200,
-          url("../images/icons/Cursor_figma.png") 200 200,
-          auto;
-}
-section {
-  background-color: transparent;
-}
+/* ========================= */
+/* LIGHTBOX IMAGES           */
+/* ========================= */
 
 .image-lightbox {
   position: fixed;
   inset: 0;
   z-index: 1050;
   display: flex;
-  align-items: flex-start;      /* on aligne en haut */
+  align-items: flex-start;
   justify-content: center;
-  padding-top: 8vh;             /* marge constante en haut */
+  padding-top: 8vh;
 }
-
 
 .image-lightbox-backdrop {
   position: absolute;
@@ -117,15 +477,13 @@ section {
   max-height: 40vh;
   z-index: 1;
   animation: lightbox-zoom-in 0.25s ease-out;
-  /* plus de transform ici */
 }
 
-/* Variante plus petite pour certains projets */
+/* variante lightbox plus petite */
 .image-lightbox-content.image-lightbox-content--small {
   max-width: 30vw;
   max-height: 30vh;
 }
-
 
 .image-lightbox-content img {
   max-width: 100%;
@@ -145,7 +503,7 @@ section {
   cursor: pointer;
 }
 
-/* animation d'apparition */
+/* animation lightbox */
 @keyframes lightbox-zoom-in {
   from {
     transform: scale(0.9);
@@ -157,406 +515,15 @@ section {
   }
 }
 
-/* utilitaire bootstrap d-none si tu l'utilises déjà */
+/* helper utilitaire */
 .d-none {
   display: none !important;
 }
 
-:root {
-  --color-navy: #211e39;   /* fond sombre */
-  --color-green: #2ecc71;  /* accent vert CV */
-  --color-bg: #f5f5f7;     /* fond général */
-  --color-text: #1f2933;   /* texte principal */
-}
+/* ========================= */
+/* HEADINGS DE SECTIONS      */
+/* ========================= */
 
-/* Texte blanc dans la section d'accueil */
-.home,
-.home h1,
-.home h2,
-.home h3,
-.home p,
-.home span,
-.home .c-highlight,
-.home .text-muted {
-  color: #ffffff !important;
-}
-
-/* Lien du bouton : texte noir comme avant */
-.home .c-btn a,
-.home .btn-link-reset {
-  color: #000000 !important;
-}
-
-
-.home {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.home-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
-}
-
-/* Contenu au-dessus de l’image */
-.home .container {
-  position: relative;
-  z-index: 1;
-}
-
-.home h1 {
-  font-size: 3.4rem;
-  line-height: 3.9rem;
-  }
-
-  .home .home-tagline {
-  font-size: 1.3rem;
-  line-height: 1.7rem;
-}
-@media (max-width: 576px) {
-  .home h1 {
-    font-size: 2.4rem;
-    line-height: 2.9rem;
-  }
-
-  .home .home-tagline {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-  }
-}
-
-h1 {
-  font-size: 3rem;
-  line-height: 3.6rem;
-}
-
-h2 {
-  font-size: 2.2rem;
-  line-height: 2.8rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-  line-height: 2.1rem;
-}
-
-p {
-  font-family: 'Poppins', sans-serif;
-  color: #000000;
-}
-
-/* RESET LIEN DANS BOUTONS */
-.btn-link-reset {
-  text-decoration: none;
-  color: inherit;
-}
-#navbar-top {
-  display: flex;
-  align-items: center;
-}
-
-/* Navbar vraiment fixe */
-#navbar-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1030;
-}
-/* NAVBAR (fond #211e39, texte blanc) */
-.navbar {
-  background-color: #211e39 !important;
-}
-
-/* bouton menu mobile */
-.nav-menu {
-  border: none;
-  background-color: transparent;
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-
-/* logo / titre */
-.navbar-brand {
-  color: #ffffff;
-}
-
-/* liens */
-.navbar-nav a {
-  color: #ffffff;
-  position: relative;
-}
-
-/* survol des liens */
-.navbar-nav a:hover {
-  color: #ffffff;
-}
-
-/* soulignement animé (blanc) */
-.navbar-nav a::after {    
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 30px;
-  height: 2px;
-  width: 0;
-  background: #ffffff;
-  transition: width 0.3s ease, left 0.3s ease;
-}
-
-.navbar-nav a:hover::after { 
-  width: 100%; 
-  left: 0; 
-}
-
-/* lien actif (scroll spy) */
-.navbar-nav .active-section {
-  color: #ffffff;
-}
-
-/* Logo / titre : style et hover séparés des liens */
-.brand-title {
-  color: #ffffff;
-}
-
-.brand-title:hover {
-  color: #2ecc71;   /* par exemple ton vert d’accent */
-  text-decoration: none;
-}
-
-/* BOUTON PRINCIPAL (fond vert – call-to-action) */
-.c-btn {
-  border: none;
-  background: #2ecc71;   /* vert de ton CV */
-  color: #000000;
-  font-size: 1rem;
-}
-
-/* variante outline pour le bouton CV de la navbar */
-.c-btn-outline {
-  background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-/* ============================
-   NAVBAR GLOBALE
-============================ */
-#navbar-top {
-  background-color: #211e39;
-}
-
-#navbar-top .container-fluid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;  /* brand à gauche, reste à droite */
-  padding-block: 0.4rem;          /* même hauteur partout */
-}
-
-
-/* Logo */
-#navbar-top .navbar-brand {
-  color: #ffffff;
-}
-
-/* Liens de nav */
-#navbar-top .nav-link {
-  color: #ffffff;
-}
-
-#navbar-top .nav-link:hover,
-#navbar-top .nav-link.active-section {
-  color: #2ecc71;
-}
-
-/* ============================
-   BURGER (icône blanche)
-============================ */
-.navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-.navbar-toggler {
-  padding: 0.25rem 0.4rem;
-  border: none;
-}
-
-.navbar-toggler-icon {
-  width: 1.4rem;
-  height: 1.4rem;
-}
-
-/* ============================
-   BOUTON CV + LINKEDIN NAVBAR
-============================ */
-.nav-right-wrapper {
-  display: flex;
-  align-items: center;
-  margin-left: auto;          /* pousse le bloc à droite sur desktop */
-}
-
-.nav-right-actions {
-  display: flex;
-  align-items: center;
-}
-
-/* Bouton CV */
-.c-btn-outline.h-btn {
-  border: 1px solid #ffffff;
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 0.95rem;
-  line-height: 1.2;   /* fixe la hauteur de ligne */
-
-}
-
-.c-btn-outline.h-btn .btn-link-reset {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* LinkedIn dans la navbar */
-.navbar-linkedin {
-  border: none;
-  font-size: 1.2rem;
-  background-color: #fff;
-  padding: 8px 10px 6px 10px;
-  border-radius: 50%;
-  color: #0A66C2;
-}
-
-.navbar-linkedin:hover {
-  background-color: #0A66C2;
-  color: #fff;
-  transform: translateY(-2px);
-  transition: 0.3s;
-}
-
-/* ============================
-   RESPONSIVE
-============================ */
-/* Mobile / tablette (< 992px) */
-@media (max-width: 991.98px) {
-  #navbar-top .container-fluid {
-    gap: 0.5rem;
-  }
-
-  /* Menu en dessous, pleine largeur */
-  #navbarNav {
-    order: 4;
-    width: 100%;
-  }
-
-  /* Logo à gauche */
-  #navbar-top .navbar-brand {
-    order: 1;
-  }
-
-  /* Bloc CV + LinkedIn au centre */
-  .nav-right-wrapper {
-    order: 2;
-    margin-left: 0;
-  }
-
-  .nav-right-actions {
-    margin: 0 auto;
-  }
-
-  /* Burger à droite */
-  .navbar-toggler {
-    order: 3;
-    margin-left: 0.5rem;
-  }
-}
-
-/* Desktop (>= 992px) */
-@media (min-width: 992px) {
-  /* Menu centré */
-  #navbarNav {
-    justify-content: center;
-  }
-
-  .nav-right-wrapper {
-    gap: 0.5rem;      /* CV + LinkedIn + burger légèrement espacés */
-  }
-
-  .nav-right-actions {
-    margin-right: 0.25rem;
-  }
-}
-
-
-/* texte dans les boutons */
-.c-btn .btn-link-reset,
-.c-btn-outline .btn-link-reset {
-  color: inherit;
-}
-
-/* survol boutons */
-.h-btn:hover {
-  background: #ffffff;
-  color: #211e39;
-  transform: translateY(-3px);
-  transition: 0.3s ease;
-}
-
-/* survol bouton principal vert : on garde un vert un peu plus foncé */
-.c-btn.h-btn:hover {
-  background: #27ae60;
-  color: #ffffff;
-}
-
-/* survol bouton CV outline */
-.c-btn-outline.h-btn:hover {
-  background: #ffffff;
-  color: #211e39;
-}
-
-@media (max-width: 576px) {
-  .c-btn-outline.h-btn {
-    font-size: 0.75rem;
-    line-height: 1.2;
-    padding: 0.35rem 0.7rem;
-  }
-}
-
-
-  .nav-right-actions {
-    gap: 0.25rem;  /* rapproche un peu le CV et le LinkedIn */
-  }
-
-
-/* ACCUEIL */
-.home {
-    background: linear-gradient(33deg, #f7f7fb 0%, #edf3ff 100%);
-}
-
-.home-intro {
-  margin-top: 1rem;
-  font-size: 1.05rem;
-  max-width: 50ch;
-}
-
-.c-highlight {
-  color: #212120;
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-
-/* HEADINGS SECTIONS */
 .heading h2 {
   color: #3f396d;
   font-size: 2.1rem;
@@ -567,12 +534,14 @@ p {
   font-size: 1rem;
 }
 
-/* PROJETS CV-LIKE */
+/* ========================= */
+/* PROJETS "CV-LIKE"         */
+/* ========================= */
+
 .projects-cv {
   background-color: #f5f5f7;
 }
 
-/* Carte projet */
 .project-cv-card {
   background-color: #f9fafc;
   border-radius: 0.8rem;
@@ -580,20 +549,21 @@ p {
   margin-bottom: 1.5rem;
   box-shadow: 0 6px 16px rgba(0,0,0,0.04);
   cursor: pointer;
-  position: relative; /* pour que la bulle se positionne dessus */
+  position: relative;
 }
 
 .project-cv-card.is-hidden {
   display: none;
 }
 
+/* badge année */
 .year-badge {
   position: absolute;
   top: -1rem;
   left: 1rem;
   padding: 0.2rem 0.9rem;
   background: #000000;
-  color: #2ecc71;
+  color: var(--color-green);
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -602,10 +572,7 @@ p {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
 }
 
-
-
-/* HEADER : texte à gauche, image à droite */
-
+/* filtres */
 .portfolio-filters {
   display: flex;
   flex-wrap: wrap;
@@ -614,9 +581,9 @@ p {
 }
 
 .filter-btn {
-  border: 2px solid #000;           /* contour noir */
-  background: #ffffff;              /* fond blanc */
-  color: #000000;                   /* texte noir bien lisible */
+  border: 2px solid #000;
+  background: #ffffff;
+  color: #000000;
   padding: 0.5rem 1.6rem;
   border-radius: 999px;
   font-size: 0.9rem;
@@ -631,48 +598,44 @@ p {
     transform 0.12s ease;
 }
 
-/* Hover (bouton non actif) */
 .filter-btn:hover {
-  background: #211e39;
+  background: var(--color-navy);
   color: #ffffff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   transform: translateY(-1px);
 }
 
-/* Actif (#TOUT au chargement puis celui cliqué) */
 .filter-btn.active {
-  background: #211e39;
-  color: #2ecc71;
+  background: var(--color-navy);
+  color: var(--color-green);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .filter-btn:focus-visible {
-  outline: 2px solid #2ecc71;
+  outline: 2px solid var(--color-green);
   outline-offset: 2px;
 }
 
+/* header carte projet */
 .project-cv-header-row {
   display: grid;
-  grid-template-columns: 2fr 1fr;  /* colonne texte plus large */
+  grid-template-columns: 2fr 1fr;
   align-items: flex-start;
   gap: 1.5rem;
 }
 
-/* bloc logo + titres */
 .project-cv-header-left {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
 }
 
-/* logo (tous les projets) */
 .project-cv-logo img {
   width: 80px;
   height: 80px;
   object-fit: contain;
 }
 
-/* image à droite */
 .project-cv-header-right {
   display: flex;
   justify-content: flex-end;
@@ -680,11 +643,11 @@ p {
 
 .project-cv-header-right img {
   max-width: 260px;
-  height: auto;
   border-radius: 0.5rem;
   object-fit: cover;
 }
 
+/* zoom sur image projet */
 .project-zoom-img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: zoom-in;
@@ -695,8 +658,7 @@ p {
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-
-/* titre et sous-titre */
+/* titres projet */
 .project-cv-title {
   font-size: 1.5rem;
   margin-bottom: 0.4rem;
@@ -711,7 +673,7 @@ p {
   margin-bottom: 0.6rem;
 }
 
-/* CORPS : texte juste sous le header, sur toute la largeur */
+/* corps carte projet */
 .project-cv-body {
   margin-top: 0.6rem;
 }
@@ -723,9 +685,10 @@ p {
 
 .project-label {
   font-weight: 600;
-  color: #211e39;
+  color: var(--color-navy);
 }
 
+/* outils projet */
 .project-tools img {
   width: 24px;
   height: 24px;
@@ -734,7 +697,7 @@ p {
   vertical-align: middle;
 }
 
-/* lien cliquable dans le titre */
+/* lien titre projet */
 .project-link {
   position: relative;
   color: inherit;
@@ -743,228 +706,37 @@ p {
 
 .project-link::before {
   position: absolute;
-  inset: 0;  /* étend la zone cliquable sur tout le h3 */
+  inset: 0;
 }
 
-/* image d’aperçu pleine largeur si tu l’utilises dans les pages projets */
+/* image hero projet */
 .project-hero {
   max-width: 590px;
   width: 100%;
   height: auto;
 }
 
-/* RESPONSIVE : empiler texte + image sur mobile */
-@media (max-width: 767.98px) {
-  .project-cv-header-row {
-    display: block;
-  }
-
-  .project-cv-header-right {
-    justify-content: center;
-    margin-top: 0.8rem;
-  }
-
-  .project-cv-header-right img {
-    max-width: 100%;
-  }
-
-  .project-cv-logo img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .project-cv-title {
-    font-size: 1.2rem;
-  }
-}
-
+/* figure projet */
 .project-figure {
   margin: 1.2rem 0;
 }
 
 .project-figure img {
   width: 40%;
-  height: auto;
-  display: block;
   border-radius: 1.2rem;
-}
-
-
-
-/* EXPÉRIENCES / FORMATIONS */
-.exp-card {
-  border: none;
-  border-radius: 0.8rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
-
-.exp-img {
-  width: 70%;
-  padding: 20px;
-  margin: 0 auto;
   display: block;
-  height: auto;
 }
 
-/* AUTRES EXPÉRIENCES */
-
-.extra-experience .card-body p {
-  max-width: none;
-}
-
-/* COMPÉTENCES */
-.skills-card {
-  height: 100%;
-}
-
-.skills-card .card-title {
-  font-size: 1.05rem;
-  margin-bottom: 0.8rem;
-}
-
-.skills-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-  font-size: 0.95rem;
-}
-
-.skills-list li {
-  margin-bottom: 0.35rem;
-}
-
-.icons-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.icons-list img {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-/* CONTACT */
-
-.contact-details i {
-  font-size: 1.5rem;
-  color: #2ecc71;
-}
-
-.contact-details p {
-  font-size: 1.05rem;
-  margin-left: 1rem;
-}
-
-.contact-form .form-control:focus {
-  box-shadow: none;
-  border: 1px solid #6f34fe;
-}
-
-.contact-form .form-control {
-  padding: 10px 10px;
-}
-
-/* LIEN */
-.link {
-  text-decoration: none;
-  font-size: 1rem;
-  color: #6f34fe;
-  position: relative;
-}
-
-.link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -3px;
-  left: 0;
-  background-color: #211e39;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.link:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* FOOTER */
-footer {
-  background-color: #211e39;
-}
-
-footer p {
-  max-width: none;
-  color: #bfbfbf;
-}
-
-.social-links button {
-  border: none;
-  margin-right: 0.8rem;
-  font-size: 1.4rem;
-  background-color: #fff;
-  padding: 10px 12px 8px 12px;
-  border-radius: 50%;
-}
-
-.social-links .linkedin {
-  color: #0A66C2;
-}
-
-.social-links .whatsapp {
-  color: #25D366;
-}
-
-.social-links button:hover {
-  color: #fff;
-  transform: translateY(-3px);
-  transition: 0.3s;
-}
-
-.social-links .linkedin:hover {
-  background-color: #0A66C2;
-}
-
-.social-links .whatsapp:hover {
-  background-color: #25D366;
-}
-
-/* BOUTON RETOUR HAUT */
-#btn-back-to-top {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  display: none;
-  font-size: 1.3rem;
-  background-color: #2ecc71;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  color: #000000;
-  border-radius: 50%;
-  border: none;
-  padding: 10px 14px;
-  z-index: 999;
-}
-
-/* RESPONSIVE */
+/* responsive cartes projet */
 @media (max-width: 767.98px) {
-  h1 {
-    font-size: 2.3rem;
-    line-height: 2.8rem;
-  }
-
-  .home-intro {
-    max-width: 100%;
-  }
-
   .project-cv-card {
     padding: 1.2rem 1.2rem;
   }
 
-  /* sur mobile, l'image redevient "dans le flux" sous le header */
+  .project-cv-header-row {
+    display: block;
+  }
+
   .project-cv-header-right {
     position: static;
     margin-top: 0.8rem;
@@ -983,26 +755,26 @@ footer p {
   .project-cv-title {
     font-size: 1.2rem;
   }
+
   .project-screenshot {
-  max-width: 600px;   /* largeur max en pixels */
-  width: 100%;        /* prend 100% de la largeur dispo, sans dépasser 600px */
-  height: auto;
-  border-radius: 0.8rem;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  display: block;
-  margin: 0 auto;     /* centrer l’image */
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    display: block;
+    margin: 0 auto;
+  }
 }
 
-}
 /* ========================= */
-/* Vue détail projet         */
+/* VUE DETAIL PROJET         */
 /* ========================= */
 
 #project-detail {
   display: block !important;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #0b0416;   /* même ton que ton fond */
+  padding-block: 3rem;
+  background-color: #0b0416;
   color: #ffffff;
 }
 
@@ -1066,6 +838,183 @@ footer p {
 
 .project-detail-image img {
   width: 100%;
-  height: auto;
   border-radius: 0.5rem;
+}
+
+/* ========================= */
+/* EXPERIENCES / FORMATIONS  */
+/* ========================= */
+
+.exp-card {
+  border: none;
+  border-radius: 0.8rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.exp-img {
+  width: 70%;
+  padding: 20px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* autres expériences */
+.extra-experience .card-body p {
+  max-width: none;
+}
+
+/* ========================= */
+/* COMPETENCES               */
+/* ========================= */
+
+.skills-card {
+  height: 100%;
+}
+
+.skills-card .card-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.skills-list li {
+  margin-bottom: 0.35rem;
+}
+
+.icons-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icons-list img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ========================= */
+/* CONTACT                   */
+/* ========================= */
+
+.contact-details i {
+  font-size: 1.5rem;
+  color: var(--color-green);
+}
+
+.contact-details p {
+  font-size: 1.05rem;
+  margin-left: 1rem;
+}
+
+.contact-form .form-control {
+  padding: 10px 10px;
+}
+
+.contact-form .form-control:focus {
+  box-shadow: none;
+  border: 1px solid #6f34fe;
+}
+
+/* liens inline */
+.link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #6f34fe;
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--color-navy);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+
+footer {
+  background-color: var(--color-navy);
+}
+
+footer p {
+  max-width: none;
+  color: #bfbfbf;
+}
+
+.social-links button {
+  border: none;
+  margin-right: 0.8rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  padding: 10px 12px 8px 12px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.social-links .linkedin {
+  color: #0A66C2;
+}
+
+.social-links .whatsapp {
+  color: #25D366;
+}
+
+.social-links button:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.social-links .linkedin:hover {
+  background-color: #0A66C2;
+}
+
+.social-links .whatsapp:hover {
+  background-color: #25D366;
+}
+
+/* ========================= */
+/* BOUTON RETOUR HAUT        */
+/* ========================= */
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+  font-size: 1.3rem;
+  background-color: var(--color-green);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  color: #000000;
+  border-radius: 50%;
+  border: none;
+  padding: 10px 14px;
+  z-index: 999;
+}
+
+/* bouton haut responsive */
+@media (max-width: 576px) {
+  #btn-back-to-top {
+    bottom: 24px;
+    right: 16px;
+  }
 }
