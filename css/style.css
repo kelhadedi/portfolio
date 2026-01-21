@@ -320,9 +320,71 @@ img {
 
 /* contenu au-dessus de l'image */
 .home .container {
+  text-align: left;
   position: relative;
   z-index: 1;
 }
+
+/* lignes du titre héro */
+.hero-title {
+  margin-bottom: 1rem;
+}
+
+.hero-line {
+  display: block;
+}
+
+/* empêche les coupures moches dans nom / intitulé */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* taille desktop du héro (un peu réduite) */
+.home h1.hero-title {
+  font-size: 2.6rem;
+  line-height: 2.9rem;
+}
+
+/* tagline / intro alignée sous le nom */
+.home .home-tagline,
+.home-intro {
+  text-align: left;
+}
+
+/* ----------------------------- */
+/*  MOBILE (iPhone & petits tel) */
+/* ----------------------------- */
+
+@media (max-width: 576px) {
+  /* titre héro compact, 2 lignes max chacune */
+  .home h1.hero-title {
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+
+  /* tagline / paragraphe plus petit et bien ferré à gauche */
+  .home .home-tagline,
+  .home-intro {
+    font-size: 0.98rem;
+    line-height: 1.4rem;
+    max-width: 32ch; /* colonne lisible alignée au titre */
+  }
+}
+
+@media (max-width: 576px) {
+  .home {
+    text-align: left !important;
+  }
+
+  .home .container,
+  .home .hero-title,
+  .home .home-tagline,
+  .home .home-intro {
+    text-align: left !important;
+    margin-left: 0;
+  }
+}
+
 
 /* titre accueil spécifique */
 .home h1 {
