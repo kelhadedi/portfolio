@@ -9,9 +9,23 @@
   --color-text: #1f2933;
 }
 
-* {
-  box-sizing: border-box;
-  scroll-margin: 85px;
+/* valeur par défaut (desktop) */
+section[id] {
+  scroll-margin-top: 85px;
+}
+
+/* tablette */
+@media (max-width: 991.98px) {
+  section[id] {
+    scroll-margin-top: 80px;  /* adapte à la hauteur de ta navbar/tablette */
+  }
+}
+
+/* mobile */
+@media (max-width: 576px) {
+  section[id] {
+    scroll-margin-top: 72px;  /* un peu moins si navbar plus petite */
+  }
 }
 
 html,
@@ -28,6 +42,11 @@ body {
   cursor: url("../images/icons/Cursor_figma.svg") 200 200,
           url("../images/icons/Cursor_figma.png") 200 200,
           auto;
+}
+
+/* quand le menu mobile est ouvert, on enlève le padding pour que le panneau colle à la navbar */
+body.nav-open {
+  padding-top: 0;
 }
 
 /* sections pleine largeur */
@@ -239,31 +258,44 @@ img {
   transform: translateY(-2px);
 }
 
-/* navbar responsive */
+/* ========================= */
+/* MENU BURGER LATERAL DROIT */
+/* ========================= */
+
 @media (max-width: 991.98px) {
-  #navbar-top .container-fluid {
-    gap: 0.5rem;
-  }
 
+  /* panneau du menu */
   #navbarNav {
-    order: 4;
+    position: fixed;
+    top: 72px;                 /* hauteur de ta navbar fixe */
+    right: 0;
+    bottom: auto;              /* plus besoin de coller au bas de l’écran */
+    width: 40vw;               /* largeur panneau; ajuste 65–80 */
+    background-color: #211e39;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    transform: translateX(100%);   /* caché par défaut */
+    transition: transform 0.3s ease;
+    z-index: 1029;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  /* état ouvert (Bootstrap ajoute .show sur le collapse) */
+  #navbarNav.show {
+    transform: translateX(0);
+  }
+
+  /* liens du menu : alignés à gauche mais avec un peu d’air */
+  #navbarNav .nav-link {
     width: 100%;
-  }
-
-  #navbar-top .navbar-brand {
-    order: 1;
-  }
-
-  .nav-right-wrapper {
-    order: 2;
-    margin-left: 0;
-  }
-
-  .navbar-toggler {
-    order: 3;
-    margin-left: 0.5rem;
+    text-align: left;
+    padding-left: 0.25rem;
   }
 }
+
 
 /* bouton CV + spacing plus petits sur très petit écran */
 @media (max-width: 576px) {

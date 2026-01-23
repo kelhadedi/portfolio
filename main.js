@@ -63,6 +63,22 @@ if (navbarToggler && navbarCollapse) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+  const navbarCollapse = document.getElementById('navbarNav');
+  const body = document.body;
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // ferme le collapse Bootstrap
+      navbarCollapse.classList.remove('show');
+      // enlève la classe qui modifie le padding quand le menu est ouvert
+      body.classList.remove('nav-open');
+    });
+  });
+});
+
+
 // ============================
 // Lightbox image projets
 // ============================
