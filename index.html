@@ -4,53 +4,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Portfolio - Karim EL HADEDI</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon.png">
 
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon.png" />
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+        rel="stylesheet" />
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
-<div id="image-lightbox" class="image-lightbox d-none">
-  <div class="image-lightbox-backdrop"></div>
-  <div class="image-lightbox-content">
-    <button type="button" class="image-lightbox-close" aria-label="Fermer l'aperçu">
-      ✕
-    </button>
-    <img src="" alt="" id="image-lightbox-img">
-  </div>
-</div>
-
-<div class="contact-fab" aria-label="Me contacter">
-  <button class="contact-fab-btn" id="contactToggle" aria-expanded="false">
-    ?
-  </button>
-
-  <div class="contact-fab-panel" id="contactPanel">
-    <p class="contact-fab-title">Vous souhaitez me contacter&nbsp;?</p>
-    <a href="tel:+33683895581" class="contact-fab-link">📞 06 83 89 66 81</a>
-    <a href="mailto:karimelhadedi@gmail.com" class="contact-fab-link">✉️ karimelhadedi@gmail.com</a>
-  </div>
-</div>
-
 <body>
+
+  <!-- LIGHTBOX IMAGE -->
+  <div id="image-lightbox" class="image-lightbox d-none">
+    <div class="image-lightbox-backdrop"></div>
+    <div class="image-lightbox-content">
+      <button type="button" class="image-lightbox-close" aria-label="Fermer l'aperçu">
+        ✕
+      </button>
+      <img src="" alt="" id="image-lightbox-img" />
+    </div>
+  </div>
+
+  <!-- CONTACT FAB -->
+  <div class="contact-fab" aria-label="Me contacter">
+    <button class="contact-fab-btn" id="contactToggle" aria-expanded="false">
+      ?
+    </button>
+
+    <div class="contact-fab-panel" id="contactPanel">
+      <p class="contact-fab-title">Vous souhaitez me contacter&nbsp;?</p>
+      <a href="tel:+33683895581" class="contact-fab-link">📞 06 83 89 66 81</a>
+      <a href="mailto:karimelhadedi@gmail.com" class="contact-fab-link">✉️ karimelhadedi@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
   <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm"
-    aria-label="Navigation principale">
+       aria-label="Navigation principale">
     <div class="container-fluid px-4 px-md-5">
 
       <!-- Logo -->
-      <a class="navbar-brand fw-bold fs-2 brand-title" href="index.html">Portfolio</a>
+      <a class="navbar-brand fw-bold fs-2 brand-title" href="#home">Portfolio</a>
 
-      <!-- Menu (centre) -->
+      <!-- Menu centre -->
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav gap-4" style="font-size: 1.05rem">
           <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
@@ -66,19 +72,23 @@
       <div class="nav-right-wrapper d-flex align-items-center ms-auto">
         <div class="nav-right-actions d-flex align-items-center me-2">
           <button class="c-btn-outline h-btn rounded-pill me-2">
-            <a href="images/cv/EL-HADEDI_Karim_CV.pdf" download="Karim_ELHADEDI_CV"
-              class="btn-link-reset">
+            <a href="images/cv/EL-HADEDI_Karim_CV.pdf"
+               download="Karim_ELHADEDI_CV"
+               class="btn-link-reset">
               CV
             </a>
           </button>
-          <button class="rounded-pill linkedin navbar-linkedin" aria-label="Profil LinkedIn de Karim EL HADEDI"
-            onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')">
+          <button class="rounded-pill linkedin navbar-linkedin"
+                  aria-label="Profil LinkedIn de Karim EL HADEDI"
+                  onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')">
             <i class="bi bi-linkedin"></i>
           </button>
         </div>
 
-        <button class="navbar-toggler nav-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+        <button class="navbar-toggler nav-menu" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Basculer la navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -88,19 +98,21 @@
 
   <!-- ACCUEIL -->
   <section class="home pt-5 pb-5" id="home" aria-labelledby="home-title">
-    <img src="images/pics/accueil.webp" alt="Portrait de Karim EL HADEDI" class="home-bg-img" />
+    <img src="images/pics/accueil.webp"
+         alt="Portrait de Karim EL HADEDI"
+         class="home-bg-img" />
 
     <div class="container">
       <div class="row justify-content-between align-items-center">
         <div class="col-12 col-md-7 text-center text-md-start" data-aos="fade-right">
-          <h1 class="hero-title">
-            <span class="hero-line nowrap">Karim EL HADEDI</span><br>
+          <h1 class="hero-title" id="home-title">
+            <span class="hero-line nowrap">Karim EL HADEDI</span><br />
             <span class="hero-line nowrap">Designer UX/UI junior</span>
           </h1>
 
           <p class="home-tagline home-intro">
             Je conçois des expériences numériques pour faciliter la vie des autres.
-            Découvrez mon univers !
+            Découvrez mon univers&nbsp;!
           </p>
 
           <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
@@ -117,6 +129,8 @@
       <div class="heading text-center mb-4">
         <h2 id="projects-title">Projets</h2>
       </div>
+
+      <!-- Filtres -->
       <div class="portfolio-filters" aria-label="Filtrer les projets par thématique">
         <button class="filter-btn active" data-filter="all">TOUT</button>
         <button class="filter-btn" data-filter="web">WEB DESIGNER</button>
@@ -127,57 +141,73 @@
         Les projets de cette thématique sont en cours d’ajout. Revenez bientôt&nbsp;!
       </p>
 
-      <!-- Projet ORANGE – Future Deskless Worker -->
+      <!-- Projet ORANGE -->
       <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
-        <!-- Bulle année -->
         <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
-          <!-- Colonne gauche : logo + titres + texte -->
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
               <img src="images/icons/Orange_logo.svg" alt="Logo Orange Innovation" />
               <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
             </div>
             <div>
-              <h3 class="project-cv-title">
-                <a href="projet-orange.html" class="project-link">Workshop « Future Deskless Worker »</a>
-              </h3>
-              <p class="project-cv-subtitle">ORANGE INNOVATION - Intégration de l'IA dans un métier "deskless"</p>
+              <!-- tags/mots-clés -->
+              <div class="project-tags">
+                <span class="project-tag">UX Research</span>
+                <span class="project-tag">Santé</span>
+                <span class="project-tag">IA</span>
+              </div>
 
-              <p><span class="project-label">Objectifs :</span> explorer comment l’IA peut soulager les tâches
-                administratives d’une infirmière sans nuire à la relation patient.</p>
-              <p><span class="project-label">Rôle :</span> chef de projet suite au départ d'un collègue et designer
-                UI/UX</p>
-              <p><span class="project-label">Missions :</span> entretien utilisateur avec une infirmière, User Journey
-                Map détaillée, priorisation des pain points, définition de scénarios IA et mise en forme des supports de
-                présentation pour la phase 1 du projet.</p>
+              <h3 class="project-cv-title">
+                <a href="projet-orange.html" class="project-link">
+                  Workshop « Future Deskless Worker »
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                ORANGE INNOVATION – Intégration de l'IA dans un métier « deskless »
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                explorer comment l’IA peut soulager les tâches administratives
+                d’une infirmière sans nuire à la relation patient.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                chef de projet suite au départ d'un collègue et designer UX/UI.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                entretien utilisateur avec une infirmière, User Journey Map détaillée,
+                priorisation des pain points, définition de scénarios IA et
+                mise en forme des supports de présentation.
+              </p>
               <p class="project-tools">
-                <span class="project-label">Outils :</span>
+                <span class="project-label">Outils&nbsp;:</span>
                 <img src="images/icons/word.svg" alt="Word" />
                 <img src="images/icons/figma.svg" alt="Figma" />
                 <img src="images/icons/Miro.svg" alt="Miro" />
               </p>
               <p>
                 <a class="link"
-                  href="https://drive.google.com/file/d/1kzrBe3sPZoWM06IcfhoP2hi4AZ9XEysx/view?usp=sharing"
-                  target="_blank" rel="noopener noreferrer">
+                   href="https://drive.google.com/file/d/1kzrBe3sPZoWM06IcfhoP2hi4AZ9XEysx/view?usp=sharing"
+                   target="_blank" rel="noopener noreferrer">
                   Voir le dossier de la phase 1
                 </a>
               </p>
             </div>
           </div>
 
-          <!-- Colonne droite : image seule -->
           <div class="project-cv-header-right">
-            <img src="images/projets/PDG_Orange.jpg" class="project-screenshot project-zoom-img"
-              alt="Aperçu du workshop Future Deskless Worker" />
+            <img src="images/projets/PDG_Orange.jpg"
+                 class="project-screenshot project-zoom-img"
+                 alt="Aperçu du workshop Future Deskless Worker" />
           </div>
         </div>
       </article>
 
-      <!-- Projet LocFit – Site de location -->
+      <!-- LocFit -->
       <article class="project-cv-card" data-category="web" data-aos="fade-up">
-        <!-- Bulle année -->
         <div class="year-badge">2024</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
@@ -185,40 +215,61 @@
               <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
             </div>
             <div>
-              <h3 class="project-cv-title">
-                <a href="projet-locfit.html" class="project-link">LocFit – Site de location de matériel sportif</a>
-              </h3>
-              <p class="project-cv-subtitle">Parcours de location & design system</p>
+              <div class="project-tags">
+                <span class="project-tag">UI Design</span>
+                <span class="project-tag">Design system</span>
+              </div>
 
-              <p><span class="project-label">Objectifs :</span> permettre à un utilisateur peu à l’aise avec le
-                numérique de réserver un équipement sportif en 3–4 clics, sans se perdre.</p>
-              <p><span class="project-label">Rôle :</span> designer UI/UX & développeur front end et back end.</p>
-              <p><span class="project-label">Missions :</span> définition de user flows (utilisateur, agent, admin),
-                design system Figma, maquettes responsive des étapes catalogue → panier → paiement.</p>
+              <h3 class="project-cv-title">
+                <a href="projet-locfit.html" class="project-link">
+                  LocFit – Site de location de matériel sportif
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                Parcours de location & design system
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                permettre à un utilisateur peu à l’aise avec le numérique
+                de réserver un équipement sportif en 3–4 clics.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                designer UX/UI & développeur front / back.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                user flows (utilisateur, agent, admin), design system Figma,
+                maquettes responsive catalogue → panier → paiement.
+              </p>
               <p class="project-tools">
-                <span class="project-label">Outils :</span>
+                <span class="project-label">Outils&nbsp;:</span>
                 <img src="images/icons/figma.svg" alt="Figma" />
                 <img src="images/icons/html.svg" alt="HTML" />
                 <img src="images/icons/css.svg" alt="CSS" />
                 <img src="images/icons/javascript.svg" alt="JavaScript" />
                 <img src="images/icons/github_desktop.svg" alt="Github Desktop" />
               </p>
-              <p><a class="link"
-                  href="https://www.figma.com/design/gLr5CgE8RDcmEh968Gb0VF/SA%C3%89-3.UX-01?node-id=0-1&t=Fe9XokD2jZz5Amnw-1"
-                  target="_blank" rel="noopener noreferrer">Voir le Figma</a></p>
-
+              <p>
+                <a class="link"
+                   href="https://www.figma.com/design/gLr5CgE8RDcmEh968Gb0VF/SA%C3%89-3.UX-01?node-id=0-1&t=Fe9XokD2jZz5Amnw-1"
+                   target="_blank" rel="noopener noreferrer">
+                  Voir le Figma
+                </a>
+              </p>
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/projets/Mockup_LocFit.jpg" class="project-screenshot project-zoom-img" alt="Mockup LocFit">
+            <img src="images/projets/Mockup_LocFit.jpg"
+                 class="project-screenshot project-zoom-img"
+                 alt="Mockup LocFit" />
           </div>
-
         </div>
       </article>
 
-      <!-- Projet KeySwitch – Webmarketing & UX e-commerce -->
+      <!-- KeySwitch -->
       <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
-        <!-- Bulle année -->
         <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
@@ -226,83 +277,120 @@
               <img src="images/icons/mmi.svg" alt="Logo MMI" />
             </div>
             <div>
-              <h3 class="project-cv-title">
-                <a href="projet-keyswitch.html" class="project-link">KeySwitch – Le clavier custom, tout simplement</a>
-              </h3>
-              <p class="project-cv-subtitle">R5.06 Webmarketing – Projet e‑commerce</p>
+              <div class="project-tags">
+                <span class="project-tag">E‑commerce</span>
+                <span class="project-tag">Positionnement UX</span>
+              </div>
 
-              <p><span class="project-label">Objectifs :</span> imaginer une marque e‑commerce dédiée aux claviers
-                mécaniques custom
-                pour francophones, avec un configurateur simple et rassurant.</p>
-              <p><span class="project-label">Rôle :</span> travail sur le positionnement UX et la structure des pages.
+              <h3 class="project-cv-title">
+                <a href="projet-keyswitch.html" class="project-link">
+                  KeySwitch – Le clavier custom, tout simplement
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                R5.06 Webmarketing – Projet e‑commerce
               </p>
-              <p><span class="project-label">Missions :</span> veille UX/UI, définition de l’univers de marque,
-                réflexion sur
-                le configurateur et contribution à la structure des pages (landing, catalogue, fiche produit).</p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                imaginer une marque e‑commerce dédiée aux claviers mécaniques custom
+                pour francophones.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                travail sur le positionnement UX et la structure des pages.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                veille UX/UI, univers de marque, réflexion sur le configurateur,
+                structure des pages (landing, catalogue, fiche produit).
+              </p>
               <p class="project-tools">
-                <span class="project-label">Outils :</span>
+                <span class="project-label">Outils&nbsp;:</span>
                 <img src="images/icons/figma.svg" alt="Figma" />
                 <img src="images/icons/prestashop.svg" alt="Prestashop" />
                 <img src="images/icons/excel.svg" alt="Excel" />
               </p>
-              <p><a class="link"
-                  href="https://www.figma.com/design/Ydjh1xcgi8nja8PrUtjL5Z/R5.06?node-id=106-2&t=T27T4foWbvjPJiWZ-1"
-                  target="_blank" rel="noopener noreferrer">Voir le Figma (en cours)</a></p>
+              <p>
+                <a class="link"
+                   href="https://www.figma.com/design/Ydjh1xcgi8nja8PrUtjL5Z/R5.06?node-id=106-2&t=T27T4foWbvjPJiWZ-1"
+                   target="_blank" rel="noopener noreferrer">
+                  Voir le Figma (en cours)
+                </a>
+              </p>
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/projets/Mockup_KeySwitch.jpg" class="project-screenshot project-zoom-img"
-              alt="Mockup KeySwitch">
+            <img src="images/projets/Mockup_KeySwitch.jpg"
+                 class="project-screenshot project-zoom-img"
+                 alt="Mockup KeySwitch" />
           </div>
         </div>
       </article>
 
-      <!-- Projet La Roche-Jagu -->
+      <!-- La Roche-Jagu -->
       <article class="project-cv-card" data-category="web graphisme" data-aos="fade-up">
-        <!-- Bulle année -->
         <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
             <div class="project-cv-logo">
-              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
+              <img src="images/icons/mmi.svg"
+                   alt="Logo IUT de Lannion, Université de Rennes et MMI" />
               <img src="images/icons/cotesdarmor.svg" alt="Logo Côtes d'Armor" />
-
             </div>
             <div>
-              <h3 class="project-cv-title">
-                <a href="projet-la-roche-jagu.html" class="project-link">Signalétique biomimétique du Domaine de la
-                  Roche‑Jagu</a>
-              </h3>
-              <p class="project-cv-subtitle">Projet UX/UI & graphisme – Parc naturel départemental (en cours)</p>
+              <div class="project-tags">
+                <span class="project-tag">Signalétique</span>
+                <span class="project-tag">Parcours visiteur</span>
+              </div>
 
-              <p><span class="project-label">Objectifs :</span> repenser la signalétique du domaine pour mieux guider
-                les visiteurs
-                tout en respectant le paysage et l’ambiance du site.</p>
-              <p><span class="project-label">Rôle :</span> conception graphique et réflexion sur le parcours visiteur.
+              <h3 class="project-cv-title">
+                <a href="projet-la-roche-jagu.html" class="project-link">
+                  Signalétique biomimétique du Domaine de la Roche‑Jagu
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                Projet UX/UI & graphisme – Parc naturel départemental (en cours)
               </p>
-              <p><span class="project-label">Missions :</span> inventaire des signalétiques nécessaires, réflexion sur
-                l’implantation
-                dans le parcours et création de maquettes de panneaux inspirés de l’Art nouveau.</p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                repenser la signalétique du domaine pour mieux guider les visiteurs
+                tout en respectant le paysage.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                conception graphique et réflexion sur le parcours visiteur.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                inventaire des signalétiques, implantation dans le parcours,
+                maquettes de panneaux inspirés de l’Art nouveau.
+              </p>
               <p class="project-tools">
-                <span class="project-label">Outils :</span>
+                <span class="project-label">Outils&nbsp;:</span>
                 <img src="images/icons/figma.svg" alt="Figma" />
                 <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
               </p>
-              <p><a class="link"
-                  href="https://www.figma.com/design/M53fPhObzDKEikfsJLogZH/Moodboard-et-maquettes-ui-ux?node-id=0-1&t=N5bpibmqC1p5zZSI-1"
-                  target="_blank" rel="noopener noreferrer">Voir le Figma (en cours)</a></p>
+              <p>
+                <a class="link"
+                   href="https://www.figma.com/design/M53fPhObzDKEikfsJLogZH/Moodboard-et-maquettes-ui-ux?node-id=0-1&t=N5bpibmqC1p5zZSI-1"
+                   target="_blank" rel="noopener noreferrer">
+                  Voir le Figma (en cours)
+                </a>
+              </p>
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/projets/Mockup_LaRocheJagu.jpg" class="project-screenshot project-zoom-img"
-              alt="Mockup La Roche-Jagu">
+            <img src="images/projets/Mockup_LaRocheJagu.jpg"
+                 class="project-screenshot project-zoom-img"
+                 alt="Mockup La Roche-Jagu" />
           </div>
         </div>
       </article>
 
-      <!-- Projet Datalogy – Enfants orphelins (SIDA) -->
+      <!-- Datalogy SIDA -->
       <article class="project-cv-card" data-category="graphisme comm" data-aos="fade-up">
-        <!-- Bulle année -->
         <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
@@ -310,36 +398,50 @@
               <img src="images/icons/mmi.svg" alt="Logo MMI" />
             </div>
             <div>
+              <div class="project-tags">
+                <span class="project-tag">Dataviz</span>
+                <span class="project-tag">Santé publique</span>
+              </div>
+
               <h3 class="project-cv-title">
                 <a href="projet-datalogy-sida.html" class="project-link">
                   Dataviz – Enfants orphelins en raison du SIDA
                 </a>
               </h3>
-              <p class="project-cv-subtitle">Projet Datalogy – Visualisation pour la santé publique</p>
+              <p class="project-cv-subtitle">
+                Projet Datalogy – Visualisation pour la santé publique
+              </p>
 
-              <p><span class="project-label">Objectifs :</span> comparer la part d’enfants orphelins à cause du SIDA
-                entre l’Afrique et l’Europe avec une interface compréhensible sans être statisticien.</p>
-              <p><span class="project-label">Rôle :</span> concepteur du ruban et du shooting photo puis postprod sur
-                illustrator</p>
-              <p><span class="project-label">Missions :</span> structuration de la page, intégration des cartes et
-                graphiques,
-                travail sur la lisibilité des légendes et des infobulles.</p>
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                comparer la part d’enfants orphelins à cause du SIDA
+                entre l’Afrique et l’Europe.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                conception du ruban, shooting photo et post‑prod Illustrator.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                structuration de la page, intégration des cartes et graphiques,
+                travail sur la lisibilité des légendes et infobulles.
+              </p>
               <p class="project-tools">
-                <span class="project-label">Outils :</span>
+                <span class="project-label">Outils&nbsp;:</span>
                 <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
               </p>
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/projets/Datalogy_SIDA_SAE4ALT.png" class="project-screenshot project-zoom-img"
-              alt="Aperçu du projet Datalogy – SIDA" />
+            <img src="images/projets/Datalogy_SIDA_SAE4ALT.png"
+                 class="project-screenshot project-zoom-img"
+                 alt="Aperçu du projet Datalogy – SIDA" />
           </div>
         </div>
       </article>
 
-      <!-- Projet Datalogy – Taux de décès liés à l'obésité -->
+      <!-- Datalogy obésité -->
       <article class="project-cv-card" data-category="web" data-aos="fade-up">
-        <!-- Bulle année -->
         <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
@@ -347,21 +449,35 @@
               <img src="images/icons/mmi.svg" alt="Logo MMI" />
             </div>
             <div>
+              <div class="project-tags">
+                <span class="project-tag">Dataviz</span>
+                <span class="project-tag">Interface web</span>
+              </div>
+
               <h3 class="project-cv-title">
                 <a href="projet-datalogy-obesite.html" class="project-link">
                   Dataviz – Taux de décès liés à l’obésité
                 </a>
               </h3>
-              <p class="project-cv-subtitle">Projet Datalogy – Interface de comparaison internationale</p>
+              <p class="project-cv-subtitle">
+                Projet Datalogy – Interface de comparaison internationale
+              </p>
 
-              <p><span class="project-label">Objectifs :</span> visualiser les taux de décès liés à l’obésité et
-                permettre
-                une comparaison rapide entre plusieurs pays.</p>
-              <p><span class="project-label">Rôle :</span> intégration front & datavisualisation.</p>
-              <p><span class="project-label">Missions :</span> Avoir une représentation originale est simple, à
-                condition de s'appuyer sur des données sourcées et fiables.</p>
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                visualiser les taux de décès liés à l’obésité
+                et permettre une comparaison rapide entre plusieurs pays.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                intégration front & datavisualisation.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                représentation originale basée sur des données sourcées et fiables.
+              </p>
               <p class="project-tools">
-                <span class="project-label">Outils :</span>
+                <span class="project-label">Outils&nbsp;:</span>
                 <img src="images/icons/javascript.svg" alt="JavaScript" />
                 <img src="images/icons/Chart.js_logo.svg" alt="Chart.js" />
                 <img src="images/icons/Logo_D3.svg" alt="D3.js" />
@@ -370,14 +486,14 @@
           </div>
           <div class="project-cv-header-right">
             <img src="images/projets/Datalogy_Taux_Deces_Lies_Obesite_MMI_2B1-SAE_3.03.jpg"
-              class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – obésité" />
+                 class="project-screenshot project-zoom-img"
+                 alt="Aperçu du projet Datalogy – obésité" />
           </div>
         </div>
       </article>
 
-      <!-- Projet Dataviz Immigration -->
+      <!-- Datalogy immigration -->
       <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
-        <!-- Bulle année -->
         <div class="year-badge">2025</div>
         <div class="project-cv-header-row">
           <div class="project-cv-header-left">
@@ -385,22 +501,35 @@
               <img src="images/icons/mmi.svg" alt="Logo MMI" />
             </div>
             <div>
+              <div class="project-tags">
+                <span class="project-tag">Dataviz</span>
+                <span class="project-tag">Interface interactive</span>
+              </div>
+
               <h3 class="project-cv-title">
                 <a href="projet-datalogy-immigration.html" class="project-link">
                   Dataviz – Immigration en Europe
                 </a>
               </h3>
-              <p class="project-cv-subtitle">Interface de visualisation interactive – Projet universitaire</p>
+              <p class="project-cv-subtitle">
+                Interface de visualisation interactive – Projet universitaire
+              </p>
 
-              <p><span class="project-label">Objectifs :</span> confronter perception et réalité de l’immigration en
-                Europe
-                via une interface web utilisable par un public non spécialiste.</p>
-              <p><span class="project-label">Rôle :</span> intégration front, datavisualisation et structuration de
-                l’interface.</p>
-              <p><span class="project-label">Missions :</span> intégration de la carte interactive, du slider d’année,
-                des graphiques et de l’“info box” qui synthétise les indicateurs par pays.</p>
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                confronter perception et réalité de l’immigration en Europe.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                intégration front, datavisualisation et structuration de l’interface.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                carte interactive, slider d’année, graphiques,
+                info‑box de synthèse par pays.
+              </p>
               <p class="project-tools">
-                <span class="project-label">Outils :</span>
+                <span class="project-label">Outils&nbsp;:</span>
                 <img src="images/icons/javascript.svg" alt="JavaScript" />
                 <img src="images/icons/Chart.js_logo.svg" alt="Chart.js" />
                 <img src="images/icons/Logo_D3.svg" alt="D3.js" />
@@ -408,303 +537,425 @@
             </div>
           </div>
           <div class="project-cv-header-right">
-            <img src="images/projets/Capture_Interface1.png" class="project-screenshot project-zoom-img"
-              alt="Aperçu du projet Datalogy – obésité" />
+            <img src="images/projets/Capture_Interface1.png"
+                 class="project-screenshot project-zoom-img"
+                 alt="Aperçu du projet Datalogy – immigration" />
           </div>
         </div>
       </article>
 
-
-      <!-- EXPÉRIENCES EN LIEN AVEC LA FORMATION -->
-      <section class="experience py-5" id="experience" aria-labelledby="exp-title">
-        <div class="container">
-          <div class="heading text-center mb-4">
-            <h2 id="exp-title">Expériences en lien avec la formation</h2>
-          </div>
-          <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
-            <div class="col-md-5 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/icons/logo cpts.svg" class="card-img-top exp-img" alt="Logo CPTS du Trégor" />
-                <div class="card-body">
-                  <span class="text-muted">Juin 2025 – Août 2026 · Alternance</span>
-                  <h3 class="card-title">Chargé de communication en santé</h3>
-                  <p class="card-subtitle mb-2">CPTS du Trégor</p>
-                  <p class="text-muted">
-                    Communication santé, design graphique, production audiovisuelle, organisation d’événements de
-                    prévention,
-                    intégration et test d’outils numériques et IA.
-                  </p>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-5 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/icons/ARDOISE.png" class="card-img-top exp-img" alt="Restaurant L'Ardoise" />
-                <div class="card-body">
-                  <span class="text-muted">Janvier – Avril 2025 · Alternance</span>
-                  <h3 class="card-title">Responsable communication en restauration</h3>
-                  <p class="card-subtitle mb-2">Restaurant L'Ardoise</p>
-                  <p class="text-muted">
-                    Gestion de la communication digitale, création de contenus visuels,
-                    optimisation de la visibilité locale et contribution au recrutement des saisonniers.
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- AUTRES EXPÉRIENCES -->
-      <section class="extra-experience py-5" id="extra-experience" aria-labelledby="extra-exp-title">
-        <div class="container">
-          <div class="heading text-center mb-4">
-            <h2 id="extra-exp-title">Autres expériences</h2>
-            <p class="text-muted">
-              Jobs étudiants et saisonniers ou j'ai pu monter en compétence sur mon sens de
-              l’effort, de l’organisation et du contact.
-            </p>
-          </div>
-
-          <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
-            <!-- Intermarché -->
-            <div class="col-md-4 col-lg-3 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/icons/intermarche.svg" class="card-img-top exp-img" alt="Intermarché" />
-                <div class="card-body">
-                  <span class="text-muted">Week-ends depuis mai 2025 · Job étudiant</span>
-                  <h3 class="card-title">Employé libre-service</h3>
-                  <p class="card-subtitle mb-2">Intermarché</p>
-                  <p class="text-muted">
-                    Mise en rayon, gestion de la marchandise et tenue des linéaires dans un contexte de forte affluence,
-                    tout en conciliant études et travail. Renforce sens de l’effort, ponctualité et travail en équipe.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <!-- Belambra -->
-            <div class="col-md-4 col-lg-3 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/icons/belambra.svg" class="card-img-top exp-img" alt="Belambra" />
-                <div class="card-body">
-                  <span class="text-muted">Saison 2024 de mai à août · Job saisonnier</span>
-                  <h3 class="card-title">Réceptionniste</h3>
-                  <p class="card-subtitle mb-2">Belambra</p>
-                  <p class="text-muted">
-                    Accueil des clients, service en restauration et gestion de situations variées en village vacances.
-                    Développe réactivité, gestion du stress et sens du service.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <!-- Miléade -->
-            <div class="col-md-4 col-lg-3 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/icons/mileade.svg" class="card-img-top exp-img" alt="Miléade" />
-                <div class="card-body">
-                  <span class="text-muted">Saison 2023 de juin à août · Job saisonnier</span>
-                  <h3 class="card-title">Serveur</h3>
-                  <p class="card-subtitle mb-2">Miléade</p>
-                  <p class="text-muted">
-                    Accueil, renseignement des vacanciers et service en salle dans un contexte touristique.
-                    Renforce adaptabilité, communication et travail en horaires décalés.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <!-- Yelloh Village -->
-            <div class="col-md-4 col-lg-3 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/icons/yellovillage.svg" class="card-img-top exp-img" alt="Yelloh Village" />
-                <div class="card-body">
-                  <span class="text-muted">Renfort sur le site de Plobannalec-Lesconil en mai 2025</span>
-                  <h3 class="card-title">Hôte d'accueil</h3>
-                  <p class="card-subtitle mb-2">Yelloh Village</p>
-                  <p class="text-muted">
-                    Prise de commandes et gestion
-                    des réservations. Développe sens du service, organisation et gestion du stress.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <!-- FabLab de Lannion -->
-            <div class="col-md-4 col-lg-3 col-10 mb-4">
-              <article class="card exp-card">
-                <img src="images/icons/fablab_lannion.png" class="card-img-top exp-img" alt="FabLab de Lannion" />
-                <div class="card-body">
-                  <span class="text-muted">Depuis 2025 · Bénévolat</span>
-                  <h3 class="card-title">Bénévole</h3>
-                  <p class="card-subtitle mb-2">FabLab de Lannion</p>
-                  <p class="text-muted">
-                    Accueil des membres, accompagnement sur les projets et prise en main des machines
-                    (impression 3D, découpe laser, électronique). Développe pédagogie, curiosité
-                    technique et travail collaboratif.
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-    </div>
     </div>
   </section>
+
+<section class="experience py-5" id="experience" aria-labelledby="exp-title">
+  <div class="container">
+    <div class="heading text-center mb-4">
+      <h2 id="exp-title">Expériences en lien avec la formation</h2>
+      <p class="text-muted">
+        Mes expériences en communication et design, principalement en lien avec la santé et la restauration.
+      </p>
+    </div>
+
+    <div class="row justify-content-center px-2 px-md-4 experience-timeline" data-aos="fade-up">
+
+      <!-- CPTS du Trégor -->
+      <article class="experience-item col-12 col-md-10 col-lg-8 mb-4">
+        <div class="experience-timeline-dot"></div>
+        <div class="experience-card">
+          <header class="experience-header">
+            <div class="experience-meta">
+              <span class="experience-badge">Alternance</span>
+              <span class="experience-date">Juin 2025 – Août 2026</span>
+            </div>
+            <h3 class="experience-title">Chargé de communication en santé</h3>
+            <p class="experience-company">CPTS du Trégor</p>
+          </header>
+
+          <div class="experience-body">
+            <p class="experience-context">
+              Communication santé pour un réseau de professionnels de santé de territoire, avec un fort enjeu de prévention.
+            </p>
+            <ul class="experience-missions">
+              <li>Création de supports de prévention (affiches, flyers, posts réseaux sociaux).</li>
+              <li>Production photo / vidéo pour des campagnes locales.</li>
+              <li>Intégration et test d’outils numériques et IA pour la coordination des soins.</li>
+            </ul>
+            <div class="experience-tags">
+              <span class="experience-tag">Communication santé</span>
+              <span class="experience-tag">Design graphique</span>
+              <span class="experience-tag">Audiovisuel</span>
+              <span class="experience-tag">Outils numériques & IA</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Restaurant L'Ardoise -->
+      <article class="experience-item col-12 col-md-10 col-lg-8 mb-4">
+        <div class="experience-timeline-dot"></div>
+        <div class="experience-card">
+          <header class="experience-header">
+            <div class="experience-meta">
+              <span class="experience-badge">Alternance</span>
+              <span class="experience-date">Janvier – Avril 2025</span>
+            </div>
+            <h3 class="experience-title">Responsable communication en restauration</h3>
+            <p class="experience-company">Restaurant L'Ardoise</p>
+          </header>
+
+          <div class="experience-body">
+            <p class="experience-context">
+              Communication locale pour un restaurant indépendant, avec un focus sur la visibilité et le recrutement saisonnier.
+            </p>
+            <ul class="experience-missions">
+              <li>Refonte des visuels réseaux sociaux (menus, événements, offres spéciales).</li>
+              <li>Création de contenus photo/vidéo adaptés aux plateformes.</li>
+              <li>Contribution au recrutement des saisonniers via les supports de communication.</li>
+            </ul>
+            <div class="experience-tags">
+              <span class="experience-tag">Réseaux sociaux</span>
+              <span class="experience-tag">Brand content</span>
+              <span class="experience-tag">Photo / vidéo</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+  <section class="extra-experience py-5" id="extra-experience" aria-labelledby="extra-exp-title">
+  <div class="container">
+    <div class="heading text-center mb-4">
+      <h2 id="extra-exp-title">Autres expériences</h2>
+      <p class="text-muted">
+        Jobs étudiants et saisonniers qui ont renforcé mon sens du service, de l’organisation et du travail en équipe.
+      </p>
+    </div>
+
+    <div class="row justify-content-center px-2 px-md-4 extra-experience-grid" data-aos="fade-up">
+
+      <!-- Intermarché -->
+      <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="extra-exp-inner">
+          <div class="extra-exp-logo">
+            <img src="images/icons/intermarche.svg" alt="Intermarché" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Week-ends depuis mai 2025 · Job étudiant</p>
+            <h3 class="extra-exp-title">Employé libre-service</h3>
+            <p class="extra-exp-company">Intermarché</p>
+            <p class="extra-exp-desc">
+              Mise en rayon, gestion de la marchandise et tenue des linéaires dans un contexte de forte affluence.
+            </p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Rigueur</span>
+              <span class="extra-exp-tag">Organisation</span>
+              <span class="extra-exp-tag">Travail en équipe</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Belambra -->
+      <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="extra-exp-inner">
+          <div class="extra-exp-logo">
+            <img src="images/icons/belambra.svg" alt="Belambra" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Saison 2024 · Job saisonnier</p>
+            <h3 class="extra-exp-title">Réceptionniste</h3>
+            <p class="extra-exp-company">Belambra</p>
+            <p class="extra-exp-desc">
+              Accueil des clients, service en restauration et gestion de situations variées en village vacances.
+            </p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Relation client</span>
+              <span class="extra-exp-tag">Gestion du stress</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Miléade -->
+      <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="extra-exp-inner">
+          <div class="extra-exp-logo">
+            <img src="images/icons/mileade.svg" alt="Miléade" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Saison 2023 · Job saisonnier</p>
+            <h3 class="extra-exp-title">Serveur</h3>
+            <p class="extra-exp-company">Miléade</p>
+            <p class="extra-exp-desc">
+              Service en salle et renseignement des vacanciers dans un contexte touristique.
+            </p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Adaptabilité</span>
+              <span class="extra-exp-tag">Contact humain</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Yelloh Village -->
+      <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="extra-exp-inner">
+          <div class="extra-exp-logo">
+            <img src="images/icons/yellovillage.svg" alt="Yelloh Village" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Mai 2025 · Renfort ponctuel</p>
+            <h3 class="extra-exp-title">Chef de rang</h3>
+            <p class="extra-exp-company">Yelloh Village</p>
+            <p class="extra-exp-desc">
+              Prise de commandes, gestion des réservations et coordination avec la cuisine.
+            </p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Service</span>
+              <span class="extra-exp-tag">Coordination</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FabLab -->
+      <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="extra-exp-inner">
+          <div class="extra-exp-logo">
+            <img src="images/icons/fablab_lannion.png" alt="FabLab de Lannion" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Depuis 2025 · Bénévolat</p>
+            <h3 class="extra-exp-title">Bénévole</h3>
+            <p class="extra-exp-company">FabLab de Lannion</p>
+            <p class="extra-exp-desc">
+              Accueil des membres, accompagnement sur les projets et prise en main des machines
+              (impression 3D, découpe laser, électronique).
+            </p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Pédagogie</span>
+              <span class="extra-exp-tag">Curiosité technique</span>
+              <span class="extra-exp-tag">Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
   <section class="skills py-5" id="skills" aria-labelledby="skills-title">
-    <div class="container">
-      <div class="heading text-center mb-4">
-        <h2 id="skills-title">Compétences</h2>
-      </div>
-
-      <div class="row justify-content-center px-2 px-md-4">
-        <!-- UX/UI design -->
-        <div class="col-lg-3 col-md-6 col-10 mb-4">
-          <article class="card exp-card skills-card">
-            <div class="card-body">
-              <h3 class="card-title">UX/UI design</h3>
-              <ul class="skills-list">
-                <li>Maquettage, wireframing, user flows, personae.</li>
-                <li>Design system, UI responsive, accessibilité.</li>
-                <li>Typographie, branding, prototypage interactif.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <!-- Développement web -->
-        <div class="col-lg-3 col-md-6 col-10 mb-4">
-          <article class="card exp-card skills-card">
-            <div class="card-body">
-              <h3 class="card-title">Développement web</h3>
-              <ul class="skills-list icons-list">
-                <li>
-                  <img src="images/icons/html.svg" alt="HTML" />
-                  <img src="images/icons/css.svg" alt="CSS" />
-                  <img src="images/icons/javascript.svg" alt="JavaScript" />
-                  <span>HTML / CSS / JavaScript</span>
-                </li>
-                <li>
-                  <img src="images/icons/php.svg" alt="PHP" />
-                  <img src="images/icons/mysql.svg" alt="MySQL" />
-                  <span>PHP / MySQL</span>
-                </li>
-                <li>
-                  <img src="images/icons/wordpress.svg" alt="WordPress" />
-                  <span>Intégration sous WordPress (CMS)</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <!-- Logiciels maîtrisés -->
-        <div class="col-lg-3 col-md-6 col-10 mb-4">
-          <article class="card exp-card skills-card">
-            <div class="card-body">
-              <h3 class="card-title">Logiciels maîtrisés</h3>
-              <ul class="skills-list icons-list">
-                <li>
-                  <img src="images/icons/figma.svg" alt="Figma" />
-                  <span>Figma</span>
-                </li>
-                <li>
-                  <img src="images/icons/adobe-photoshop.svg" alt="Adobe Photoshop" />
-                  <img src="images/icons/adobe-illustrator.svg" alt="Adobe Illustrator" />
-                  <span>Photoshop, Illustrator</span>
-                </li>
-                <li>
-                  <img src="images/icons/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve" />
-                  <span>DaVinci Resolve</span>
-                </li>
-                <li>
-                  <img src="images/icons/github_desktop.svg" alt="GitHub" />
-                  <span>GitHub et outils collaboratifs</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <!-- Soft skills -->
-        <div class="col-lg-3 col-md-6 col-10 mb-4">
-          <article class="card exp-card skills-card">
-            <div class="card-body">
-              <h3 class="card-title">Soft skills</h3>
-              <ul class="skills-list">
-                <li>Communication orale et visuelle, pitch.</li>
-                <li>Gestion de projet, respect des délais.</li>
-                <li>Cohérence graphique entre supports.</li>
-                <li>Empathie utilisateur, curiosité, veille design.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
+  <div class="container">
+    <div class="heading text-center mb-4">
+      <h2 id="skills-title">Compétences</h2>
+      <p class="text-muted">
+        Un socle orienté UX/UI et communication, complété par le développement web et la production audiovisuelle.
+      </p>
     </div>
-  </section>
 
+    <div class="row justify-content-center px-2 px-md-4 skills-grid" data-aos="fade-up">
 
-  <!-- FORMATIONS -->
-  <section class="education py-5" id="education" aria-labelledby="edu-title">
-    <div class="container">
-      <div class="heading text-center mb-4">
-        <h2 id="edu-title">Formations</h2>
-      </div>
-
-      <div class="row justify-content-evenly px-2 px-md-4" data-aos="fade-up">
-        <!-- BUT MMI -->
-        <div class="col-md-5 col-10 mb-4">
-          <article class="card exp-card">
-            <img src="images/icons/iut_rennes_mmi.svg" class="card-img-top exp-img"
-              alt="IUT de Lannion / Université de Rennes" />
-            <div class="card-body">
-              <span class="text-muted">2023 – 2026</span>
-              <h3 class="card-title">BUT MMI – Parcours Stratégie & UX</h3>
-              <p class="card-subtitle mb-2">IUT de Lannion – Université de Rennes</p>
-              <p class="text-muted">
-                Parcours centré sur la stratégie de communication numérique et le
-                design d’expérience : recherche utilisateur, maquettes Figma, prototypage,
-                accessibilité et gestion de projets web orientés usages.
-              </p>
-              <p class="text-muted mb-0">
-                Projets marquants : datavisualisation en santé (Datalogy) et workshop
-                sur les parcours infirmiers et l’IA avec Orange.
-              </p>
-            </div>
-          </article>
+      <!-- UX / UI design -->
+      <article class="skill-card col-12 col-md-6 col-lg-3 mb-4">
+        <div class="skill-inner">
+          <h3 class="skill-title">UX / UI design</h3>
+          <ul class="skill-list">
+            <li>Recherche utilisateur, personae, user flows.</li>
+            <li>Wireframes et maquettes Figma (web & mobile).</li>
+            <li>Design system, hiérarchie visuelle, accessibilité.</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">UX</span>
+            <span class="skill-tag">UI</span>
+            <span class="skill-tag">Design system</span>
+          </div>
         </div>
+      </article>
 
-        <!-- Master visé UI/UX -->
-        <div class="col-md-5 col-10 mb-4">
-          <article class="card exp-card">
-            <img src="images/icons/Logo_of_Sorbonne_University.svg" class="card-img-top exp-img"
-              alt="Sorbonne Université" />
-            <div class="card-body">
-              <span class="text-muted">Projet d’études</span>
-              <h3 class="card-title">Master Création Numérique – Design d’interface</h3>
-              <p class="card-subtitle mb-2">Sorbonne Université (envisagé)</p>
-              <p class="text-muted">
-                Master axé sur le design et l’ergonomie d’interfaces, l’UX design,
-                l’accessibilité et la conception d’expériences numériques complexes
-                (web, applications, services).
-              </p>
-              <p class="text-muted mb-0">
-                <strong>Objectif :</strong> approfondir la recherche UX, le design d’interaction et la
-                conduite de projets en équipe pour des produits digitaux centrés
-                utilisateurs.
-              </p>
-            </div>
-          </article>
+      <!-- Développement web -->
+      <article class="skill-card col-12 col-md-6 col-lg-3 mb-4">
+        <div class="skill-inner">
+          <h3 class="skill-title">Développement web</h3>
+          <ul class="skill-list">
+            <li>HTML / CSS / JavaScript (front).</li>
+            <li>PHP / MySQL (bases back-end).</li>
+            <li>Intégration sous WordPress.</li>
+          </ul>
+          <div class="skill-icons-row">
+            <img src="images/icons/html.svg" alt="HTML" />
+            <img src="images/icons/css.svg" alt="CSS" />
+            <img src="images/icons/javascript.svg" alt="JavaScript" />
+            <img src="images/icons/php.svg" alt="PHP" />
+            <img src="images/icons/mysql.svg" alt="MySQL" />
+          </div>
         </div>
-      </div>
+      </article>
+
+      <!-- Logiciels -->
+      <article class="skill-card col-12 col-md-6 col-lg-3 mb-4">
+        <div class="skill-inner">
+          <h3 class="skill-title">Logiciels</h3>
+          <ul class="skill-list">
+            <li>Figma (maquettes, prototypes, design system).</li>
+            <li>Photoshop & Illustrator (retouche, illustration, print).</li>
+            <li>DaVinci Resolve (montage vidéo).</li>
+          </ul>
+          <div class="skill-icons-row">
+            <img src="images/icons/figma.svg" alt="Figma" />
+            <img src="images/icons/adobe-photoshop.svg" alt="Photoshop" />
+            <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
+            <img src="images/icons/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve" />
+            <img src="images/icons/github_desktop.svg" alt="GitHub" />
+          </div>
+        </div>
+      </article>
+
+      <!-- Soft skills -->
+      <article class="skill-card col-12 col-md-6 col-lg-3 mb-4">
+        <div class="skill-inner">
+          <h3 class="skill-title">Soft skills</h3>
+          <ul class="skill-list">
+            <li>Communication orale et visuelle, capacité à pitcher.</li>
+            <li>Gestion de projet, respect des délais.</li>
+            <li>Empathie utilisateur, curiosité, veille design.</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">Collaboration</span>
+            <span class="skill-tag">Autonomie</span>
+            <span class="skill-tag">Pédagogie</span>
+          </div>
+        </div>
+      </article>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="education py-5" id="education" aria-labelledby="edu-title">
+  <div class="container">
+    <div class="heading text-center mb-4">
+      <h2 id="edu-title">Formations</h2>
+      <p class="text-muted">
+        Un parcours orienté design numérique, UX/UI, communication et médiation de l’information, avec une appétence forte pour les sujets santé.
+      </p>
+    </div>
+
+    <div class="row justify-content-center px-2 px-md-4 education-grid" data-aos="fade-up">
+
+      <!-- BUT MMI -->
+      <article class="education-card col-12 col-lg-4 mb-4">
+        <div class="education-inner">
+          <div class="education-header">
+            <div class="education-logo">
+              <img src="images/icons/iut_rennes_mmi.svg"
+                   alt="IUT de Lannion – Université de Rennes / MMI" />
+            </div>
+            <div class="education-meta">
+              <span class="education-date">2023 – 2026</span>
+              <span class="education-badge">Diplôme en cours</span>
+            </div>
+          </div>
+
+          <div class="education-body">
+            <h3 class="education-title">BUT MMI – Parcours Stratégie & UX</h3>
+            <p class="education-school">IUT de Lannion – Université de Rennes</p>
+            <p class="education-desc">
+              Parcours centré sur la stratégie de communication numérique et le design d’expérience :
+              recherche utilisateur, maquettes Figma, prototypage, accessibilité et gestion de projets web orientés usages.
+            </p>
+            <ul class="education-highlights">
+              <li>Projets de datavisualisation en santé (Datalogy).</li>
+              <li>Workshop avec Orange sur les parcours infirmiers et l’IA.</li>
+              <li>Travaux autour de la communication et de la médiation scientifique.</li>
+            </ul>
+            <div class="education-tags">
+              <span class="education-tag">UX / UI</span>
+              <span class="education-tag">Communication numérique</span>
+              <span class="education-tag">Projet web</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Plan A : Cycle master Media Design -->
+      <article class="education-card col-12 col-lg-4 mb-4">
+        <div class="education-inner education-inner--outline">
+          <div class="education-header">
+            <div class="education-logo">
+              <img src="images/icons/logo_ledna_media.jpeg"
+                   alt="L’École de design Nantes Atlantique – Media Design" />
+            </div>
+            <div class="education-meta">
+              <span class="education-date">Plan A</span>
+              <span class="education-badge education-badge--light">Candidature 2026–2027</span>
+            </div>
+          </div>
+
+          <div class="education-body">
+            <h3 class="education-title">Cycle master Media Design</h3>
+            <p class="education-school">L’École de design Nantes Atlantique – Nantes</p>
+            <p class="education-desc">
+              Diplôme de design Bac +5 (grade de master) axé sur le traitement et la représentation de l’information,
+              la narration et l’expérience utilisateur, au sein du Media Design Lab.
+            </p>
+            <ul class="education-highlights">
+              <li>Approche pratique et critique du numérique, dans une perspective UX et product design.</li>
+              <li>Travaux sur les enjeux de l’information, de la connaissance et de la communication.</li>
+              <li>Thèmes : UX design, design de narration, enjeux environnementaux, démocratie et citoyenneté.</li>
+            </ul>
+            <div class="education-tags">
+              <span class="education-tag">Media design</span>
+              <span class="education-tag">UX / Product</span>
+              <span class="education-tag">Information & société</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Plan B : Master Sorbonne -->
+      <article class="education-card col-12 col-lg-4 mb-4">
+        <div class="education-inner education-inner--outline">
+          <div class="education-header">
+            <div class="education-logo">
+              <img src="images/icons/Logo_of_Sorbonne_University.svg"
+                   alt="Sorbonne Université" />
+            </div>
+            <div class="education-meta">
+              <span class="education-date">Plan B</span>
+              <span class="education-badge education-badge--light">Candidature 2026–2027</span>
+            </div>
+          </div>
+
+          <div class="education-body">
+            <h3 class="education-title">Master Création Numérique – Design d’interface</h3>
+            <p class="education-school">Sorbonne Université (envisagé)</p>
+            <p class="education-desc">
+              Master axé sur le design d’interfaces, l’UX design, l’accessibilité et la conception
+              d’expériences numériques complexes (web, applications, services).
+            </p>
+            <ul class="education-highlights">
+              <li>Approfondir la recherche UX et le design d’interaction.</li>
+              <li>Travailler en équipe sur des projets à forte dimension utilisateur.</li>
+              <li>Développer une expertise sur les produits digitaux orientés usages.</li>
+            </ul>
+            <div class="education-tags">
+              <span class="education-tag">Design d’interface</span>
+              <span class="education-tag">UX avancée</span>
+              <span class="education-tag">Accessibilité</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
 
   <!-- CONTACT -->
@@ -713,12 +964,13 @@
       <div class="heading text-center">
         <h2 id="contact-title">Des questions ? Contactez-moi</h2>
       </div>
+
       <div class="row justify-content-evenly mt-5">
         <div class="col-md-5 col-10 contact-details" data-aos="fade-right">
           <div class="row justify-content-evenly mb-3">
             <div class="col-1"><i class="bi bi-geo-alt-fill"></i></div>
             <div class="col-11">
-              <p>Lannion, Bretagne<br>Marseille, Provence-Alpes-Côte d'Azur</p>
+              <p>Lannion, Bretagne<br />Marseille, Provence-Alpes-Côte d'Azur</p>
             </div>
           </div>
           <div class="row justify-content-evenly mb-3">
@@ -736,8 +988,12 @@
           <div class="row justify-content-evenly mb-3">
             <div class="col-1"><i class="bi bi-globe-americas"></i></div>
             <div class="col-11">
-              <p><a href="https://github.com/kelhadedi/portfolio" class="link" target="_blank"
-                  rel="noopener noreferrer">GitHub du portfolio</a></p>
+              <p>
+                <a href="https://github.com/kelhadedi/portfolio"
+                   class="link" target="_blank" rel="noopener noreferrer">
+                  GitHub du portfolio
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -746,21 +1002,27 @@
           <form class="contact-form" aria-label="Formulaire de contact">
             <div class="mb-3">
               <label for="contact-name" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="contact-name" placeholder="Votre nom" />
+              <input type="text" class="form-control" id="contact-name"
+                     placeholder="Votre nom" />
             </div>
             <div class="mb-3">
               <label for="contact-email" class="form-label">E-mail</label>
-              <input type="email" class="form-control" id="contact-email" placeholder="Votre e-mail" />
+              <input type="email" class="form-control" id="contact-email"
+                     placeholder="Votre e-mail" />
             </div>
             <div class="mb-3">
               <label for="contact-phone" class="form-label">Numéro de téléphone</label>
-              <input type="text" class="form-control" id="contact-phone" placeholder="Votre numéro" />
+              <input type="text" class="form-control" id="contact-phone"
+                     placeholder="Votre numéro" />
             </div>
             <div class="mb-3">
               <label for="contact-message" class="form-label">Message</label>
-              <textarea class="form-control" id="contact-message" placeholder="Votre message" rows="5"></textarea>
+              <textarea class="form-control" id="contact-message"
+                        placeholder="Votre message" rows="5"></textarea>
             </div>
-            <button type="submit" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">Envoyer</button>
+            <button type="submit" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+              Envoyer
+            </button>
           </form>
         </div>
       </div>
@@ -776,12 +1038,14 @@
   <footer class="text-center text-muted py-4">
     <h2 class="text-white pt-3">Portfolio</h2>
     <div class="social-links mt-3 mb-3">
-      <button class="rounded-pill linkedin" aria-label="Profil LinkedIn de Karim EL HADEDI"
-        onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')">
+      <button class="rounded-pill linkedin"
+              aria-label="Profil LinkedIn de Karim EL HADEDI"
+              onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')">
         <i class="bi bi-linkedin"></i>
       </button>
-      <button class="rounded-pill whatsapp" aria-label="Contacter Karim EL HADEDI sur WhatsApp"
-        onclick="window.open('https://wa.me/33683895581', '_blank')">
+      <button class="rounded-pill whatsapp"
+              aria-label="Contacter Karim EL HADEDI sur WhatsApp"
+              onclick="window.open('https://wa.me/33683895581', '_blank')">
         <i class="bi bi-whatsapp"></i>
       </button>
     </div>
@@ -790,10 +1054,8 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="main.js"></script>
 </body>
-
 </html>

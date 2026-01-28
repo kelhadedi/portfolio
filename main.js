@@ -5,7 +5,7 @@ if (window.AOS) {
   AOS.init({
     duration: 400,
     offset: 120,
-    once: false,
+    once: true,
     mirror: false
   });
 }
@@ -13,10 +13,12 @@ if (window.AOS) {
 // ============================
 // Bulle contact ( ? en bas )
 // ============================
-const contactToggle = document.getElementById('contactToggle');
-const contactPanel  = document.getElementById('contactPanel');
+(() => {
+  const contactToggle = document.getElementById('contactToggle');
+  const contactPanel  = document.getElementById('contactPanel');
 
-if (contactToggle && contactPanel) {
+  if (!contactToggle || !contactPanel) return;
+
   contactToggle.addEventListener('click', (e) => {
     e.stopPropagation();
     const isOpen = contactPanel.classList.toggle('open');
@@ -31,179 +33,200 @@ if (contactToggle && contactPanel) {
       contactToggle.setAttribute('aria-expanded', 'false');
     }
   });
-}
+})();
 
 // ============================
 // Bouton "retour haut"
 // ============================
-const backToTopBtn = document.getElementById("btn-back-to-top");
+(() => {
+  const backToTopBtn = document.getElementById('btn-back-to-top');
+  if (!backToTopBtn) return;
 
-if (backToTopBtn) {
-  window.addEventListener("scroll", () => {
-    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-    backToTopBtn.style.display = scrollTop > 200 ? "block" : "none";
+  const toggleBackToTop = () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    backToTopBtn.style.display = scrollTop > 200 ? 'block' : 'none';
+  };
+
+  window.addEventListener('scroll', toggleBackToTop);
+  toggleBackToTop();
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+})();
 
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+// ============================
+// Navbar mobile & fermeture
+// ============================
+(() => {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.getElementById('navbarNav');
+  const body = document.body;
 
-const navbarToggler = document.querySelector('.navbar-toggler');
-const navbarCollapse = document.getElementById('navbarNav');
+  if (!navbarToggler || !navbarCollapse) return;
 
-if (navbarToggler && navbarCollapse) {
+  // fermer si clic en dehors de la navbar
   document.addEventListener('click', (event) => {
     const isClickInsideNav = event.target.closest('#navbar-top');
-
-    // si clic en dehors de la navbar et menu ouvert
     if (!isClickInsideNav && navbarCollapse.classList.contains('show')) {
       navbarToggler.click();
     }
   });
-}
 
-document.addEventListener('DOMContentLoaded', function () {
-  const navLinks = document.querySelectorAll('#navbarNav .nav-link');
-  const navbarCollapse = document.getElementById('navbarNav');
-  const body = document.body;
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      // ferme le collapse Bootstrap
-      navbarCollapse.classList.remove('show');
-      // enlève la classe qui modifie le padding quand le menu est ouvert
-      body.classList.remove('nav-open');
+  // fermeture sur clic lien
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        navbarCollapse.classList.remove('show');
+        body.classList.remove('nav-open');
+      });
     });
   });
-});
-
+})();
 
 // ============================
 // Lightbox image projets
 // ============================
-const zoomImages     = document.querySelectorAll(".project-zoom-img");
-const lightbox       = document.getElementById("image-lightbox");
-const lightboxImg    = document.getElementById("image-lightbox-img");
-const lightboxContent= document.querySelector(".image-lightbox-content");
+(() => {
+  const zoomImages      = document.querySelectorAll('.project-zoom-img');
+  const lightbox        = document.getElementById('image-lightbox');
+  const lightboxImg     = document.getElementById('image-lightbox-img');
+  const lightboxContent = document.querySelector('.image-lightbox-content');
 
-if (zoomImages.length && lightbox && lightboxImg && lightboxContent) {
-  zoomImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
+  if (!zoomImages.length || !lightbox || !lightboxImg || !lightboxContent) return;
 
-      lightboxContent.classList.remove("image-lightbox-content--small");
+  const openLightbox = (img) => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
 
-      if (
-        img.alt.includes("LocFit") ||
-        img.alt.includes("KeySwitch") ||
-        img.alt.includes("La Roche-Jagu")
-      ) {
-        lightboxContent.classList.add("image-lightbox-content--small");
-      }
-
-      lightbox.classList.remove("d-none");
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  lightbox.addEventListener("click", (e) => {
+    lightboxContent.classList.remove('image-lightbox-content--small');
     if (
-      e.target.classList.contains("image-lightbox-backdrop") ||
-      e.target.classList.contains("image-lightbox-close")
+      img.alt.includes('LocFit') ||
+      img.alt.includes('KeySwitch') ||
+      img.alt.includes('La Roche-Jagu')
     ) {
-      lightbox.classList.add("d-none");
-      lightboxImg.src = "";
-      lightboxContent.classList.remove("image-lightbox-content--small");
-      document.body.style.overflow = "";
+      lightboxContent.classList.add('image-lightbox-content--small');
+    }
+
+    lightbox.classList.remove('d-none');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.add('d-none');
+    lightboxImg.src = '';
+    lightboxContent.classList.remove('image-lightbox-content--small');
+    document.body.style.overflow = '';
+  };
+
+  zoomImages.forEach((img) => {
+    img.addEventListener('click', () => openLightbox(img));
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (
+      e.target.classList.contains('image-lightbox-backdrop') ||
+      e.target.classList.contains('image-lightbox-close')
+    ) {
+      closeLightbox();
     }
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !lightbox.classList.contains("d-none")) {
-      lightbox.classList.add("d-none");
-      lightboxImg.src = "";
-      lightboxContent.classList.remove("image-lightbox-content--small");
-      document.body.style.overflow = "";
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lightbox.classList.contains('d-none')) {
+      closeLightbox();
     }
   });
-}
+})();
 
 // ============================
 // Scroll spy - lien de nav actif
 // ============================
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+(() => {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  if (!sections.length || !navLinks.length) return;
 
-if (sections.length && navLinks.length) {
-  window.addEventListener("scroll", () => {
-    let current = "";
+  const setActiveLink = () => {
+    let current = '';
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 140;
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 160;
       if (window.scrollY >= sectionTop) {
-        current = section.getAttribute("id");
+        current = section.id;
       }
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove("active-section");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active-section");
+    navLinks.forEach((link) => {
+      link.classList.remove('active-section');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active-section');
       }
     });
-  });
-}
+  };
+
+  window.addEventListener('scroll', setActiveLink);
+  setActiveLink();
+})();
 
 // ============================
 // Parallax léger sur la section home
 // ============================
-const homeSection = document.querySelector(".home");
+(() => {
+  const homeSection = document.querySelector('.home');
+  if (!homeSection) return;
 
-if (homeSection) {
-  window.addEventListener("scroll", () => {
+  const updateBackground = () => {
     const offset = window.pageYOffset;
-    homeSection.style.backgroundPositionY = offset * 0.2 + "px";
-  });
-}
+    homeSection.style.backgroundPositionY = offset * 0.2 + 'px';
+  };
+
+  window.addEventListener('scroll', updateBackground);
+  updateBackground();
+})();
 
 // ============================
 // Filtres projets par domaine
 // ============================
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards  = document.querySelectorAll('.project-cv-card');
-const emptyMsg      = document.getElementById('portfolio-empty-msg');
+(() => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards  = document.querySelectorAll('.project-cv-card');
+  const emptyMsg      = document.getElementById('portfolio-empty-msg');
 
-if (filterButtons.length && projectCards.length) {
-  filterButtons.forEach(btn => {
+  if (!filterButtons.length || !projectCards.length) return;
+
+  const applyFilter = (filter) => {
+    let visibleCount = 0;
+
+    projectCards.forEach((card) => {
+      const cats = (card.dataset.category || '')
+        .split(' ')
+        .filter(Boolean);
+
+      const match = filter === 'all' || cats.includes(filter);
+
+      card.classList.toggle('is-hidden', !match);
+      if (match) visibleCount++;
+    });
+
+    if (emptyMsg) {
+      if (visibleCount === 0 && filter !== 'all') {
+        emptyMsg.style.display = 'block';
+      } else {
+        emptyMsg.style.display = 'none';
+      }
+    }
+  };
+
+  filterButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       document.querySelector('.filter-btn.active')?.classList.remove('active');
       btn.classList.add('active');
-
-      const filter = btn.dataset.filter;
-      let visibleCount = 0;
-
-      projectCards.forEach(card => {
-        const cats = (card.dataset.category || '')
-          .split(' ')
-          .filter(Boolean);
-
-        if (filter === 'all' || cats.includes(filter)) {
-          card.classList.remove('is-hidden');
-          visibleCount++;
-        } else {
-          card.classList.add('is-hidden');
-        }
-      });
-
-      if (emptyMsg) {
-        if (visibleCount === 0 && filter !== 'all') {
-          emptyMsg.style.display = 'block';
-        } else {
-          emptyMsg.style.display = 'none';
-        }
-      }
+      applyFilter(btn.dataset.filter);
     });
   });
-}
+
+  // filtre initial
+  applyFilter('all');
+})();
