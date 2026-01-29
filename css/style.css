@@ -1354,15 +1354,15 @@ img {
     box-shadow 0.18s ease-out;
 }
 
-/* Variante outline plus claire pour le master envisagé */
-.education-inner--outline {
-  background: #050816;
+/* Poursuites d’études : fond dégradé orange pour les distinguer */
+.education-inner--future {
+  background: linear-gradient(135deg, #1f2937 0%, #312e81 25%, #f97316 100%);
   box-shadow:
-    0 18px 36px rgba(15, 23, 42, 0.55),
-    0 0 0 1px rgba(209, 213, 219, 0.55);
+    0 20px 40px rgba(15, 23, 42, 0.6),
+    0 0 0 1px rgba(251, 146, 60, 0.7);
 }
 
-/* halo */
+/* halo de base */
 .education-inner::before {
   content: "";
   position: absolute;
@@ -1374,6 +1374,13 @@ img {
   pointer-events: none;
 }
 
+/* halo plus chaud pour les futures formations */
+.education-inner--future::before {
+  background:
+    radial-gradient(circle at top left, rgba(251, 146, 60, 0.45), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(248, 113, 113, 0.25), transparent 60%);
+}
+
 .education-inner:hover {
   transform: translateY(-3px);
   box-shadow:
@@ -1381,6 +1388,7 @@ img {
     0 0 0 1px rgba(191, 219, 254, 0.55);
 }
 
+/* header / logo / meta déjà en place, tu peux garder tes règles actuelles */
 .education-header {
   display: flex;
   justify-content: space-between;
@@ -1429,14 +1437,14 @@ img {
   background: #22c55e;
 }
 
-/* version badge claire */
-.education-badge--light {
-  background: rgba(129, 140, 248, 0.1);
-  color: #a5b4fc;
+/* badge + texte adaptés aux poursuites */
+.education-inner--future .education-badge {
+  background: rgba(249, 115, 22, 0.18);
+  color: #fed7aa;
 }
 
-.education-badge--light::before {
-  background: #818cf8;
+.education-inner--future .education-badge::before {
+  background: #fb923c;
 }
 
 .education-body {
@@ -1483,6 +1491,10 @@ img {
   color: #a5b4fc;
 }
 
+.education-inner--future .education-highlights li::before {
+  color: #fed7aa;
+}
+
 .education-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1498,6 +1510,10 @@ img {
   border: 1px solid rgba(191, 219, 254, 0.85);
   color: #e5e7eb;
   background: rgba(15, 23, 42, 0.75);
+}
+
+.education-inner--future .education-tag {
+  border-color: rgba(251, 146, 60, 0.8);
 }
 
 @media (max-width: 768px) {
