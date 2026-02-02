@@ -19,6 +19,8 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
 </head>
 
 <body>
@@ -106,6 +108,9 @@
             Je conçois des expériences numériques pour faciliter la vie des autres.
             Découvrez mon univers&nbsp;!
           </p>
+          <div class="col-12 col-md-5 d-none d-md-block">
+            <div id="figma-orbit-container" aria-hidden="true"></div>
+          </div>
 
           <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
             <a href="#projects" class="btn-link-reset">Voir mes projets</a>
@@ -115,427 +120,428 @@
     </div>
   </section>
 
-<!-- PROJETS -->
-<section class="projects-cv py-5" id="projects" aria-labelledby="projects-title">
-  <div class="container">
-    <div class="heading text-center mb-4">
-      <h2 id="projects-title">Projets</h2>
+  <!-- PROJETS -->
+  <section class="projects-cv py-5" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="heading text-center mb-4">
+        <h2 id="projects-title">Projets</h2>
+      </div>
+
+      <!-- Filtres -->
+      <div class="portfolio-filters" aria-label="Filtrer les projets par thématique">
+        <button class="filter-btn active" data-filter="all">TOUT</button>
+        <button class="filter-btn" data-filter="web">WEB DESIGNER</button>
+        <button class="filter-btn" data-filter="graphisme">GRAPHISTE</button>
+        <button class="filter-btn" data-filter="comm">COMMUNICANT</button>
+      </div>
+      <p id="portfolio-empty-msg" class="text-muted mt-2" style="display:none;">
+        Les projets de cette thématique sont en cours d’ajout. Revenez bientôt&nbsp;!
+      </p>
+
+      <!-- Projet ORANGE -->
+      <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
+        <div class="year-badge">2025</div>
+        <div class="project-cv-header-row">
+          <div class="project-cv-header-left">
+            <div class="project-cv-logo">
+              <img src="images/icons/Orange_logo.svg" alt="Logo Orange Innovation" />
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
+            </div>
+            <div>
+              <!-- tags/mots-clés -->
+              <div class="project-tags">
+                <span class="project-tag">UX Research</span>
+                <span class="project-tag">Parcours infirmier</span>
+                <span class="project-tag">IA</span>
+              </div>
+
+              <h3 class="project-cv-title">
+                <a href="projet-orange.html" class="project-link">
+                  Workshop « Future Deskless Worker »
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                ORANGE INNOVATION – Intégration de l'IA dans un métier de soins « deskless »
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                cadrer comment l’IA peut soulager les tâches administratives d’une infirmière
+                sans dégrader la qualité de la relation patient.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                chef de projet suite au départ d'un collègue et designer UX/UI référent.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                réalisation d’un entretien utilisateur avec une infirmière, conception d’une User Journey Map détaillée
+                du parcours de soin, priorisation des pain points critiques, définition de scénarios d’assistance IA
+                et mise en forme des supports de présentation pour le pitch destiné à Orange Innovation.
+              </p>
+              <p class="project-tools">
+                <span class="project-label">Outils&nbsp;:</span>
+                <img src="images/icons/word.svg" alt="Word" />
+                <img src="images/icons/figma.svg" alt="Figma" />
+                <img src="images/icons/Miro.svg" alt="Miro" />
+              </p>
+              <p>
+                <a class="link"
+                  href="https://drive.google.com/file/d/1kzrBe3sPZoWM06IcfhoP2hi4AZ9XEysx/view?usp=sharing"
+                  target="_blank" rel="noopener noreferrer">
+                  Voir le dossier de la phase 1
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="project-cv-header-right">
+            <img src="images/projets/PDG_Orange.jpg" class="project-screenshot project-zoom-img"
+              alt="Aperçu du workshop Future Deskless Worker" />
+          </div>
+        </div>
+      </article>
+
+      <!-- LocFit -->
+      <article class="project-cv-card" data-category="web" data-aos="fade-up">
+        <div class="year-badge">2024</div>
+        <div class="project-cv-header-row">
+          <div class="project-cv-header-left">
+            <div class="project-cv-logo">
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
+            </div>
+            <div>
+              <div class="project-tags">
+                <span class="project-tag">UI Design</span>
+                <span class="project-tag">Design system</span>
+                <span class="project-tag">Parcours e‑commerce</span>
+              </div>
+
+              <h3 class="project-cv-title">
+                <a href="projet-locfit.html" class="project-link">
+                  LocFit – Site de location de matériel sportif
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                Parcours de location & design system
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                permettre à un utilisateur peu à l’aise avec le numérique de réserver un équipement sportif
+                en 3–4 clics via un parcours fluide et rassurant.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                designer UX/UI et développeur front / back.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                modélisation des user flows (utilisateur, agent, admin), conception et documentation d’un design system
+                Figma, réalisation de maquettes responsive pour le parcours catalogue → panier → paiement,
+                puis intégration front-end et mise en place de la logique back-end.
+              </p>
+              <p class="project-tools">
+                <span class="project-label">Outils&nbsp;:</span>
+                <img src="images/icons/figma.svg" alt="Figma" />
+                <img src="images/icons/html.svg" alt="HTML" />
+                <img src="images/icons/css.svg" alt="CSS" />
+                <img src="images/icons/javascript.svg" alt="JavaScript" />
+                <img src="images/icons/github_desktop.svg" alt="Github Desktop" />
+              </p>
+              <p>
+                <a class="link"
+                  href="https://www.figma.com/design/gLr5CgE8RDcmEh968Gb0VF/SA%C3%89-3.UX-01?node-id=0-1&t=Fe9XokD2jZz5Amnw-1"
+                  target="_blank" rel="noopener noreferrer">
+                  Voir le Figma
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="project-cv-header-right">
+            <img src="images/projets/Mockup_LocFit.jpg" class="project-screenshot project-zoom-img"
+              alt="Mockup LocFit" />
+          </div>
+        </div>
+      </article>
+
+      <!-- KeySwitch -->
+      <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
+        <div class="year-badge">2025</div>
+        <div class="project-cv-header-row">
+          <div class="project-cv-header-left">
+            <div class="project-cv-logo">
+              <img src="images/icons/mmi.svg" alt="Logo MMI" />
+            </div>
+            <div>
+              <div class="project-tags">
+                <span class="project-tag">E‑commerce</span>
+                <span class="project-tag">UX de conversion</span>
+              </div>
+
+              <h3 class="project-cv-title">
+                <a href="projet-keyswitch.html" class="project-link">
+                  KeySwitch – Le clavier custom, tout simplement
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                Webmarketing – E‑commerce
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                imaginer une marque e‑commerce dédiée aux claviers mécaniques custom
+                pour francophones, avec un configurateur simple et rassurant.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                définir le positionnement UX et l’architecture des pages clés.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                réalisation d’une veille UX/UI sur les configurateurs produits,
+                construction de l’univers de marque, conception du flux de configuration
+                et définition de la structure des pages (landing, catalogue, fiche produit)
+                en cohérence avec les objectifs marketing.
+              </p>
+              <p class="project-tools">
+                <span class="project-label">Outils&nbsp;:</span>
+                <img src="images/icons/figma.svg" alt="Figma" />
+                <img src="images/icons/prestashop.svg" alt="Prestashop" />
+                <img src="images/icons/excel.svg" alt="Excel" />
+              </p>
+              <p>
+                <a class="link"
+                  href="https://www.figma.com/design/Ydjh1xcgi8nja8PrUtjL5Z/R5.06?node-id=106-2&t=T27T4foWbvjPJiWZ-1"
+                  target="_blank" rel="noopener noreferrer">
+                  Voir le Figma (en cours)
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="project-cv-header-right">
+            <img src="images/projets/Mockup_KeySwitch.jpg" class="project-screenshot project-zoom-img"
+              alt="Mockup KeySwitch" />
+          </div>
+        </div>
+      </article>
+
+      <!-- La Roche-Jagu -->
+      <article class="project-cv-card" data-category="web graphisme" data-aos="fade-up">
+        <div class="year-badge">2025</div>
+        <div class="project-cv-header-row">
+          <div class="project-cv-header-left">
+            <div class="project-cv-logo">
+              <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
+              <img src="images/icons/cotesdarmor.svg" alt="Logo Côtes d'Armor" />
+            </div>
+            <div>
+              <div class="project-tags">
+                <span class="project-tag">Signalétique</span>
+                <span class="project-tag">Parcours visiteur</span>
+              </div>
+
+              <h3 class="project-cv-title">
+                <a href="projet-la-roche-jagu.html" class="project-link">
+                  Signalétique biomimétique du Domaine de la Roche‑Jagu
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                Projet UX/UI & graphisme – Parc naturel départemental (en cours)
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                Réaliser un dispositif intéractif permettant d'innover la signalétique du domaine pour guider les
+                visiteurs
+                tout en respectant le paysage et l’ambiance du site.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                imaginer l’aspect visuel et l’ergonomie du dispositif.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                co-conception du dispositif intéractif (maquette figma)
+              </p>
+              <p class="project-tools">
+                <span class="project-label">Outils&nbsp;:</span>
+                <img src="images/icons/figma.svg" alt="Figma" />
+              </p>
+              <p>
+                <a class="link"
+                  href="https://www.figma.com/design/M53fPhObzDKEikfsJLogZH/Moodboard-et-maquettes-ui-ux?node-id=0-1&t=N5bpibmqC1p5zZSI-1"
+                  target="_blank" rel="noopener noreferrer">
+                  Voir le Figma (en cours)
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="project-cv-header-right">
+            <img src="images/projets/Mockup_LaRocheJagu.jpg" class="project-screenshot project-zoom-img"
+              alt="Mockup La Roche-Jagu" />
+          </div>
+        </div>
+      </article>
+
+      <!-- Datalogy SIDA -->
+      <article class="project-cv-card" data-category="graphisme comm" data-aos="fade-up">
+        <div class="year-badge">2025</div>
+        <div class="project-cv-header-row">
+          <div class="project-cv-header-left">
+            <div class="project-cv-logo">
+              <img src="images/icons/mmi.svg" alt="Logo MMI" />
+            </div>
+            <div>
+              <div class="project-tags">
+                <span class="project-tag">Dataviz</span>
+                <span class="project-tag">Santé publique</span>
+              </div>
+
+              <h3 class="project-cv-title">
+                <a href="projet-datalogy-sida.html" class="project-link">
+                  Dataviz – Enfants orphelins en raison du SIDA
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                Projet Datalogy – Visualisation pour la santé publique
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                rendre lisible et sensible la part d’enfants orphelins à cause du SIDA
+                en Afrique et en Europe, pour un public non expert.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                concevoir le dispositif visuel et la narration.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                conception du ruban central, direction du shooting photo, post‑production sous Illustrator,
+                structuration de la page de dataviz et optimisation de la lisibilité des légendes et des infobulles.
+              </p>
+              <p class="project-tools">
+                <span class="project-label">Outils&nbsp;:</span>
+                <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
+              </p>
+            </div>
+          </div>
+          <div class="project-cv-header-right">
+            <img src="images/projets/Datalogy_SIDA_SAE4ALT.png" class="project-screenshot project-zoom-img"
+              alt="Aperçu du projet Datalogy – SIDA" />
+          </div>
+        </div>
+      </article>
+
+      <!-- Datalogy obésité -->
+      <article class="project-cv-card" data-category="web" data-aos="fade-up">
+        <div class="year-badge">2025</div>
+        <div class="project-cv-header-row">
+          <div class="project-cv-header-left">
+            <div class="project-cv-logo">
+              <img src="images/icons/mmi.svg" alt="Logo MMI" />
+            </div>
+            <div>
+              <div class="project-tags">
+                <span class="project-tag">Dataviz</span>
+                <span class="project-tag">Interface web</span>
+              </div>
+
+              <h3 class="project-cv-title">
+                <a href="projet-datalogy-obesite.html" class="project-link">
+                  Dataviz – Taux de décès liés à l’obésité
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                Projet Datalogy – Interface de comparaison internationale
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                visualiser les taux de décès liés à l’obésité et permettre une comparaison rapide
+                entre plusieurs pays pour alimenter la prise de décision.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                concevoir et intégrer l’interface de datavisualisation.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                conception d’une représentation originale basée sur des données sourcées,
+                implémentation des graphiques en JavaScript, et réglage des interactions (hover, focus, filtres)
+                pour guider la lecture.
+              </p>
+              <p class="project-tools">
+                <span class="project-label">Outils&nbsp;:</span>
+                <img src="images/icons/javascript.svg" alt="JavaScript" />
+                <img src="images/icons/Chart.js_logo.svg" alt="Chart.js" />
+                <img src="images/icons/Logo_D3.svg" alt="D3.js" />
+              </p>
+            </div>
+          </div>
+          <div class="project-cv-header-right">
+            <img src="images/projets/Datalogy_Taux_Deces_Lies_Obesite_MMI_2B1-SAE_3.03.jpg"
+              class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – obésité" />
+          </div>
+        </div>
+      </article>
+
+      <!-- Datalogy immigration -->
+      <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
+        <div class="year-badge">2025</div>
+        <div class="project-cv-header-row">
+          <div class="project-cv-header-left">
+            <div class="project-cv-logo">
+              <img src="images/icons/mmi.svg" alt="Logo MMI" />
+            </div>
+            <div>
+              <div class="project-tags">
+                <span class="project-tag">Dataviz</span>
+                <span class="project-tag">Interface interactive</span>
+              </div>
+
+              <h3 class="project-cv-title">
+                <a href="projet-datalogy-immigration.html" class="project-link">
+                  Dataviz – Immigration en Europe
+                </a>
+              </h3>
+              <p class="project-cv-subtitle">
+                Interface de visualisation interactive – Projet universitaire
+              </p>
+
+              <p>
+                <span class="project-label">Objectifs&nbsp;:</span>
+                confronter perception et réalité de l’immigration en Europe via une interface
+                de visualisation accessible au grand public.
+              </p>
+              <p>
+                <span class="project-label">Rôle&nbsp;:</span>
+                concevoir l’interface et développer la datavisualisation.
+              </p>
+              <p>
+                <span class="project-label">Missions&nbsp;:</span>
+                conception de la carte interactive, du slider d’année et des graphiques,
+                orchestration de l’info‑box de synthèse par pays et réglage des micro‑interactions
+                pour faciliter l’exploration des données.
+              </p>
+              <p class="project-tools">
+                <span class="project-label">Outils&nbsp;:</span>
+                <img src="images/icons/javascript.svg" alt="JavaScript" />
+                <img src="images/icons/Chart.js_logo.svg" alt="Chart.js" />
+                <img src="images/icons/Logo_D3.svg" alt="D3.js" />
+              </p>
+            </div>
+          </div>
+          <div class="project-cv-header-right">
+            <img src="images/projets/Capture_Interface1.png" class="project-screenshot project-zoom-img"
+              alt="Aperçu du projet Datalogy – immigration" />
+          </div>
+        </div>
+      </article>
+
     </div>
-
-    <!-- Filtres -->
-    <div class="portfolio-filters" aria-label="Filtrer les projets par thématique">
-      <button class="filter-btn active" data-filter="all">TOUT</button>
-      <button class="filter-btn" data-filter="web">WEB DESIGNER</button>
-      <button class="filter-btn" data-filter="graphisme">GRAPHISTE</button>
-      <button class="filter-btn" data-filter="comm">COMMUNICANT</button>
-    </div>
-    <p id="portfolio-empty-msg" class="text-muted mt-2" style="display:none;">
-      Les projets de cette thématique sont en cours d’ajout. Revenez bientôt&nbsp;!
-    </p>
-
-    <!-- Projet ORANGE -->
-    <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
-      <div class="year-badge">2025</div>
-      <div class="project-cv-header-row">
-        <div class="project-cv-header-left">
-          <div class="project-cv-logo">
-            <img src="images/icons/Orange_logo.svg" alt="Logo Orange Innovation" />
-            <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
-          </div>
-          <div>
-            <!-- tags/mots-clés -->
-            <div class="project-tags">
-              <span class="project-tag">UX Research</span>
-              <span class="project-tag">Parcours infirmier</span>
-              <span class="project-tag">IA</span>
-            </div>
-
-            <h3 class="project-cv-title">
-              <a href="projet-orange.html" class="project-link">
-                Workshop « Future Deskless Worker »
-              </a>
-            </h3>
-            <p class="project-cv-subtitle">
-              ORANGE INNOVATION – Intégration de l'IA dans un métier de soins « deskless »
-            </p>
-
-            <p>
-              <span class="project-label">Objectifs&nbsp;:</span>
-              cadrer comment l’IA peut soulager les tâches administratives d’une infirmière
-              sans dégrader la qualité de la relation patient.
-            </p>
-            <p>
-              <span class="project-label">Rôle&nbsp;:</span>
-              chef de projet suite au départ d'un collègue et designer UX/UI référent.
-            </p>
-            <p>
-              <span class="project-label">Missions&nbsp;:</span>
-              réalisation d’un entretien utilisateur avec une infirmière, conception d’une User Journey Map détaillée
-              du parcours de soin, priorisation des pain points critiques, définition de scénarios d’assistance IA
-              et mise en forme des supports de présentation pour le pitch destiné à Orange Innovation.
-            </p>
-            <p class="project-tools">
-              <span class="project-label">Outils&nbsp;:</span>
-              <img src="images/icons/word.svg" alt="Word" />
-              <img src="images/icons/figma.svg" alt="Figma" />
-              <img src="images/icons/Miro.svg" alt="Miro" />
-            </p>
-            <p>
-              <a class="link"
-                href="https://drive.google.com/file/d/1kzrBe3sPZoWM06IcfhoP2hi4AZ9XEysx/view?usp=sharing"
-                target="_blank" rel="noopener noreferrer">
-                Voir le dossier de la phase 1
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="project-cv-header-right">
-          <img src="images/projets/PDG_Orange.jpg" class="project-screenshot project-zoom-img"
-            alt="Aperçu du workshop Future Deskless Worker" />
-        </div>
-      </div>
-    </article>
-
-    <!-- LocFit -->
-    <article class="project-cv-card" data-category="web" data-aos="fade-up">
-      <div class="year-badge">2024</div>
-      <div class="project-cv-header-row">
-        <div class="project-cv-header-left">
-          <div class="project-cv-logo">
-            <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion MMI" />
-          </div>
-          <div>
-            <div class="project-tags">
-              <span class="project-tag">UI Design</span>
-              <span class="project-tag">Design system</span>
-              <span class="project-tag">Parcours e‑commerce</span>
-            </div>
-
-            <h3 class="project-cv-title">
-              <a href="projet-locfit.html" class="project-link">
-                LocFit – Site de location de matériel sportif
-              </a>
-            </h3>
-            <p class="project-cv-subtitle">
-              Parcours de location & design system
-            </p>
-
-            <p>
-              <span class="project-label">Objectifs&nbsp;:</span>
-              permettre à un utilisateur peu à l’aise avec le numérique de réserver un équipement sportif
-              en 3–4 clics via un parcours fluide et rassurant.
-            </p>
-            <p>
-              <span class="project-label">Rôle&nbsp;:</span>
-              designer UX/UI et développeur front / back.
-            </p>
-            <p>
-              <span class="project-label">Missions&nbsp;:</span>
-              modélisation des user flows (utilisateur, agent, admin), conception et documentation d’un design system
-              Figma, réalisation de maquettes responsive pour le parcours catalogue → panier → paiement,
-              puis intégration front-end et mise en place de la logique back-end.
-            </p>
-            <p class="project-tools">
-              <span class="project-label">Outils&nbsp;:</span>
-              <img src="images/icons/figma.svg" alt="Figma" />
-              <img src="images/icons/html.svg" alt="HTML" />
-              <img src="images/icons/css.svg" alt="CSS" />
-              <img src="images/icons/javascript.svg" alt="JavaScript" />
-              <img src="images/icons/github_desktop.svg" alt="Github Desktop" />
-            </p>
-            <p>
-              <a class="link"
-                href="https://www.figma.com/design/gLr5CgE8RDcmEh968Gb0VF/SA%C3%89-3.UX-01?node-id=0-1&t=Fe9XokD2jZz5Amnw-1"
-                target="_blank" rel="noopener noreferrer">
-                Voir le Figma
-              </a>
-            </p>
-          </div>
-        </div>
-        <div class="project-cv-header-right">
-          <img src="images/projets/Mockup_LocFit.jpg" class="project-screenshot project-zoom-img"
-            alt="Mockup LocFit" />
-        </div>
-      </div>
-    </article>
-
-    <!-- KeySwitch -->
-    <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
-      <div class="year-badge">2025</div>
-      <div class="project-cv-header-row">
-        <div class="project-cv-header-left">
-          <div class="project-cv-logo">
-            <img src="images/icons/mmi.svg" alt="Logo MMI" />
-          </div>
-          <div>
-            <div class="project-tags">
-              <span class="project-tag">E‑commerce</span>
-              <span class="project-tag">UX de conversion</span>
-            </div>
-
-            <h3 class="project-cv-title">
-              <a href="projet-keyswitch.html" class="project-link">
-                KeySwitch – Le clavier custom, tout simplement
-              </a>
-            </h3>
-            <p class="project-cv-subtitle">
-              Webmarketing – E‑commerce
-            </p>
-
-            <p>
-              <span class="project-label">Objectifs&nbsp;:</span>
-              imaginer une marque e‑commerce dédiée aux claviers mécaniques custom
-              pour francophones, avec un configurateur simple et rassurant.
-            </p>
-            <p>
-              <span class="project-label">Rôle&nbsp;:</span>
-              définir le positionnement UX et l’architecture des pages clés.
-            </p>
-            <p>
-              <span class="project-label">Missions&nbsp;:</span>
-              réalisation d’une veille UX/UI sur les configurateurs produits,
-              construction de l’univers de marque, conception du flux de configuration
-              et définition de la structure des pages (landing, catalogue, fiche produit)
-              en cohérence avec les objectifs marketing.
-            </p>
-            <p class="project-tools">
-              <span class="project-label">Outils&nbsp;:</span>
-              <img src="images/icons/figma.svg" alt="Figma" />
-              <img src="images/icons/prestashop.svg" alt="Prestashop" />
-              <img src="images/icons/excel.svg" alt="Excel" />
-            </p>
-            <p>
-              <a class="link"
-                href="https://www.figma.com/design/Ydjh1xcgi8nja8PrUtjL5Z/R5.06?node-id=106-2&t=T27T4foWbvjPJiWZ-1"
-                target="_blank" rel="noopener noreferrer">
-                Voir le Figma (en cours)
-              </a>
-            </p>
-          </div>
-        </div>
-        <div class="project-cv-header-right">
-          <img src="images/projets/Mockup_KeySwitch.jpg" class="project-screenshot project-zoom-img"
-            alt="Mockup KeySwitch" />
-        </div>
-      </div>
-    </article>
-
-    <!-- La Roche-Jagu -->
-    <article class="project-cv-card" data-category="web graphisme" data-aos="fade-up">
-      <div class="year-badge">2025</div>
-      <div class="project-cv-header-row">
-        <div class="project-cv-header-left">
-          <div class="project-cv-logo">
-            <img src="images/icons/mmi.svg" alt="Logo IUT de Lannion, Université de Rennes et MMI" />
-            <img src="images/icons/cotesdarmor.svg" alt="Logo Côtes d'Armor" />
-          </div>
-          <div>
-            <div class="project-tags">
-              <span class="project-tag">Signalétique</span>
-              <span class="project-tag">Parcours visiteur</span>
-            </div>
-
-            <h3 class="project-cv-title">
-              <a href="projet-la-roche-jagu.html" class="project-link">
-                Signalétique biomimétique du Domaine de la Roche‑Jagu
-              </a>
-            </h3>
-            <p class="project-cv-subtitle">
-              Projet UX/UI & graphisme – Parc naturel départemental (en cours)
-            </p>
-
-            <p>
-              <span class="project-label">Objectifs&nbsp;:</span>
-              Réaliser un dispositif intéractif permettant d'innover la signalétique du domaine pour guider les visiteurs
-              tout en respectant le paysage et l’ambiance du site.
-            </p>
-            <p>
-              <span class="project-label">Rôle&nbsp;:</span>
-              imaginer l’aspect visuel et l’ergonomie du dispositif.
-            </p>
-            <p>
-              <span class="project-label">Missions&nbsp;:</span>
-              co-conception du dispositif intéractif (maquette figma) 
-            </p>
-            <p class="project-tools">
-              <span class="project-label">Outils&nbsp;:</span>
-              <img src="images/icons/figma.svg" alt="Figma" />
-            </p>
-            <p>
-              <a class="link"
-                href="https://www.figma.com/design/M53fPhObzDKEikfsJLogZH/Moodboard-et-maquettes-ui-ux?node-id=0-1&t=N5bpibmqC1p5zZSI-1"
-                target="_blank" rel="noopener noreferrer">
-                Voir le Figma (en cours)
-              </a>
-            </p>
-          </div>
-        </div>
-        <div class="project-cv-header-right">
-          <img src="images/projets/Mockup_LaRocheJagu.jpg" class="project-screenshot project-zoom-img"
-            alt="Mockup La Roche-Jagu" />
-        </div>
-      </div>
-    </article>
-
-    <!-- Datalogy SIDA -->
-    <article class="project-cv-card" data-category="graphisme comm" data-aos="fade-up">
-      <div class="year-badge">2025</div>
-      <div class="project-cv-header-row">
-        <div class="project-cv-header-left">
-          <div class="project-cv-logo">
-            <img src="images/icons/mmi.svg" alt="Logo MMI" />
-          </div>
-          <div>
-            <div class="project-tags">
-              <span class="project-tag">Dataviz</span>
-              <span class="project-tag">Santé publique</span>
-            </div>
-
-            <h3 class="project-cv-title">
-              <a href="projet-datalogy-sida.html" class="project-link">
-                Dataviz – Enfants orphelins en raison du SIDA
-              </a>
-            </h3>
-            <p class="project-cv-subtitle">
-              Projet Datalogy – Visualisation pour la santé publique
-            </p>
-
-            <p>
-              <span class="project-label">Objectifs&nbsp;:</span>
-              rendre lisible et sensible la part d’enfants orphelins à cause du SIDA
-              en Afrique et en Europe, pour un public non expert.
-            </p>
-            <p>
-              <span class="project-label">Rôle&nbsp;:</span>
-              concevoir le dispositif visuel et la narration.
-            </p>
-            <p>
-              <span class="project-label">Missions&nbsp;:</span>
-              conception du ruban central, direction du shooting photo, post‑production sous Illustrator,
-              structuration de la page de dataviz et optimisation de la lisibilité des légendes et des infobulles.
-            </p>
-            <p class="project-tools">
-              <span class="project-label">Outils&nbsp;:</span>
-              <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
-            </p>
-          </div>
-        </div>
-        <div class="project-cv-header-right">
-          <img src="images/projets/Datalogy_SIDA_SAE4ALT.png" class="project-screenshot project-zoom-img"
-            alt="Aperçu du projet Datalogy – SIDA" />
-        </div>
-      </div>
-    </article>
-
-    <!-- Datalogy obésité -->
-    <article class="project-cv-card" data-category="web" data-aos="fade-up">
-      <div class="year-badge">2025</div>
-      <div class="project-cv-header-row">
-        <div class="project-cv-header-left">
-          <div class="project-cv-logo">
-            <img src="images/icons/mmi.svg" alt="Logo MMI" />
-          </div>
-          <div>
-            <div class="project-tags">
-              <span class="project-tag">Dataviz</span>
-              <span class="project-tag">Interface web</span>
-            </div>
-
-            <h3 class="project-cv-title">
-              <a href="projet-datalogy-obesite.html" class="project-link">
-                Dataviz – Taux de décès liés à l’obésité
-              </a>
-            </h3>
-            <p class="project-cv-subtitle">
-              Projet Datalogy – Interface de comparaison internationale
-            </p>
-
-            <p>
-              <span class="project-label">Objectifs&nbsp;:</span>
-              visualiser les taux de décès liés à l’obésité et permettre une comparaison rapide
-              entre plusieurs pays pour alimenter la prise de décision.
-            </p>
-            <p>
-              <span class="project-label">Rôle&nbsp;:</span>
-              concevoir et intégrer l’interface de datavisualisation.
-            </p>
-            <p>
-              <span class="project-label">Missions&nbsp;:</span>
-              conception d’une représentation originale basée sur des données sourcées,
-              implémentation des graphiques en JavaScript, et réglage des interactions (hover, focus, filtres)
-              pour guider la lecture.
-            </p>
-            <p class="project-tools">
-              <span class="project-label">Outils&nbsp;:</span>
-              <img src="images/icons/javascript.svg" alt="JavaScript" />
-              <img src="images/icons/Chart.js_logo.svg" alt="Chart.js" />
-              <img src="images/icons/Logo_D3.svg" alt="D3.js" />
-            </p>
-          </div>
-        </div>
-        <div class="project-cv-header-right">
-          <img src="images/projets/Datalogy_Taux_Deces_Lies_Obesite_MMI_2B1-SAE_3.03.jpg"
-            class="project-screenshot project-zoom-img" alt="Aperçu du projet Datalogy – obésité" />
-        </div>
-      </div>
-    </article>
-
-    <!-- Datalogy immigration -->
-    <article class="project-cv-card" data-category="web comm" data-aos="fade-up">
-      <div class="year-badge">2025</div>
-      <div class="project-cv-header-row">
-        <div class="project-cv-header-left">
-          <div class="project-cv-logo">
-            <img src="images/icons/mmi.svg" alt="Logo MMI" />
-          </div>
-          <div>
-            <div class="project-tags">
-              <span class="project-tag">Dataviz</span>
-              <span class="project-tag">Interface interactive</span>
-            </div>
-
-            <h3 class="project-cv-title">
-              <a href="projet-datalogy-immigration.html" class="project-link">
-                Dataviz – Immigration en Europe
-              </a>
-            </h3>
-            <p class="project-cv-subtitle">
-              Interface de visualisation interactive – Projet universitaire
-            </p>
-
-            <p>
-              <span class="project-label">Objectifs&nbsp;:</span>
-              confronter perception et réalité de l’immigration en Europe via une interface
-              de visualisation accessible au grand public.
-            </p>
-            <p>
-              <span class="project-label">Rôle&nbsp;:</span>
-              concevoir l’interface et développer la datavisualisation.
-            </p>
-            <p>
-              <span class="project-label">Missions&nbsp;:</span>
-              conception de la carte interactive, du slider d’année et des graphiques,
-              orchestration de l’info‑box de synthèse par pays et réglage des micro‑interactions
-              pour faciliter l’exploration des données.
-            </p>
-            <p class="project-tools">
-              <span class="project-label">Outils&nbsp;:</span>
-              <img src="images/icons/javascript.svg" alt="JavaScript" />
-              <img src="images/icons/Chart.js_logo.svg" alt="Chart.js" />
-              <img src="images/icons/Logo_D3.svg" alt="D3.js" />
-            </p>
-          </div>
-        </div>
-        <div class="project-cv-header-right">
-          <img src="images/projets/Capture_Interface1.png" class="project-screenshot project-zoom-img"
-            alt="Aperçu du projet Datalogy – immigration" />
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
+  </section>
 
 
   <section class="experience py-5" id="experience" aria-labelledby="exp-title">
@@ -829,127 +835,131 @@
     </div>
   </section>
 
-<section class="education py-5" id="education" aria-labelledby="edu-title">
-  <div class="container">
-    <div class="heading text-center mb-4">
-      <h2 id="edu-title">Formations</h2>
-      <p class="text-muted">
-        Ce que j’ai construit jusqu’au BUT MMI, et comment je souhaite prolonger ce parcours en master, en alternance.
-      </p>
+  <section class="education py-5" id="education" aria-labelledby="edu-title">
+    <div class="container">
+      <div class="heading text-center mb-4">
+        <h2 id="edu-title">Formations</h2>
+        <p class="text-muted">
+          Ce que j’ai construit jusqu’au BUT MMI, et comment je souhaite prolonger ce parcours en master, en alternance.
+        </p>
+      </div>
+
+      <div class="row justify-content-center px-2 px-md-4 education-grid" data-aos="fade-up">
+
+        <!-- BUT MMI – réalisé -->
+        <article class="education-card col-12 col-lg-4 mb-4">
+          <div class="education-inner">
+            <div class="education-header">
+              <div class="extra-exp-logo">
+                <img src="images/icons/yellovillage.svg" alt="Yelloh Village" />
+              </div>
+              <div class="education-meta">
+                <span class="education-date">2023 – 2026</span>
+                <span class="education-badge">Diplôme en cours</span>
+              </div>
+            </div>
+
+            <div class="education-body">
+              <h3 class="education-title">BUT MMI – Parcours Stratégie & UX</h3>
+              <p class="education-school">IUT de Lannion – Université de Rennes</p>
+              <p class="education-desc">
+                Formation où j’ai structuré mon profil de designer UX/UI : recherche utilisateur, maquettes Figma,
+                datavisualisation, prototypage et gestion de projets web orientés usages.
+              </p>
+              <ul class="education-highlights">
+                <li>Construction d’un socle solide en UX/UI et en design d’interfaces.</li>
+                <li>Premières expériences dans la santé (dataviz, workshop Orange)</li>
+                <li>Habitude de travailler en mode projet avec des contraintes réelles et des partenaires.</li>
+              </ul>
+              <div class="education-tags">
+                <span class="education-tag">Parcours réalisé</span>
+                <span class="education-tag">UX / UI</span>
+                <span class="education-tag">Projet web</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Plan A : Cycle master Media Design – projet d’intégration après Bac+3 -->
+        <article class="education-card col-12 col-lg-4 mb-4">
+          <div class="education-inner education-inner--future">
+            <div class="education-header">
+              <div class="education-logo">
+                <img src="images/icons/logo_ledna_media.jpeg"
+                  alt="L’École de design Nantes Atlantique – Media Design" />
+              </div>
+              <div class="education-meta">
+                <span class="education-date">Plan A</span>
+                <span class="education-badge education-badge--light">Candidature 2026–2027</span>
+              </div>
+            </div>
+
+            <div class="education-body">
+              <h3 class="education-title">Intégrer le cycle master Media Design</h3>
+              <p class="education-school">L’École de design Nantes Atlantique – Nantes</p>
+              <p class="education-desc">
+                Après mon Bac +3, je vise ce cycle master pour ancrer mon profil de designer UX/UI dans les enjeux
+                d’information, de médiation et de narration interactive, en alternance.
+              </p>
+              <ul class="education-highlights">
+                <li>Mobiliser mon expérience en datavisualisation pour concevoir des dispositifs interactifs
+                  au service de la compréhension.</li>
+                <li>Développer une approche plus critique du numérique et de l’UX, en lien avec les grands enjeux de
+                  société.</li>
+                <li>Renforcer mon expérience en alternance sur 4e et 5e année, avec une intégration progressive en tant
+                  que
+                  designer produit / UX dans une structure.</li>
+              </ul>
+              <div class="education-tags">
+                <span class="education-tag">Poursuite en alternance</span>
+                <span class="education-tag">Media / UX</span>
+                <span class="education-tag">Après Bac +3</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Plan B : Master Sorbonne – projet d’intégration après Bac+3 -->
+        <article class="education-card col-12 col-lg-4 mb-4">
+          <div class="education-inner education-inner--future">
+            <div class="education-header">
+              <div class="education-logo">
+                <img src="images/icons/Logo_of_Sorbonne_University.svg" alt="Sorbonne Université" />
+              </div>
+              <div class="education-meta">
+                <span class="education-date">Plan B</span>
+                <span class="education-badge education-badge--light">Candidature 2026–2027</span>
+              </div>
+            </div>
+
+            <div class="education-body">
+              <h3 class="education-title">Préparer un Master Création Numérique</h3>
+              <p class="education-school">Sorbonne Université - Paris</p>
+              <p class="education-desc">
+                En alternative, je vise un master orienté design d’interfaces pour approfondir l’ergonomie,
+                l’accessibilité et le design d’expérience sur des produits digitaux complexes.
+              </p>
+              <ul class="education-highlights">
+                <li>Capitaliser sur mon expérience en UI design (design system, maquettes responsive) pour monter en
+                  expertise sur l’interface et le détail d’interaction.</li>
+                <li>Élargir mes compétences à des projets d’envergure (applications, services) en environnement
+                  académique exigeant.</li>
+                <li>Préparer une insertion professionnelle comme designer UX/UI en consolidant méthodologie, culture
+                  design
+                  et travail d’équipe sur 4e et 5e année.</li>
+              </ul>
+              <div class="education-tags">
+                <span class="education-tag">Poursuite possible</span>
+                <span class="education-tag">Design d’interface</span>
+                <span class="education-tag">Après Bac +3</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
-
-    <div class="row justify-content-center px-2 px-md-4 education-grid" data-aos="fade-up">
-
-      <!-- BUT MMI – réalisé -->
-      <article class="education-card col-12 col-lg-4 mb-4">
-        <div class="education-inner">
-          <div class="education-header">
-            <div class="extra-exp-logo">
-              <img src="images/icons/yellovillage.svg" alt="Yelloh Village" />
-            </div>
-            <div class="education-meta">
-              <span class="education-date">2023 – 2026</span>
-              <span class="education-badge">Diplôme en cours</span>
-            </div>
-          </div>
-
-          <div class="education-body">
-            <h3 class="education-title">BUT MMI – Parcours Stratégie & UX</h3>
-            <p class="education-school">IUT de Lannion – Université de Rennes</p>
-            <p class="education-desc">
-              Formation où j’ai structuré mon profil de designer UX/UI : recherche utilisateur, maquettes Figma,
-              datavisualisation, prototypage et gestion de projets web orientés usages.
-            </p>
-            <ul class="education-highlights">
-              <li>Construction d’un socle solide en UX/UI et en design d’interfaces.</li>
-              <li>Premières expériences dans la santé (dataviz, workshop Orange)</li>
-              <li>Habitude de travailler en mode projet avec des contraintes réelles et des partenaires.</li>
-            </ul>
-            <div class="education-tags">
-              <span class="education-tag">Parcours réalisé</span>
-              <span class="education-tag">UX / UI</span>
-              <span class="education-tag">Projet web</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Plan A : Cycle master Media Design – projet d’intégration après Bac+3 -->
-      <article class="education-card col-12 col-lg-4 mb-4">
-        <div class="education-inner education-inner--future">
-          <div class="education-header">
-            <div class="education-logo">
-              <img src="images/icons/logo_ledna_media.jpeg"
-                alt="L’École de design Nantes Atlantique – Media Design" />
-            </div>
-            <div class="education-meta">
-              <span class="education-date">Plan A</span>
-              <span class="education-badge education-badge--light">Candidature 2026–2027</span>
-            </div>
-          </div>
-
-          <div class="education-body">
-            <h3 class="education-title">Intégrer le cycle master Media Design</h3>
-            <p class="education-school">L’École de design Nantes Atlantique – Nantes</p>
-            <p class="education-desc">
-              Après mon Bac +3, je vise ce cycle master pour ancrer mon profil de designer UX/UI dans les enjeux
-              d’information, de médiation et de narration interactive, en alternance.
-            </p>
-            <ul class="education-highlights">
-              <li>Mobiliser mon expérience en datavisualisation pour concevoir des dispositifs interactifs
-                au service de la compréhension.</li>
-              <li>Développer une approche plus critique du numérique et de l’UX, en lien avec les grands enjeux de société.</li>
-              <li>Renforcer mon expérience en alternance sur 4e et 5e année, avec une intégration progressive en tant que
-                designer produit / UX dans une structure.</li>
-            </ul>
-            <div class="education-tags">
-              <span class="education-tag">Poursuite en alternance</span>
-              <span class="education-tag">Media / UX</span>
-              <span class="education-tag">Après Bac +3</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Plan B : Master Sorbonne – projet d’intégration après Bac+3 -->
-      <article class="education-card col-12 col-lg-4 mb-4">
-        <div class="education-inner education-inner--future">
-          <div class="education-header">
-            <div class="education-logo">
-              <img src="images/icons/Logo_of_Sorbonne_University.svg" alt="Sorbonne Université" />
-            </div>
-            <div class="education-meta">
-              <span class="education-date">Plan B</span>
-              <span class="education-badge education-badge--light">Candidature 2026–2027</span>
-            </div>
-          </div>
-
-          <div class="education-body">
-            <h3 class="education-title">Préparer un Master Création Numérique</h3>
-            <p class="education-school">Sorbonne Université - Paris</p>
-            <p class="education-desc">
-              En alternative, je vise un master orienté design d’interfaces pour approfondir l’ergonomie,
-              l’accessibilité et le design d’expérience sur des produits digitaux complexes.
-            </p>
-            <ul class="education-highlights">
-              <li>Capitaliser sur mon expérience en UI design (design system, maquettes responsive) pour monter en
-                expertise sur l’interface et le détail d’interaction.</li>
-              <li>Élargir mes compétences à des projets d’envergure (applications, services) en environnement académique exigeant.</li>
-              <li>Préparer une insertion professionnelle comme designer UX/UI en consolidant méthodologie, culture design
-                et travail d’équipe sur 4e et 5e année.</li>
-            </ul>
-            <div class="education-tags">
-              <span class="education-tag">Poursuite possible</span>
-              <span class="education-tag">Design d’interface</span>
-              <span class="education-tag">Après Bac +3</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
+  </section>
   <!-- CONTACT -->
   <section class="contact py-5" id="contact" aria-labelledby="contact-title">
     <div class="container">
