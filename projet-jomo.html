@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOMO – Tests utilisateurs & protocole | Karim EL HADEDI</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+</head>
+<body>
+  <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm"
+    aria-label="Navigation principale">
+    <div class="container-fluid px-4 px-md-5">
+
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold fs-2 brand-title" href="#home">Portfolio</a>
+
+      <!-- Menu (centre) -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav gap-4" style="font-size: 1.05rem">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#experience">Expériences</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#skills">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#education">Formations</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne droite : CV + LinkedIn + burger -->
+      <div class="nav-right-wrapper d-flex align-items-center ms-auto">
+        <div class="nav-right-actions d-flex align-items-center me-2">
+          <button class="c-btn-outline h-btn rounded-pill me-2">
+            <a href="images/cv/CV_Karim_Elhadedi_Stagiaire_2026.pdf" download="Karim_ELHADEDI_CV"
+              class="btn-link-reset">
+              CV
+            </a>
+          </button>
+          <button class="rounded-pill linkedin navbar-linkedin" aria-label="Profil LinkedIn de Karim EL HADEDI"
+            onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')">
+            <i class="bi bi-linkedin"></i>
+          </button>
+        </div>
+
+        <button class="navbar-toggler nav-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <header class="py-4 border-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html#projects" class="link d-inline-flex align-items-center">
+        <i class="bi bi-arrow-left me-2"></i> Retour aux projets
+      </a>
+      <span class="text-muted">BUT MMI – Design Expérience</span>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+
+      <!-- INTRO -->
+      <section class="mb-4">
+        <h1>JOMO – Tests utilisateurs &amp; protocole (en cours)</h1>
+        <p class="text-muted">
+          Protocole de tests utilisateurs pour l’application JOMO, une app de gestion du temps d’écran,
+          réalisé dans le cadre du cours de Design Expérience à l’IUT de Lannion.
+        </p>
+      </section>
+
+      <!-- APERÇU VISUEL -->
+      <section class="mb-4">
+        <figure class="project-figure">
+          <img src="images/projets/Mockup_JOMO.jpg"
+               class="img-fluid rounded-3 shadow-sm"
+               alt="Mockup présentant le protocole de tests utilisateurs JOMO" />
+          <figcaption class="text-muted mt-2">
+            Tests utilisateurs JOMO – panel d’étudiants, scénarios réalistes et questionnaire SUS.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- CONTEXTE & OBJECTIFS -->
+      <section class="mb-4">
+        <h2>Contexte &amp; objectifs</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Présentation de l’application</h3>
+            <ul>
+              <li>JOMO est une application de <strong>temps d’écran</strong> disponible sur iPhone, iPad (iOS) et Mac (macOS).</li>
+              <li>Elle aide les utilisateurs à mieux gérer leur relation aux écrans via des <strong>règles de blocage</strong> temporaires.</li>
+              <li>L’app propose différentes “règles” pour limiter l’accès à certaines applications distrayantes.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3>Problématique &amp; objectifs</h3>
+            <ul>
+              <li>Étude réalisée dans le cadre du cours de <strong>Design Expérience</strong> (IUT de Lannion).</li>
+              <li>Objectif : évaluer l’<strong>expérience utilisateur</strong> de JOMO (ergonomie, compréhension, ressenti).</li>
+              <li>Identifier les <strong>points forts</strong> et les <strong>axes d’amélioration</strong> (gestion du temps d’écran, compréhension des règles).</li>
+              <li>Période de l’étude : du <strong>26 janvier 2026</strong> au <strong>6 mars 2026</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MÉTHODE -->
+      <section class="mb-4">
+        <h2>Méthode & déroulé des tests</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Déroulement d’une séance</h3>
+            <ol>
+              <li>Accueil et <strong>présentation de l’étude</strong>.</li>
+              <li>Remplissage du <strong>questionnaire de profil</strong> (pré‑test).</li>
+              <li><strong>Passation des scénarios</strong> d’usage sur l’app JOMO.</li>
+              <li>Remplissage du <strong>questionnaire SUS</strong> et <strong>entretien de fin de test</strong>.</li>
+            </ol>
+            <p>
+              Chaque session dure environ <strong>30 minutes</strong>. Les participants sont invités à
+              <strong>verbaliser à voix haute</strong> leurs actions et leurs ressentis. Les tests sont
+              <strong>filmés</strong> pour analyser les réactions et verbalisations.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3>Équipement utilisé</h3>
+            <ul>
+              <li>Un smartphone <strong>iOS</strong> avec l’application JOMO installée.</li>
+              <li>Un ordinateur <strong>Mac</strong> si nécessaire pour certains usages.</li>
+              <li>Une <strong>connexion Internet</strong>.</li>
+              <li>Du matériel d’<strong>enregistrement audio/vidéo</strong> (caméra, micro).</li>
+            </ul>
+            <p>
+              L’objectif est de se rapprocher d’un <strong>usage réel</strong> tout en capturant les données nécessaires :
+              réussites/échecs, erreurs, difficultés, temps de réalisation, remarques.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL & PRÉ-TEST -->
+      <section class="mb-4">
+        <h2>Panel & questionnaire pré‑test</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Panel d’étudiants ciblés</h3>
+            <ul>
+              <li><strong>12 participants</strong>, étudiants de <strong>18 à 22 ans</strong>.</li>
+              <li>6 étudiants avec des <strong>devoirs / examens</strong> à préparer (besoin de concentration).</li>
+              <li>6 étudiants qui estiment passer <strong>trop de temps sur leur téléphone</strong> (réseaux sociaux, vidéos…).</li>
+              <li>Sexe varié pour diversifier les profils et les points de vue.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3>Questionnaire pré‑test</h3>
+            <p>Le pré‑test sert à mieux caractériser et sélectionner les profils les plus pertinents :</p>
+            <ul>
+              <li>Informations générales (nom, âge, sexe).</li>
+              <li><strong>Équipement</strong> : Mac/PC, iPhone/Android.</li>
+              <li><strong>Études</strong> : type de formation, charge de travail, fréquence des révisions.</li>
+              <li><strong>Usage du téléphone</strong> : fréquence, types d’apps, usage pendant le travail / révisions.</li>
+              <li><strong>Gestion du temps & concentration</strong> : perception du temps d’écran, impact sur les études.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCÉNARIOS -->
+      <section class="mb-4">
+        <h2>Scénarios testés</h2>
+        <p class="text-muted">
+          Les 8 scénarios suivent un même utilisateur à différents moments de sa vie quotidienne, depuis la découverte
+          de l’app jusqu’aux fonctionnalités avancées (version payante).
+        </p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3">
+              <h3 class="h5 mb-2">Scénario 1 – Prise de conscience</h3>
+              <p><strong>Objectif :</strong> comprendre à quoi sert JOMO et bloquer une application qui fait perdre du temps.</p>
+              <p><strong>Test :</strong> onboarding, compréhension du concept, création d’une première règle simple, écran de blocage.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3">
+              <h3 class="h5 mb-2">Scénario 2 – Besoin ponctuel de concentration</h3>
+              <p><strong>Objectif :</strong> éviter les distractions (réseaux) pendant une soirée de révisions.</p>
+              <p><strong>Test :</strong> blocage multi‑apps, règles temporelles simples, retour visuel du blocage.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3">
+              <h3 class="h5 mb-2">Scénario 3 – Phase de réflexion</h3>
+              <p><strong>Objectif :</strong> voir l’évolution de son temps d’écran et vérifier si JOMO aide vraiment.</p>
+              <p><strong>Test :</strong> home, statistiques, journal d’utilisation, compréhension des graphiques.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3">
+              <h3 class="h5 mb-2">Scénario 4 – Fatigue / perte de motivation</h3>
+              <p><strong>Objectif :</strong> tenter d’accéder à une app bloquée et observer la gestion de la frustration.</p>
+              <p><strong>Test :</strong> écran de blocage, options disponibles (pause, retour, abandon), limites de la version gratuite.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3">
+              <h3 class="h5 mb-2">Scénario 5 – Organisation du quotidien</h3>
+              <p><strong>Objectif :</strong> planifier des sessions de blocage automatiques.</p>
+              <p><strong>Test :</strong> activation de la version payante, création de règles programmées, multi‑sessions.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3">
+              <h3 class="h5 mb-2">Scénario 6 – Examen / projet important</h3>
+              <p><strong>Objectif :</strong> être sûr de ne pas pouvoir désactiver une règle trop facilement.</p>
+              <p><strong>Test :</strong> Mode Strict, résistance au contournement, ressenti entre sécurité et frustration.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3">
+              <h3 class="h5 mb-2">Scénario 7 – Recherche d’équilibre</h3>
+              <p><strong>Objectif :</strong> se fixer un budget de temps d’écran à ne pas dépasser.</p>
+              <p><strong>Test :</strong> budgets avancés, catégories, alertes en cas de dépassement, jauges et indicateurs.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded-3">
+              <h3 class="h5 mb-2">Scénario 8 – Engagement social</h3>
+              <p><strong>Objectif :</strong> inviter un proche et partager son expérience pour se motiver.</p>
+              <p><strong>Test :</strong> invitation, partage, dimension sociale, engagement à long terme.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENTRETENIR & SUS -->
+      <section class="mb-4">
+        <h2>Entretien de fin de test & questionnaire SUS</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Questionnaire SUS</h3>
+            <p>
+              En fin de session, chaque participant répond au <strong>SUS (System Usability Scale)</strong> pour évaluer
+              la <strong>facilité d’utilisation globale</strong> de JOMO. Les 10 affirmations sont notées de 1 à 5,
+              en alternant items positifs et négatifs pour limiter les biais.
+            </p>
+            <p>
+              Le score SUS permettra de positionner JOMO sur une échelle d’<strong>utilisabilité perçue</strong> et
+              de comparer d’éventuelles futures versions.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3>Questions qualitatives</h3>
+            <p>Un court entretien semi‑directif complète le SUS :</p>
+            <ul>
+              <li>Impression générale & note globale.</li>
+              <li>Compréhension de l’app et utilité perçue au quotidien.</li>
+              <li>Points forts (fonctionnalités appréciées, ressentis positifs).</li>
+              <li>Points faibles & frustrations (moments de blocage, zones floues).</li>
+              <li>Projection d’usage (fréquence, contexte d’utilisation).</li>
+              <li>Suggestions de priorités d’amélioration.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONCLUSION -->
+      <section class="mb-4">
+        <h2>État d’avancement & apprentissages</h2>
+        <p>
+          Le <strong>protocole de tests utilisateurs</strong> JOMO est rédigé et la phase terrain est en cours
+          (recrutement, pré‑tests, passation des scénarios, sessions filmées). Les analyses détaillées et les
+          recommandations seront formalisées dans un rapport destiné aux fondateurs de JOMO.
+        </p>
+        <p>
+          Ce projet me permet de mettre en pratique une démarche <strong>UX Research</strong> complète (protocole,
+          scénarios, panel, SUS, entretien), et nourrit ma réflexion sur la façon dont des outils, dont l’<strong>IA</strong>,
+          pourraient à terme aider à <strong>synthétiser les verbalisations</strong> ou à identifier plus rapidement
+          les patterns dans les retours utilisateurs.
+        </p>
+        <p>
+          Vous pouvez consulter le détail du protocole ici&nbsp;:
+          <a href="images/projets/Test_Utilisateurs.pdf" target="_blank" rel="noopener noreferrer">
+            Protocole de tests utilisateurs JOMO (PDF)
+          </a>.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-muted py-4">
+    <h2 class="text-white pt-3">Portfolio</h2>
+    <div class="social-links mt-3 mb-3">
+      <button class="rounded-pill linkedin" aria-label="Profil LinkedIn de Karim EL HADEDI"
+        onclick="window.open('https://www.linkedin.com/in/karim-el-hadedi-489587330/', '_blank')">
+        <i class="bi bi-linkedin"></i>
+      </button>
+      <button class="rounded-pill whatsapp" aria-label="Contacter Karim EL HADEDI sur WhatsApp"
+        onclick="window.open('https://wa.me/33683895581', '_blank')">
+        <i class="bi bi-whatsapp"></i>
+      </button>
+    </div>
+    <hr class="text-muted my-3" />
+    <p>Portfolio réalisé par Karim EL HADEDI © 2025 – Tous droits réservés.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
