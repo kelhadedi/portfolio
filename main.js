@@ -1,3 +1,29 @@
+/* Par défaut dark → on affiche le soleil */
+.icon-sun  { display: block; }
+.icon-moon { display: none; }
+
+/* En mode clair → on affiche la lune */
+[data-theme="light"] .icon-sun  { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.theme-toggle:hover {
+  background: rgba(128, 128, 128, 0.15);
+}
+
+
 // ============================
 // AOS - animations au scroll
 // ============================

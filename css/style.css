@@ -16,6 +16,32 @@
 /* VARIABLES                 */
 /* ========================= */
 
+/* Par défaut dark → on affiche le soleil */
+.icon-sun  { display: block; }
+.icon-moon { display: none; }
+
+/* En mode clair → on affiche la lune */
+[data-theme="light"] .icon-sun  { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.theme-toggle:hover {
+  background: rgba(128, 128, 128, 0.15);
+}
+
+
 :root {
   /* Palette */
   --c-bg: #0a0a0b;
@@ -60,6 +86,22 @@
   --dur-fast: 150ms;
   --dur-base: 280ms;
   --dur-slow: 500ms;
+}
+
+[data-theme="light"] {
+  --c-bg:        #f5f4f0;
+  --c-surface:   #ffffff;
+  --c-surface-2: #eeede9;
+  --c-border:    rgba(0, 0, 0, 0.07);
+  --c-border-lg: rgba(0, 0, 0, 0.13);
+
+  --c-text:   #16151a;
+  --c-text-2: #5a5766;
+  --c-text-3: #9b98a3;
+
+  --c-accent:  #5c8a00; /* chartreuse assombrie pour lisibilité sur fond clair */
+  --c-accent-2: #6b5ce7;
+  --c-gold:     #b8893a;
 }
 
 
