@@ -84,7 +84,11 @@ document.addEventListener('keydown', e => {
 
   const toggleBackToTop = () => {
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    backToTopBtn.style.display = scrollTop > 200 ? 'block' : 'none';
+    if (scrollTop > 200) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
   };
 
   window.addEventListener('scroll', toggleBackToTop);
@@ -95,6 +99,7 @@ document.addEventListener('keydown', e => {
   });
 })();
 
+
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
   setTimeout(() => {
@@ -104,6 +109,7 @@ window.addEventListener('load', () => {
     }, 500);
   }, 1800);
 });
+
 
 // ============================
 // Navbar mobile & fermeture

@@ -85,6 +85,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
   padding-top: 68px;
 }
 
@@ -1171,7 +1172,7 @@ section.home {
 
 
 /* ========================= */
-/* LIGHTBOX                  */
+/* LIGHTBOX IMAGE            */
 /* ========================= */
 
 .image-lightbox {
@@ -1181,55 +1182,116 @@ section.home {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.image-lightbox.d-none {
+  display: none !important;
 }
 
 .image-lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(4px);
+  background: rgba(5, 5, 7, 0.92);
+  backdrop-filter: blur(8px);
+  cursor: zoom-out;
 }
 
 .image-lightbox-content {
   position: relative;
-  max-width: 72vw;
-  max-height: 70vh;
-  z-index: 1;
-  animation: lightbox-in 0.3s var(--ease-out);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(90vw, 900px);
+  max-height: 90vh;
+  width: 100%;
 }
 
-.image-lightbox-content.image-lightbox-content--small {
-  max-width: 38vw;
-  max-height: 38vh;
+.image-lightbox-content--small {
+  max-width: min(90vw, 560px);
 }
 
 .image-lightbox-content img {
-  max-width: 100%;
-  max-height: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
   border-radius: var(--r-md);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.8);
+  border: 1px solid var(--c-border-lg);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
 }
 
+/* Bouton fermer */
 .image-lightbox-close {
   position: absolute;
-  top: -2.2rem;
-  right: 0;
-  border: none;
-  background: transparent;
+  top: -1rem;
+  right: -1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--c-border-lg);
+  background: var(--c-surface);
   color: var(--c-text-2);
-  font-size: 1.4rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: color var(--dur-fast);
+  z-index: 3;
+  transition: background var(--dur-fast) ease,
+              color var(--dur-fast) ease,
+              transform var(--dur-fast) ease;
 }
 
-.image-lightbox-close:hover { color: var(--c-text); }
+.image-lightbox-close:hover {
+  background: var(--c-accent);
+  color: #0a0a0b;
+  transform: rotate(90deg);
+}
+
+/* Animation ouverture */
+.image-lightbox:not(.d-none) .image-lightbox-content {
+  animation: lightbox-in 0.3s var(--ease-out) forwards;
+}
 
 @keyframes lightbox-in {
-  from { transform: scale(0.92); opacity: 0; }
-  to   { transform: scale(1);    opacity: 1; }
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-.d-none { display: none !important; }
+/* Mobile */
+@media (max-width: 576px) {
+  .image-lightbox {
+    padding: 1rem;
+  }
+
+  .image-lightbox-content {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  .image-lightbox-content img {
+    max-height: 75vh;
+    border-radius: var(--r-sm);
+  }
+
+  .image-lightbox-close {
+    top: -0.8rem;
+    right: -0.5rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+}
 
 
 /* ========================= */
@@ -2462,23 +2524,33 @@ footer p {
   position: fixed;
   bottom: 2.5rem;
   right: 2.5rem;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 42px;
   height: 42px;
   border-radius: 50%;
   border: 1px solid var(--c-border-lg);
   background: var(--c-surface);
   color: var(--c-text-2);
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;                 /* ← Bootstrap btn-lg ajoute du padding, on reset */
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   cursor: pointer;
   z-index: 999;
-  align-items: center;
-  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
   transition: background var(--dur-base) var(--ease-out),
               border-color var(--dur-base) var(--ease-out),
               color var(--dur-base) var(--ease-out),
-              transform var(--dur-fast) var(--ease-out);
+              transform var(--dur-fast) var(--ease-out),
+              opacity var(--dur-base) var(--ease-out);
+}
+
+#btn-back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #btn-back-to-top:hover {
@@ -2488,8 +2560,31 @@ footer p {
   transform: translateY(-2px);
 }
 
+/* Reset Bootstrap btn-lg qui décale l'icône */
+#btn-back-to-top.btn-lg {
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+/* Centrage de l'icône Bootstrap Icons */
+#btn-back-to-top .bi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 576px) {
-  #btn-back-to-top { bottom: 1.5rem; right: 1rem; }
+  #btn-back-to-top {
+    bottom: 1.5rem;
+    right: 1rem;
+    width: 38px;
+    height: 38px;
+  }
 }
 
 
