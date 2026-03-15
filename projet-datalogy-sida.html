@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dataviz – Enfants orphelins (SIDA) | Karim EL HADEDI</title>
 
+  <link rel="icon" type="image/png" sizes="100x100" href="images/icons/ehk.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+  <link rel="icon" type="image/png" sizes="100x100" href="images/icons/ehk.png" />
 </head>
+
 <body>
+
+  <!-- Burger overlay -->
+  <div id="burger-menu" class="burger-overlay" aria-hidden="true">
+    <button class="burger-close" id="burger-close" aria-label="Fermer le menu">✕</button>
+    <div class="burger-inner">
+      <nav class="burger-nav">
+        <a href="index.html#accueil" class="burger-link" data-label="01">Accueil</a>
+        <a href="index.html#about" class="burger-link" data-label="02">À propos</a>
+        <a href="index.html#projects" class="burger-link" data-label="03">Projets</a>
+        <a href="index.html#experience" class="burger-link" data-label="04">Expériences</a>
+        <a href="index.html#skills" class="burger-link" data-label="05">Compétences</a>
+        <a href="index.html#contact" class="burger-link" data-label="06">Contact</a>
+      </nav>
+      <div class="burger-footer">
+        <p class="burger-hello">👋 Nice to see you!</p>
+        <p class="burger-bio">Je suis <strong>Karim EL HADEDI</strong>, Designer UX/UI junior</p>
+        <p class="burger-made">Fait avec <span aria-label="amour">🤍</span> par Karim</p>
+      </div>
+    </div>
+  </div>
+
   <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm"
     aria-label="Navigation principale">
     <div class="container-fluid px-4 px-md-5">
 
       <!-- Logo -->
-      <a class="navbar-brand fw-bold fs-2 brand-title" href="#home">Portfolio</a>
+<a class="navbar-brand fw-bold fs-2 brand-title" href="index.html">Portfolio</a>
 
       <!-- Menu (centre) -->
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -46,9 +72,13 @@
           </button>
         </div>
 
-        <button class="navbar-toggler nav-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler nav-menu" id="burger-btn" type="button" aria-label="Ouvrir le menu"
+          aria-expanded="false">
+          <span class="burger-icon">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </span>
         </button>
       </div>
 
@@ -70,17 +100,21 @@
       <section class="mb-4">
         <h1>Dataviz – Enfants orphelins en raison du SIDA</h1>
         <p class="text-muted">
-          En 2023, 10 millions d’enfants africains, soit 71% des orphelins du SIDA, ont perdu un parent. Ce projet ne portait pas sur une interface numérique, mais sur la conception d’une idée physique représentant ces données.
+          En 2023, 10 millions d’enfants africains, soit 71% des orphelins du SIDA, ont perdu un parent. Ce projet ne
+          portait pas sur une interface numérique, mais sur la conception d’une idée physique représentant ces données.
         </p>
       </section>
 
       <section class="mb-4">
         <h2>Conception physique</h2>
         <p>
-          J’ai conçu un ruban en collant les drapeaux des pays africains et européens, avec une coupure au milieu pour symboliser la séparation entre les continents. Cette représentation visuelle met en lumière l’écart dramatique entre les deux régions.
+          J’ai conçu un ruban en collant les drapeaux des pays africains et européens, avec une coupure au milieu pour
+          symboliser la séparation entre les continents. Cette représentation visuelle met en lumière l’écart dramatique
+          entre les deux régions.
         </p>
         <p class="text-muted">
-          Source des données : Join United Nations Programme on HIV/AIDS (2024), avec un traitement mineur par Our World in Data et Africanews.
+          Source des données : Join United Nations Programme on HIV/AIDS (2024), avec un traitement mineur par Our World
+          in Data et Africanews.
         </p>
       </section>
 
@@ -114,5 +148,43 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ============================
+    // Burger menu
+    // ============================
+    (() => {
+      const burgerBtn = document.getElementById('burger-btn');
+      const burgerMenu = document.getElementById('burger-menu');
+      const burgerClose = document.getElementById('burger-close');
+      const burgerLinks = document.querySelectorAll('.burger-link');
+
+      if (!burgerBtn || !burgerMenu) return;
+
+      function openMenu() {
+        burgerMenu.classList.add('open');
+        burgerMenu.setAttribute('aria-hidden', 'false');
+        burgerBtn.setAttribute('aria-expanded', 'true');
+        burgerBtn.querySelector('.burger-icon')?.classList.add('is-open');
+        document.body.classList.add('nav-open');
+      }
+
+      function closeMenu() {
+        burgerMenu.classList.remove('open');
+        burgerMenu.setAttribute('aria-hidden', 'true');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+        burgerBtn.querySelector('.burger-icon')?.classList.remove('is-open');
+        document.body.classList.remove('nav-open');
+      }
+
+      burgerBtn.addEventListener('click', () => {
+        burgerMenu.classList.contains('open') ? closeMenu() : openMenu();
+      });
+
+      burgerClose?.addEventListener('click', closeMenu);
+      burgerLinks.forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
 </body>
+
 </html>
