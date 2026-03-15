@@ -93,6 +93,40 @@ body.nav-open {
   overflow: hidden;
 }
 
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0a0a0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
+
+.preloader-text {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  animation: preloader-fade 1.6s ease forwards;
+}
+
+@keyframes preloader-fade {
+  0%   { opacity: 0; transform: translateY(12px); }
+  30%  { opacity: 1; transform: translateY(0);    }
+  75%  { opacity: 1; transform: translateY(0);    }
+  100% { opacity: 0; transform: translateY(-8px); }
+}
+
+
 img {
   max-width: 100%;
   height: auto;
@@ -255,6 +289,215 @@ strong { font-weight: 600; color: var(--c-text); }
 }
 
 .brand-title:hover { color: var(--c-accent) !important; }
+
+/* ========================= */
+/* BURGER OVERLAY            */
+/* ========================= */
+
+/* Icône burger animée */
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.burger-bar {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--c-text);
+  border-radius: 2px;
+  transition: transform 0.35s var(--ease-out),
+              opacity 0.2s ease,
+              width 0.3s ease;
+  transform-origin: center;
+}
+
+/* État ouvert — transformation en croix */
+.burger-icon.is-open .burger-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.burger-icon.is-open .burger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger-icon.is-open .burger-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Cache le burger-close du overlay — le bouton navbar suffit */
+.burger-close { display: none; }
+
+
+.burger-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: #0a0a0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s var(--ease-out), visibility 0.45s var(--ease-out);
+}
+
+.burger-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.burger-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  padding: clamp(2rem, 8vw, 5rem);
+  gap: 3rem;
+}
+
+/* Bouton fermer */
+.burger-close {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.6rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 999;
+}
+
+.burger-close:hover {
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* Nav links */
+.burger-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.burger-link {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  padding: 0.15rem 0;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.burger-link::before {
+  content: attr(data-label);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.2);
+  transition: color 0.25s ease;
+  margin-bottom: 0.1rem;
+  flex-shrink: 0;
+}
+
+.burger-link:hover {
+  color: #ffffff;
+}
+
+.burger-link:hover::before {
+  color: var(--c-accent);
+}
+
+/* Ligne décorative au hover */
+.burger-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--c-accent);
+  transition: width 0.3s var(--ease-out);
+}
+
+.burger-link:hover::after {
+  width: 100%;
+}
+
+/* Animation d'entrée des liens */
+.burger-overlay.open .burger-link {
+  animation: burger-link-in 0.5s var(--ease-out) forwards;
+  opacity: 0;
+}
+
+.burger-overlay.open .burger-link:nth-child(1) { animation-delay: 0.05s; }
+.burger-overlay.open .burger-link:nth-child(2) { animation-delay: 0.10s; }
+.burger-overlay.open .burger-link:nth-child(3) { animation-delay: 0.15s; }
+.burger-overlay.open .burger-link:nth-child(4) { animation-delay: 0.20s; }
+.burger-overlay.open .burger-link:nth-child(5) { animation-delay: 0.25s; }
+.burger-overlay.open .burger-link:nth-child(6) { animation-delay: 0.30s; }
+
+@keyframes burger-link-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Footer burger */
+.burger-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1.5rem;
+  width: 100%;
+}
+
+.burger-hello {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+.burger-bio {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.burger-bio strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+
+.burger-made {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.2);
+  margin: 0.4rem 0 0 0;
+  letter-spacing: 0.04em;
+}
+
 
 /* Nav links */
 #navbar-top .nav-link {
@@ -501,8 +744,10 @@ section.home {
   align-items: flex-start;
   text-align: left;
   gap: 0;
-  max-width: 520px;   /* réduit la zone de texte */
-  margin-left: 0;     /* colle à gauche */
+  max-width: 520px;
+  margin-left: 0;
+  margin-bottom: -4rem;
+
 }
 
 /* "Hi! i'm Karim" */
@@ -588,6 +833,31 @@ section.home {
   .hero-langs { gap: 0.3rem 0.5rem; }
   .hero-lang  { font-size: 0.68rem; }
 }
+
+/* Tablette — badge en relatif sous les CTAs */
+@media (max-width: 768px) {
+  .hero-status {
+    display: flex;
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 1.2rem;
+    align-self: flex-start;
+  }
+}
+
+/* Mobile — badge plus compact */
+@media (max-width: 576px) {
+  .hero-status {
+    font-size: 0.62rem;
+    padding: 0.32rem 0.8rem;
+  }
+
+  .hero-status-logo {
+    height: 13px;
+  }
+}
+
 
 
 /* CTAs */
@@ -709,11 +979,6 @@ section.home {
   letter-spacing: 0.04em;
 }
 
-@media (max-width: 768px) {
-  .hero-status { display: none; }
-}
-
-
 @keyframes pulse-dot {
   0%, 100% { opacity: 1;   transform: scale(1);    }
   50%       { opacity: 0.4; transform: scale(0.75); }
@@ -795,8 +1060,8 @@ section.home {
   .hero-social-side { display: none; }
 
   .hero-line {
-    font-size: clamp(2.2rem, 8vw, 5rem);
-  }
+    font-size: clamp(1.6rem, 8.5vw, 2.8rem);  /* réduit pour tenir sur une ligne */
+    white-space: nowrap;  }
 }
 
 /* ---- Mobile ---- */
@@ -804,9 +1069,9 @@ section.home {
   section.home {
     margin-top: -72px;
     padding-top: 72px;
-    padding-bottom: 80px;
-    padding-inline: clamp(1.5rem, 6vw, 5rem) clamp(1.5rem, 50vw, 55rem);
-    align-items: flex-end;
+    padding-bottom: 3rem;
+    padding-inline: 1.2rem;
+    align-items: center;
   }
 
   .hero-line {
@@ -818,8 +1083,6 @@ section.home {
     white-space: normal;
     margin-bottom: 1rem;
   }
-
-  .hero-status { display: none; }
   .hero-scroll  { display: none; }
 }
 
@@ -1208,7 +1471,7 @@ section.home {
   padding: 2rem 2.2rem;
   margin-bottom: 1.2rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   cursor: pointer;
   transition: border-color var(--dur-base) var(--ease-out),
               transform var(--dur-base) var(--ease-out),
@@ -1240,6 +1503,7 @@ section.home {
 /* Badge année */
 .year-badge {
   position: absolute;
+  z-index: 2;
   top: -0.9rem;
   left: 1.5rem;
   padding: 0.2rem 0.9rem;

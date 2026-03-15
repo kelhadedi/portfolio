@@ -10,6 +10,46 @@ if (window.AOS) {
   });
 }
 
+const burgerBtn    = document.getElementById('burger-btn');
+const burgerIcon   = burgerBtn.querySelector('.burger-icon');
+const burgerMenu   = document.getElementById('burger-menu');
+const burgerLinks  = document.querySelectorAll('.burger-link');
+
+function openBurger() {
+  burgerMenu.classList.add('open');
+  burgerIcon.classList.add('is-open');
+  burgerBtn.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBurger() {
+  burgerMenu.classList.remove('open');
+  burgerIcon.classList.remove('is-open');
+  burgerBtn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+function toggleBurger() {
+  burgerMenu.classList.contains('open') ? closeBurger() : openBurger();
+}
+
+// Toggle au clic sur le bouton
+burgerBtn.addEventListener('click', toggleBurger);
+
+// Fermer en cliquant sur un lien
+burgerLinks.forEach(link => link.addEventListener('click', closeBurger));
+
+// Fermer en cliquant en dehors du burger-inner
+burgerMenu.addEventListener('click', e => {
+  if (!e.target.closest('.burger-inner')) closeBurger();
+});
+
+// Fermer avec Échap
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeBurger();
+});
+
+
 // ============================
 // Bulle contact ( ? en bas )
 // ============================
@@ -54,6 +94,16 @@ if (window.AOS) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  setTimeout(() => {
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  }, 1800);
+});
 
 // ============================
 // Navbar mobile & fermeture

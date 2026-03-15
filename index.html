@@ -23,7 +23,9 @@
 </head>
 
 <body>
-
+  <div id="preloader" aria-hidden="true">
+    <span class="preloader-text">Hello.</span>
+  </div>
   <!-- LIGHTBOX IMAGE -->
   <div id="image-lightbox" class="image-lightbox d-none">
     <div class="image-lightbox-backdrop"></div>
@@ -47,6 +49,27 @@
       <a href="mailto:karimelhadedi@gmail.com" class="contact-fab-link">✉️ karimelhadedi@gmail.com</a>
     </div>
   </div>
+
+  <!-- Burger overlay -->
+  <div id="burger-menu" class="burger-overlay" aria-hidden="true">
+    <button class="burger-close" id="burger-close" aria-label="Fermer le menu">✕</button>
+    <div class="burger-inner">
+      <nav class="burger-nav">
+        <a href="#accueil" class="burger-link" data-label="01">Accueil</a>
+        <a href="#about" class="burger-link" data-label="02">À propos</a>
+        <a href="#projects" class="burger-link" data-label="03">Projets</a>
+        <a href="#experience" class="burger-link" data-label="04">Expériences</a>
+        <a href="#skills" class="burger-link" data-label="05">Compétences</a>
+        <a href="#contact" class="burger-link" data-label="06">Contact</a>
+      </nav>
+      <div class="burger-footer">
+        <p class="burger-hello">👋 Ravi de te voir !</p>
+        <p class="burger-bio">Je suis <strong>Karim EL HADEDI</strong>, Designer UX/UI junior<br></p>
+        <p class="burger-made">Fait avec <span aria-label="amour">🤍</span> par Karim</p>
+      </div>
+    </div>
+  </div>
+
 
   <!-- NAVBAR -->
   <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm"
@@ -83,10 +106,16 @@
           </button>
         </div>
 
-        <button class="navbar-toggler nav-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler nav-menu" id="burger-btn" type="button" aria-label="Ouvrir le menu"
+          aria-expanded="false">
+          <span class="burger-icon">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </span>
         </button>
+
+
       </div>
 
     </div>
