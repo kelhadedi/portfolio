@@ -76,6 +76,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+
 }
 
 body {
@@ -223,6 +225,34 @@ strong { font-weight: 600; color: var(--c-text); }
 
 @media (max-width: 768px) {
   .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Grilles — plancher minimum réduit sur très petits écrans */
+@media (max-width: 400px) {
+  .extra-experience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sécurité sur tous les éléments positionnés en absolute/fixed
+   qui pourraient dépasser */
+.experience-timeline,
+.extra-experience-grid,
+.education-grid,
+.skills-grid,
+.projects-cv .container {
+  max-width: 100%;
+  overflow: visible; /* ne pas bloquer les tooltips */
+}
+
+/* Images — s'assurer qu'aucune image ne déborde */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 
