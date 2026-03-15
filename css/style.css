@@ -1006,6 +1006,12 @@ section.home {
   box-shadow: 0 8px 28px rgba(200, 240, 96, 0.2);
   transition: opacity 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
+.hero-cta--primary,
+.hero-cta--primary:hover,
+.hero-cta--primary:focus,
+.hero-cta--primary:visited {
+  color: #0a0a0b;
+}
 
 .hero-cta--primary:hover {
   opacity: 0.85;
@@ -3627,6 +3633,18 @@ p.project-tools img,
   transform: scaleX(1);
   transform-origin: left;
 }
+
+.link,
+.link:hover,
+.link:focus,
+.link:visited {
+  color: var(--c-text);
+}
+
+.link:hover {
+  color: var(--c-accent);
+}
+
 
 .contact-form .form-control {
   background: var(--c-surface);
