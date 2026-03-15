@@ -1856,8 +1856,8 @@ section.home {
 
 .travels-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 2fr; /* carte France + cartes pays */
+  gap: 1.5rem;
   align-items: start;
 }
 
