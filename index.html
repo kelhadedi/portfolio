@@ -63,7 +63,7 @@
         <a href="#contact" class="burger-link" data-label="06">Contact</a>
       </nav>
       <div class="burger-footer">
-        <p class="burger-hello">👋 Ravi de te voir !</p>
+        <p class="burger-hello">👋 Nice to see you!</p>
         <p class="burger-bio">Je suis <strong>Karim EL HADEDI</strong>, Designer UX/UI junior<br></p>
         <p class="burger-made">Fait avec <span aria-label="amour">🤍</span> par Karim</p>
       </div>
@@ -209,7 +209,6 @@
 
       <div class="heading text-center mb-5">
         <h2 id="about-title">À propos</h2>
-        <p class="text-muted">Ce qui me motive, ce que je défends, et ce qui me rend un peu différent.</p>
       </div>
 
       <div class="row align-items-start g-5">
@@ -367,10 +366,13 @@
               </div>
 
               <h3 class="project-cv-title">
-                <a href="projet-jomo.html" class="project-link">
+                <a href="projet-jomo.html" class="project-link"
+                  aria-label="JOMO – Tests utilisateurs & protocole – Voir le détail du projet">
                   JOMO – Tests utilisateurs &amp; protocole (en cours)
+                  <span class="project-link-hint" aria-hidden="true">→ Voir le projet</span>
                 </a>
               </h3>
+
               <p class="project-cv-subtitle">
                 Application de gestion du temps d’écran – <strong>protocole de tests</strong> auprès d’étudiants
               </p>
@@ -437,8 +439,10 @@
               </div>
 
               <h3 class="project-cv-title">
-                <a href="projet-orange.html" class="project-link">
+                <a href="projet-orange.html" class="project-link"
+                  aria-label="Workshop « Future Deskless Worker » – Voir le détail du projet">
                   Workshop « Future Deskless Worker »
+                  <span class="project-link-hint" aria-hidden="true">→ Voir le projet</span>
                 </a>
               </h3>
               <p class="project-cv-subtitle">
@@ -498,8 +502,10 @@
               </div>
 
               <h3 class="project-cv-title">
-                <a href="projet-locfit.html" class="project-link">
+                <a href="projet-locfit.html" class="project-link"
+                  aria-label="LocFit – Site de location de matériel sportif – Voir le détail du projet">
                   LocFit – Site de location de matériel sportif
+                  <span class="project-link-hint" aria-hidden="true">→ Voir le projet</span>
                 </a>
               </h3>
               <p class="project-cv-subtitle">
@@ -508,7 +514,7 @@
 
               <p>
                 <span class="project-label">Objectifs&nbsp;:</span>
-                permettre à un utilisateur peu à l’aise avec le numérique de réserver un équipement sportif
+                permettre à un utilisateur peu à l'aise avec le numérique de réserver un équipement sportif
                 en <strong>3–4 clics</strong> via un parcours fluide et rassurant.
               </p>
               <p>
@@ -564,8 +570,10 @@
               </div>
 
               <h3 class="project-cv-title">
-                <a href="projet-keyswitch.html" class="project-link">
+                <a href="projet-keyswitch.html" class="project-link"
+                  aria-label="KeySwitch – Le clavier custom, tout simplement – Voir le détail du projet">
                   KeySwitch – Le clavier custom, tout simplement
+                  <span class="project-link-hint" aria-hidden="true">→ Voir le projet</span>
                 </a>
               </h3>
               <p class="project-cv-subtitle">
@@ -627,8 +635,10 @@
               </div>
 
               <h3 class="project-cv-title">
-                <a href="projet-datalogy-sida.html" class="project-link">
+                <a href="projet-datalogy-sida.html" class="project-link"
+                  aria-label="Dataviz – Enfants orphelins en raison du SIDA – Voir le détail du projet">
                   Dataviz – Enfants orphelins en raison du SIDA
+                  <span class="project-link-hint" aria-hidden="true">→ Voir le projet</span>
                 </a>
               </h3>
               <p class="project-cv-subtitle">
@@ -679,8 +689,10 @@
               </div>
 
               <h3 class="project-cv-title">
-                <a href="projet-datalogy-obesite.html" class="project-link">
+                <a href="projet-datalogy-obesite.html" class="project-link"
+                  aria-label="Dataviz – Taux de décès liés à l’obésité – Voir le détail du projet">
                   Dataviz – Taux de décès liés à l’obésité
+                  <span class="project-link-hint" aria-hidden="true">→ Voir le projet</span>
                 </a>
               </h3>
               <p class="project-cv-subtitle">
@@ -735,8 +747,10 @@
               </div>
 
               <h3 class="project-cv-title">
-                <a href="projet-datalogy-immigration.html" class="project-link">
+                <a href="projet-datalogy-immigration.html" class="project-link"
+                  aria-label="Dataviz – Immigration en Europe – Voir le détail du projet">
                   Dataviz – Immigration en Europe
+                  <span class="project-link-hint" aria-hidden="true">→ Voir le projet</span>
                 </a>
               </h3>
               <p class="project-cv-subtitle">
@@ -778,21 +792,65 @@
 
     </div>
   </section>
-
-
   <section class="experience py-5" id="experience" aria-labelledby="exp-title">
     <div class="container">
-      <div class="heading text-center mb-4">
+      <div class="heading text-center mb-5">
         <h2 id="exp-title">Expériences en lien avec la formation</h2>
-        <p class="text-muted">
-          Mes expériences en communication et design, principalement en lien avec la santé et la restauration.
-        </p>
       </div>
 
-      <div class="row justify-content-center px-2 px-md-4 experience-timeline" data-aos="fade-up">
+      <div class="experience-timeline" data-aos="fade-up">
 
-        <!-- CPTS du Trégor -->
-        <article class="experience-item col-12 col-md-10 col-lg-8 mb-4">
+        <!-- ===== ORANGE BUSINESS – Stage ===== -->
+        <article class="experience-item">
+          <div class="experience-timeline-dot dot-active"></div>
+          <div class="experience-card">
+            <div class="experience-card-top-line"></div>
+
+            <header class="experience-header">
+              <div class="experience-header-row">
+                <div class="experience-header-left">
+                  <div class="experience-meta">
+                    <span class="experience-badge experience-badge--current">
+                      Stage en cours
+                    </span>
+                    <span class="experience-date">Mars – Juillet 2026</span>
+                  </div>
+                  <h3 class="experience-title">Stagiaire UX/UI & IA</h3>
+                  <p class="experience-company">Orange Business · Studio Design</p>
+                </div>
+                <div class="experience-logo">
+                  <img src="images/icons/Orange-business-logo-white.svg" alt="Logo Orange Business" width="110"
+                    height="auto" />
+                </div>
+              </div>
+            </header>
+
+            <div class="experience-body">
+              <p class="experience-context">
+                Intégration de l'IA dans les processus de design du Studio — de l'expérimentation
+                sur cas concrets à l'industrialisation des pratiques à l'échelle de l'équipe.
+              </p>
+              <ul class="experience-missions">
+                <li>Cartographie des processus design et identification des opportunités IA (matrice Impact / Effort).
+                </li>
+                <li>Expérimentation sur 2–4 cas réels — prototypes Figma, automatisation d'étapes, composants
+                  IA-assisted.</li>
+                <li>Rédaction d'un guide de bonnes pratiques IA-design et d'une checklist qualité.</li>
+                <li>Déploiement et formation de l'équipe aux pratiques validées.</li>
+              </ul>
+              <div class="experience-tags">
+                <span class="experience-tag">UX/UI Design</span>
+                <span class="experience-tag">Intelligence artificielle</span>
+                <span class="experience-tag">Figma</span>
+                <span class="experience-tag">Prompt design</span>
+                <span class="experience-tag">Design system</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== CPTS DU TRÉGOR ===== -->
+        <article class="experience-item">
           <div class="experience-timeline-dot"></div>
           <div class="experience-card">
             <header class="experience-header">
@@ -800,32 +858,32 @@
                 <span class="experience-badge">Alternance</span>
                 <span class="experience-date">Juin 2025 – Janvier 2026</span>
               </div>
-              <h3 class="experience-title">Alternant</h3>
+              <h3 class="experience-title">Alternant Communication</h3>
               <p class="experience-company">CPTS du Trégor</p>
             </header>
 
             <div class="experience-body">
               <p class="experience-context">
-                Communication santé pour un réseau de professionnels de santé de territoire, avec un fort enjeu de
-                prévention.
+                Communication santé pour un réseau de professionnels de santé de territoire,
+                avec un fort enjeu de prévention.
               </p>
               <ul class="experience-missions">
                 <li>Création de supports de prévention (affiches, flyers, posts réseaux sociaux).</li>
                 <li>Production photo / vidéo pour des campagnes locales.</li>
-                <li>Intégration et test d’outils numériques et IA pour la coordination des soins.</li>
+                <li>Intégration et test d'outils numériques et IA pour la coordination des soins.</li>
               </ul>
               <div class="experience-tags">
                 <span class="experience-tag">Communication santé</span>
                 <span class="experience-tag">Design graphique</span>
                 <span class="experience-tag">Audiovisuel</span>
-                <span class="experience-tag">Outils numériques & IA</span>
+                <span class="experience-tag">Outils IA</span>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- Restaurant L'Ardoise -->
-        <article class="experience-item col-12 col-md-10 col-lg-8 mb-4">
+        <!-- ===== RESTAURANT L'ARDOISE ===== -->
+        <article class="experience-item">
           <div class="experience-timeline-dot"></div>
           <div class="experience-card">
             <header class="experience-header">
@@ -833,19 +891,19 @@
                 <span class="experience-badge">Alternance</span>
                 <span class="experience-date">Février – Avril 2025</span>
               </div>
-              <h3 class="experience-title">Alternant</h3>
+              <h3 class="experience-title">Alternant Communication</h3>
               <p class="experience-company">Restaurant L'Ardoise</p>
             </header>
 
             <div class="experience-body">
               <p class="experience-context">
-                Communication locale pour un restaurant indépendant, avec un focus sur la visibilité et le recrutement
-                saisonnier.
+                Communication locale pour un restaurant indépendant, avec un focus
+                sur la visibilité et le recrutement saisonnier.
               </p>
               <ul class="experience-missions">
                 <li>Refonte des visuels réseaux sociaux (menus, événements, offres spéciales).</li>
-                <li>Création de contenus photo/vidéo adaptés aux plateformes.</li>
-                <li>Contribution au recrutement des saisonniers via les supports de communication.</li>
+                <li>Création de contenus photo / vidéo adaptés aux plateformes.</li>
+                <li>Contribution au recrutement saisonnier via les supports de communication.</li>
               </ul>
               <div class="experience-tags">
                 <span class="experience-tag">Réseaux sociaux</span>
@@ -856,126 +914,106 @@
           </div>
         </article>
 
-      </div>
+      </div><!-- /.experience-timeline -->
     </div>
   </section>
+
 
   <!-- EXTRA-EXPERIENCE -->
   <section class="extra-experience py-5" id="extra-experience" aria-labelledby="extra-exp-title">
     <div class="container">
-      <div class="heading text-center mb-4">
+
+      <div class="heading text-center mb-5">
         <h2 id="extra-exp-title">Autres expériences</h2>
-        <p class="text-muted">
-          Jobs étudiants et saisonniers qui ont renforcé mon sens du service, de l’organisation et du travail en équipe.
-        </p>
       </div>
 
-      <div class="row justify-content-center px-2 px-md-4 extra-experience-grid" data-aos="fade-up">
+      <div class="extra-experience-grid" data-aos="fade-up">
 
         <!-- Intermarché -->
-        <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="extra-exp-inner">
-            <div class="extra-exp-logo">
-              <img src="images/icons/intermarche-white.svg" alt="Intermarché" />
-            </div>
-            <div class="extra-exp-body">
-              <p class="extra-exp-date">Week-ends depuis mai 2025 · Job étudiant</p>
-              <h3 class="extra-exp-title">Employé libre-service</h3>
-              <p class="extra-exp-company">Intermarché</p>
-              <p class="extra-exp-desc">
-                Mise en rayon, gestion de la marchandise et tenue des linéaires dans un contexte de forte affluence.
-              </p>
-              <div class="extra-exp-tags">
-                <span class="extra-exp-tag">Rigueur</span>
-                <span class="extra-exp-tag">Organisation</span>
-                <span class="extra-exp-tag">Travail en équipe</span>
-              </div>
+        <article class="extra-exp-card">
+          <div class="extra-exp-logo-wrap">
+            <img src="images/icons/intermarche-white.svg" alt="Intermarché" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Depuis mai 2025 · Job étudiant</p>
+            <h3 class="extra-exp-title">Employé libre-service</h3>
+            <p class="extra-exp-company">Intermarché</p>
+            <p class="extra-exp-desc">Mise en rayon, gestion de la marchandise et tenue des linéaires en forte
+              affluence.</p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Rigueur</span>
+              <span class="extra-exp-tag">Organisation</span>
+              <span class="extra-exp-tag">Travail en équipe</span>
             </div>
           </div>
         </article>
 
         <!-- FabLab -->
-        <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="extra-exp-inner">
-            <div class="extra-exp-logo">
-              <img src="images/icons/fablab_lannion.png" alt="FabLab de Lannion" />
-            </div>
-            <div class="extra-exp-body">
-              <p class="extra-exp-date">Depuis septembre 2025 · Bénévolat</p>
-              <h3 class="extra-exp-title">Bénévole</h3>
-              <p class="extra-exp-company">FabLab de Lannion</p>
-              <p class="extra-exp-desc">
-                Accueil des membres, accompagnement sur les projets et prise en main des machines
-                (impression 3D, découpe laser, électronique).
-              </p>
-              <div class="extra-exp-tags">
-                <span class="extra-exp-tag">Pédagogie</span>
-                <span class="extra-exp-tag">Curiosité technique</span>
-                <span class="extra-exp-tag">Collaboration</span>
-              </div>
+        <article class="extra-exp-card">
+          <div class="extra-exp-logo-wrap">
+            <img src="images/icons/fablab_lannion.png" alt="FabLab de Lannion" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Depuis sept. 2025 · Bénévolat</p>
+            <h3 class="extra-exp-title">Bénévole</h3>
+            <p class="extra-exp-company">FabLab de Lannion</p>
+            <p class="extra-exp-desc">Accueil des membres, accompagnement sur les projets et prise en main des machines.
+            </p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Pédagogie</span>
+              <span class="extra-exp-tag">Curiosité technique</span>
+              <span class="extra-exp-tag">Collaboration</span>
             </div>
           </div>
         </article>
 
         <!-- Yelloh Village -->
-        <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="extra-exp-inner">
-            <div class="extra-exp-logo">
-              <img src="images/icons/yellovillage.svg" alt="Yelloh Village" />
-            </div>
-            <div class="extra-exp-body">
-              <p class="extra-exp-date">Mai 2025 · Renfort ponctuel</p>
-              <h3 class="extra-exp-title">Chef de rang</h3>
-              <p class="extra-exp-company">Yelloh Village</p>
-              <p class="extra-exp-desc">
-                Prise de commandes, gestion des réservations et coordination avec la cuisine.
-              </p>
-              <div class="extra-exp-tags">
-                <span class="extra-exp-tag">Service</span>
-                <span class="extra-exp-tag">Coordination</span>
-              </div>
+        <article class="extra-exp-card">
+          <div class="extra-exp-logo-wrap">
+            <img src="images/icons/yellovillage.svg" alt="Yelloh Village" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Mai 2025 · Renfort ponctuel</p>
+            <h3 class="extra-exp-title">Chef de rang</h3>
+            <p class="extra-exp-company">Yelloh Village</p>
+            <p class="extra-exp-desc">Prise de commandes, gestion des réservations et coordination avec la cuisine.</p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Service</span>
+              <span class="extra-exp-tag">Coordination</span>
             </div>
           </div>
         </article>
 
         <!-- Belambra -->
-        <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="extra-exp-inner">
-            <div class="extra-exp-logo">
-              <img src="images/icons/belambra.svg" alt="Belambra" />
-            </div>
-            <div class="extra-exp-body">
-              <p class="extra-exp-date">Saison 2024 · Job saisonnier</p>
-              <h3 class="extra-exp-title">Réceptionniste</h3>
-              <p class="extra-exp-company">Belambra</p>
-              <p class="extra-exp-desc">
-                Accueil des clients, service en restauration et gestion de situations variées en village vacances.
-              </p>
-              <div class="extra-exp-tags">
-                <span class="extra-exp-tag">Relation client</span>
-                <span class="extra-exp-tag">Gestion du stress</span>
-              </div>
+        <article class="extra-exp-card">
+          <div class="extra-exp-logo-wrap">
+            <img src="images/icons/belambra.svg" alt="Belambra" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Saison 2024 · Job saisonnier</p>
+            <h3 class="extra-exp-title">Réceptionniste</h3>
+            <p class="extra-exp-company">Belambra</p>
+            <p class="extra-exp-desc">Accueil des clients, service en restauration et gestion de situations variées.</p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Relation client</span>
+              <span class="extra-exp-tag">Gestion du stress</span>
             </div>
           </div>
         </article>
 
         <!-- Miléade -->
-        <article class="extra-exp-card col-12 col-sm-6 col-lg-3 mb-4">
-          <div class="extra-exp-inner">
-            <div class="extra-exp-logo">
-              <img src="images/icons/mileade.svg" alt="Miléade" />
-            </div>
-            <div class="extra-exp-body">
-              <p class="extra-exp-date">Saison 2023 · Job saisonnier</p>
-              <h3 class="extra-exp-title">Serveur</h3>
-              <p class="extra-exp-company">Miléade</p>
-              <p class="extra-exp-desc">
-                Service en salle et renseignement des vacanciers dans un contexte touristique.
-              </p>
-              <div class="extra-exp-tags">
-                <span class="extra-exp-tag">Adaptabilité</span>
-                <span class="extra-exp-tag">Contact humain</span>
-              </div>
+        <article class="extra-exp-card">
+          <div class="extra-exp-logo-wrap">
+            <img src="images/icons/mileade.svg" alt="Miléade" />
+          </div>
+          <div class="extra-exp-body">
+            <p class="extra-exp-date">Saison 2023 · Job saisonnier</p>
+            <h3 class="extra-exp-title">Serveur</h3>
+            <p class="extra-exp-company">Miléade</p>
+            <p class="extra-exp-desc">Service en salle et renseignement des vacanciers en contexte touristique.</p>
+            <div class="extra-exp-tags">
+              <span class="extra-exp-tag">Adaptabilité</span>
+              <span class="extra-exp-tag">Contact humain</span>
             </div>
           </div>
         </article>
@@ -984,13 +1022,11 @@
     </div>
   </section>
 
+
   <section class="skills py-5" id="skills" aria-labelledby="skills-title">
     <div class="container">
       <div class="heading text-center mb-4">
         <h2 id="skills-title">Compétences</h2>
-        <p class="text-muted">
-          Un socle orienté UX/UI et communication, complété par le développement web et la production audiovisuelle.
-        </p>
       </div>
 
       <div class="row justify-content-center px-2 px-md-4 skills-grid" data-aos="fade-up">
@@ -1022,13 +1058,22 @@
               <li>Intégration sous WordPress.</li>
             </ul>
             <div class="skill-icons-row">
-              <img src="images/icons/html.svg" alt="HTML" />
-              <img src="images/icons/css.svg" alt="CSS" />
-              <img src="images/icons/javascript.svg" alt="JavaScript" />
-              <img src="images/icons/php.svg" alt="PHP" />
-              <img src="images/icons/mysql.svg" alt="MySQL" />
+              <span class="tool-icon" data-tooltip="HTML">
+                <img src="images/icons/html.svg" alt="HTML" />
+              </span>
+              <span class="tool-icon" data-tooltip="CSS">
+                <img src="images/icons/css.svg" alt="CSS" />
+              </span>
+              <span class="tool-icon" data-tooltip="JavaScript">
+                <img src="images/icons/javascript.svg" alt="JavaScript" />
+              </span>
+              <span class="tool-icon" data-tooltip="PHP">
+                <img src="images/icons/php.svg" alt="PHP" />
+              </span>
+              <span class="tool-icon" data-tooltip="MySQL">
+                <img src="images/icons/mysql.svg" alt="MySQL" />
+              </span>
             </div>
-          </div>
         </article>
 
         <!-- Logiciels -->
@@ -1041,11 +1086,21 @@
               <li>DaVinci Resolve (montage vidéo).</li>
             </ul>
             <div class="skill-icons-row">
-              <img src="images/icons/figma.svg" alt="Figma" />
-              <img src="images/icons/adobe-photoshop.svg" alt="Photoshop" />
-              <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
-              <img src="images/icons/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve" />
-              <img src="images/icons/github_desktop.svg" alt="GitHub" />
+              <span class="tool-icon" data-tooltip="Figma">
+                <img src="images/icons/figma.svg" alt="Figma" />
+              </span>
+              <span class="tool-icon" data-tooltip="Photoshop">
+                <img src="images/icons/adobe-photoshop.svg" alt="Photoshop" />
+              </span>
+              <span class="tool-icon" data-tooltip="Illustrator">
+                <img src="images/icons/adobe-illustrator.svg" alt="Illustrator" />
+              </span>
+              <span class="tool-icon" data-tooltip="DaVinci Resolve">
+                <img src="images/icons/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve" />
+              </span>
+              <span class="tool-icon" data-tooltip="GitHub">
+                <img src="images/icons/github_desktop.svg" alt="GitHub" />
+              </span>
             </div>
           </div>
         </article>
@@ -1073,129 +1128,146 @@
 
   <section class="education py-5" id="education" aria-labelledby="edu-title">
     <div class="container">
-      <div class="heading text-center mb-4">
+
+      <div class="heading text-center mb-5">
         <h2 id="edu-title">Formations</h2>
-        <p class="text-muted">
-          Ce que j’ai construit jusqu’au BUT MMI, et comment je souhaite prolonger ce parcours en master, en alternance.
-        </p>
+        <p class="section-subtitle">Parcours réalisé et projets de poursuite d'études.</p>
       </div>
 
-      <div class="row justify-content-center px-2 px-md-4 education-grid" data-aos="fade-up">
+      <div class="education-grid" data-aos="fade-up">
 
-        <!-- BUT MMI – réalisé -->
-        <article class="education-card col-12 col-lg-4 mb-4">
-          <div class="education-inner">
-            <div class="education-header">
-              <div class="extra-exp-logo">
-                <img src="images/icons/yellovillage.svg" alt="Yelloh Village" />
-              </div>
-              <div class="education-meta">
-                <span class="education-date">2023 – 2026</span>
-                <span class="education-badge">Diplôme en cours</span>
-              </div>
+        <!-- ===== BUT MMI — réalisé ===== -->
+        <article class="education-card education-card--done">
+          <div class="education-card-top-line"></div>
+
+          <header class="education-header">
+            <div class="education-logo-wrap">
+              <img src="images/icons/iut_rennes_mmi_white.svg" alt="IUT de Lannion – BUT MMI" />
             </div>
-
-            <div class="education-body">
-              <h3 class="education-title">BUT MMI – Parcours Stratégie & UX</h3>
-              <p class="education-school">IUT de Lannion – Université de Rennes</p>
-              <p class="education-desc">
-                Formation où j’ai structuré mon profil de designer UX/UI : recherche utilisateur, maquettes Figma,
-                datavisualisation, prototypage et gestion de projets web orientés usages.
-              </p>
-              <ul class="education-highlights">
-                <li>Construction d’un socle solide en UX/UI et en design d’interfaces.</li>
-                <li>Premières expériences dans la santé (dataviz, workshop Orange)</li>
-                <li>Habitude de travailler en mode projet avec des contraintes réelles et des partenaires.</li>
-              </ul>
-              <div class="education-tags">
-                <span class="education-tag">Parcours réalisé</span>
-                <span class="education-tag">UX / UI</span>
-                <span class="education-tag">Projet web</span>
-              </div>
+            <div class="education-meta">
+              <span class="education-date">2023 – 2026</span>
+              <span class="education-badge education-badge--done">
+                Diplôme en cours
+              </span>
             </div>
-          </div>
-        </article>
+          </header>
 
-        <!-- Plan A : Cycle master Media Design – projet d’intégration après Bac+3 -->
-        <article class="education-card col-12 col-lg-4 mb-4">
-          <div class="education-inner education-inner--future">
-            <div class="education-header">
-              <div class="education-logo">
-                <img src="images/icons/logo_ledna_media.jpeg"
-                  alt="L’École de design Nantes Atlantique – Media Design" />
-              </div>
-              <div class="education-meta">
-                <span class="education-date">Plan A</span>
-                <span class="education-badge education-badge--light">Candidature 2026–2027</span>
-              </div>
-            </div>
-
-            <div class="education-body">
-              <h3 class="education-title">Intégrer le cycle master Media Design</h3>
-              <p class="education-school">L’École de design Nantes Atlantique – Nantes</p>
-              <p class="education-desc">
-                Après mon Bac +3, je vise ce cycle master pour ancrer mon profil de designer UX/UI dans les enjeux
-                d’information, de médiation et de narration interactive, en alternance.
-              </p>
-              <ul class="education-highlights">
-                <li>Mobiliser mon expérience en datavisualisation pour concevoir des dispositifs interactifs
-                  au service de la compréhension.</li>
-                <li>Développer une approche plus critique du numérique et de l’UX, en lien avec les grands enjeux de
-                  société.</li>
-                <li>Renforcer mon expérience en alternance sur 4e et 5e année, avec une intégration progressive en tant
-                  que
-                  designer produit / UX dans une structure.</li>
-              </ul>
-              <div class="education-tags">
-                <span class="education-tag">Poursuite en alternance</span>
-                <span class="education-tag">Media / UX</span>
-                <span class="education-tag">Après Bac +3</span>
-              </div>
+          <div class="education-body">
+            <h3 class="education-title">BUT MMI</h3>
+            <p class="education-school">IUT de Lannion · Université de Rennes · Parcours Stratégie &amp; UX</p>
+            <p class="education-desc">
+              Formation qui a structuré mon profil UX/UI : recherche utilisateur, maquettes Figma,
+              datavisualisation, prototypage et gestion de projets web orientés usages.
+            </p>
+            <ul class="education-highlights">
+              <li>Socle solide en UX/UI et design d'interfaces.</li>
+              <li>Premières expériences dans la santé (dataviz, workshop Orange).</li>
+              <li>Mode projet avec contraintes réelles et partenaires professionnels.</li>
+            </ul>
+            <div class="education-tags">
+              <span class="education-tag">UX / UI</span>
+              <span class="education-tag">Projets web</span>
+              <span class="education-tag">Datavisualisation</span>
             </div>
           </div>
         </article>
 
-        <!-- Plan B : Master Sorbonne – projet d’intégration après Bac+3 -->
-        <article class="education-card col-12 col-lg-4 mb-4">
-          <div class="education-inner education-inner--future">
-            <div class="education-header">
-              <div class="education-logo">
-                <img src="images/icons/Logo_of_Sorbonne_University.svg" alt="Sorbonne Université" />
-              </div>
-              <div class="education-meta">
-                <span class="education-date">Plan B</span>
-                <span class="education-badge education-badge--light">Candidature 2026–2027</span>
-              </div>
-            </div>
+        <!-- ===== ECV Nantes — Plan A ===== -->
+        <article class="education-card education-card--future">
 
-            <div class="education-body">
-              <h3 class="education-title">Préparer un Master Création Numérique</h3>
-              <p class="education-school">Sorbonne Université - Paris</p>
-              <p class="education-desc">
-                En alternative, je vise un master orienté design d’interfaces pour approfondir l’ergonomie,
-                l’accessibilité et le design d’expérience sur des produits digitaux complexes.
-              </p>
-              <ul class="education-highlights">
-                <li>Capitaliser sur mon expérience en UI design (design system, maquettes responsive) pour monter en
-                  expertise sur l’interface et le détail d’interaction.</li>
-                <li>Élargir mes compétences à des projets d’envergure (applications, services) en environnement
-                  académique exigeant.</li>
-                <li>Préparer une insertion professionnelle comme designer UX/UI en consolidant méthodologie, culture
-                  design
-                  et travail d’équipe sur 4e et 5e année.</li>
-              </ul>
-              <div class="education-tags">
-                <span class="education-tag">Poursuite possible</span>
-                <span class="education-tag">Design d’interface</span>
-                <span class="education-tag">Après Bac +3</span>
-              </div>
+          <header class="education-header">
+            <div class="education-logo-wrap education-logo-wrap--future">
+              <img src="images/icons/ecv.svg" alt="ECV Nantes" />
+            </div>
+            <div class="education-meta">
+              <span class="education-date">Plan A · 2026–2027</span>
+              <span class="education-badge education-badge--future">
+                Entretien à venir
+              </span>
+            </div>
+          </header>
+
+          <div class="education-body">
+            <h3 class="education-title">Bachelor / Mastère Design UI·UX</h3>
+            <p class="education-school">ECV · Nantes</p>
+            <p class="education-desc">
+              Rencontre avec <strong>Louis Boudet</strong>, responsable pédagogique du Cursus Digital lors des JPO du 14
+              mars.
+              Après une recherche approfondie de formations spécialisées en UX/UI,
+              ce mastère s'est imposé comme l'option la plus cohérente avec mon profil,
+              il délivre un <strong>titre RNCP niveau 7 « Expert en design d'expérience utilisateur »</strong>
+              (RNCP41694, actif jusqu'en 2028), directement aligné avec mes objectifs.
+            </p>
+            <ul class="education-highlights">
+              <li>Titre RNCP 7 reconnu — Expert en design d'expérience utilisateur.</li>
+              <li>Alternance possible avec Orange Business ou un acteur nantais.</li>
+              <li>Continuité avec mon réseau professionnel déjà construit à Nantes.</li>
+            </ul>
+
+
+            <div class="education-tags">
+              <span class="education-tag">Design créatif</span>
+              <span class="education-tag">Alternance</span>
+              <span class="education-tag">Nantes</span>
+              <span class="education-tag education-tag--rncp">RNCP Niv. 7</span>
+
             </div>
           </div>
+
+          <div class="education-card-note">
+            <span class="education-card-note-icon">📅</span>
+            Entretien d'admission prévu — admission valable sur les deux campus
+          </div>
+
+
+        </article>
+
+        <!-- ===== ECV Aix-en-Provence — Plan B ===== -->
+        <article class="education-card education-card--future education-card--alt">
+
+          <header class="education-header">
+            <div class="education-logo-wrap education-logo-wrap--future">
+              <img src="images/icons/ecv.svg" alt="ECV Aix-en-Provence" />
+            </div>
+            <div class="education-meta">
+              <span class="education-date">Plan B · 2026–2027</span>
+              <span class="education-badge education-badge--future education-badge--alt">
+                Option envisagée
+              </span>
+            </div>
+          </header>
+
+          <div class="education-body">
+            <h3 class="education-title">Bachelor / Mastère Design UI·UX</h3>
+            <p class="education-school">ECV · Aix-en-Provence</p>
+            <p class="education-desc">
+              Même mastère, même titre RNCP niveau 7, même pédagogie ECV,
+              Louis Boudet m'a confirmé qu'une admission à Nantes vaut admission à Aix.
+              Option privilégiée pour me rapprocher du Sud, selon les opportunités d'alternance.
+            </p>
+
+            <ul class="education-highlights">
+              <li>Même programme ECV, pédagogie identique entre campus.</li>
+              <li>Retour aux racines et découverte d'un nouvel écosystème créatif.</li>
+              <li>Alternance à trouver dans le tissu professionnel d'Aix / Marseille.</li>
+            </ul>
+
+            <div class="education-tags">
+              <span class="education-tag">Design créatif</span>
+              <span class="education-tag">Alternance</span>
+              <span class="education-tag">Aix-en-Provence</span>
+              <span class="education-tag education-tag--rncp">RNCP Niv. 7</span>
+
+            </div>
+          </div>
+
         </article>
 
       </div>
     </div>
   </section>
+
+
   <!-- CONTACT -->
   <section class="contact py-5" id="contact" aria-labelledby="contact-title">
     <div class="container">

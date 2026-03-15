@@ -197,6 +197,73 @@ window.addEventListener('load', () => {
 })();
 
 // ============================
+// Animations timeline expériences
+// ============================
+(() => {
+  const items = document.querySelectorAll('.experience-item');
+  if (!items.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  items.forEach((item) => observer.observe(item));
+})();
+
+// ============================
+// Animations extra-experience
+// ============================
+(() => {
+  const cards = document.querySelectorAll('.extra-exp-card');
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+})();
+
+// ============================
+// Animations formations
+// ============================
+(() => {
+  const cards = document.querySelectorAll('.education-card');
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+})();
+
+
+// ============================
 // Scroll spy - lien de nav actif
 // ============================
 (() => {
