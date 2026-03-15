@@ -19,6 +19,8 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+
 
 </head>
 
@@ -206,9 +208,6 @@
   </section>
 
 
-  <!-- ========================= -->
-  <!-- À PROPOS                  -->
-  <!-- ========================= -->
   <section class="about py-5" id="about" aria-labelledby="about-title">
     <div class="container">
 
@@ -216,84 +215,166 @@
         <h2 id="about-title">À propos</h2>
       </div>
 
-      <div class="row align-items-start g-5">
+      <div class="row align-items-start g-4">
 
         <!-- COLONNE GAUCHE : storytelling -->
-        <div class="col-12 col-lg-7" data-aos="fade-right">
+        <div class="col-12 col-lg-7">
 
-          <div class="about-story-card mb-4">
-            <span class="about-story-label">Mon point de départ</span>
+          <div class="about-story-card about-story-card--origin mb-4" data-aos="fade-up">
+            <span class="about-story-label">Au départ</span>
+            <h3 class="about-story-heading">Je voulais travailler dans la santé.</h3>
             <p>
-              Tout a commencé avec une curiosité simple&nbsp;: <strong>pourquoi certaines interfaces rendent les gens
-                frustrés, et d'autres les mettent à l'aise instantanément&nbsp;?</strong> Cette question m'a emmené vers
-              la psychologie cognitive, les biais d'attention, la charge mentale. L'UX, c'est pas que du design pour
-              moi,
-              c'est avant tout le fait de comprendre l'humain en face de nous.
+              Depuis longtemps, ce qui me motive c'est d'<strong>aider les gens</strong>.
+              À la base, je me dirigeais vers un parcours dans le domaine de la santé — sans vraiment
+              savoir sous quelle forme. Ce qui me portait, c'était cette envie simple&nbsp;:
+              être utile, avoir un impact concret sur la vie des personnes.
             </p>
           </div>
 
-          <div class="about-story-card mb-4">
-            <span class="about-story-label">Ce qui me définit sur le terrain</span>
+          <div class="about-story-card about-story-card--pivot mb-4" data-aos="fade-up" data-aos-delay="80">
+            <span class="about-story-label">Le déclic</span>
+            <h3 class="about-story-heading">Pourquoi certaines interfaces frustrent, et d'autres rassurent&nbsp;?</h3>
             <p>
-              Je suis quelqu'un de profondément social. J'aime aller sur le terrain, parler aux utilisateurs, observer
-              leurs comportements réels plutôt que supposés.
+              Cette question a tout changé. En explorant le design, j'ai réalisé que
+              <strong>l'UX, c'est de la psychologie appliquée</strong> — comprendre les biais d'attention,
+              la charge mentale, les comportements réels des utilisateurs. J'avais trouvé
+              ma façon d'aider les gens&nbsp;: <strong>concevoir des interfaces qui leur simplifient
+                la vie</strong>, plutôt que de la compliquer.
             </p>
           </div>
 
-          <div class="about-story-card">
-            <span class="about-story-label">Mon engagement</span>
+          <div class="about-story-card about-story-card--engage mb-4" data-aos="fade-up" data-aos-delay="160">
+            <span class="about-story-label">Ce qui me définit</span>
+            <h3 class="about-story-heading">Le terrain avant tout.</h3>
             <p>
-              L'accessibilité n'est pas une contrainte à cocher, c'est un <strong>acte de respect</strong>.
-              Concevoir pour tout le monde, c'est ce qui donne du sens à ce que je fais.
+              Je suis quelqu'un de profondément social — j'aime aller parler aux utilisateurs,
+              observer leurs comportements <strong>réels plutôt que supposés</strong>.
+              Et concevoir pour tout le monde, sans exception, n'est pas une contrainte pour moi&nbsp;:
+              c'est un <strong>acte de respect</strong> et ce qui donne du sens à ce que je fais.
             </p>
+          </div>
+
+          <!-- Voyages — pleine largeur sous le storytelling -->
+          <div class="about-travels" data-aos="fade-up" data-aos-delay="200">
+            <p class="about-identity-title mb-4">Voyages &amp; ancrage</p>
+            <div class="travels-grid">
+
+              <!-- Carte France -->
+              <div class="travel-france-wrap">
+                <p class="travel-section-label">France</p>
+                <div class="travel-france-map-container">
+                  <svg class="travel-france-map" id="franceSvg" viewBox="0 0 600 620"
+                    aria-label="Carte de France avec régions visitées"></svg>
+                  <div class="map-tooltip" id="mapTooltip"></div>
+                </div>
+              </div>
+
+              <!-- Voyages internationaux -->
+              <div class="travel-international">
+                <p class="travel-section-label">International</p>
+                <div class="travel-cards">
+
+                  <div class="travel-card">
+                    <div class="travel-card-img-wrap">
+                      <img src="images/voyages/egypte.jpg" alt="Paysage d'Égypte"
+                        class="travel-card-img project-zoom-img" />
+                      <div class="travel-card-overlay">
+                        <span class="travel-card-flag">🇪🇬</span>
+                      </div>
+                    </div>
+                    <div class="travel-card-body">
+                      <h4 class="travel-card-title">Égypte</h4>
+                      <p class="travel-card-sub">Mes origines</p>
+                      <p class="travel-card-desc">
+                        Mes origines. J'y retourne régulièrement, la dernière fois
+                        en août 2025, pour fêter mes 20&nbsp;ans sur place.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="travel-card">
+                    <div class="travel-card-img-wrap">
+                      <img src="images/voyages/turquie.jpg" alt="Paysage de Turquie"
+                        class="travel-card-img project-zoom-img" />
+                      <div class="travel-card-overlay">
+                        <span class="travel-card-flag">🇹🇷</span>
+                      </div>
+                    </div>
+                    <div class="travel-card-body">
+                      <h4 class="travel-card-title">Turquie</h4>
+                      <p class="travel-card-sub">Voyage personnel</p>
+                      <p class="travel-card-desc">
+                        Un pays magnifique entre deux continents, une architecture et une culture
+                        qui m'ont vraiment marqué. J'y suis allé en février 2026 pour un voyage de 1&nbsp;semaines.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
 
-        <!-- COLONNE DROITE : identité visuelle -->
-        <div class="col-12 col-lg-5" data-aos="fade-left">
+        <!-- COLONNE DROITE -->
+        <div class="col-12 col-lg-5" data-aos="fade-left" data-aos-delay="100">
 
-          <div class="about-identity-block mb-4">
-            <p class="about-identity-title">Qui je suis</p>
+          <div class="about-identity-block mb-3">
+            <p class="about-identity-title">Compétences &amp; approche</p>
             <div class="about-badges">
               <span class="about-badge badge-purple">🧠 Psychologie cognitive</span>
               <span class="about-badge badge-orange">♿ Accessibilité WCAG</span>
               <span class="about-badge badge-green">⚡ IA dans le design</span>
-              <span class="about-badge badge-blue">🤝 Social &amp; terrain</span>
+              <span class="about-badge badge-blue">🤝 Recherche utilisateur terrain</span>
               <span class="about-badge badge-pink">🌍 Design inclusif</span>
-              <span class="about-badge badge-teal">⚽ Football depuis 6&nbsp;ans</span>
-              <span class="about-badge badge-indigo">🔧 FabLab bénévole</span>
             </div>
           </div>
 
-          <div class="about-identity-block mb-4">
+          <div class="about-identity-block mb-3">
+            <p class="about-identity-title">En dehors du design</p>
+            <div class="about-badges">
+              <span class="about-badge badge-teal">🏀 Basket</span>
+              <span class="about-badge badge-indigo">🎾 Tennis</span>
+              <span class="about-badge badge-orange">⚽ Football</span>
+              <span class="about-badge badge-blue">📖 Culture sportive</span>
+              <span class="about-badge badge-green">🔧 FabLab bénévole</span>
+            </div>
+          </div>
+
+          <div class="about-identity-block mb-3">
             <p class="about-identity-title">Langues</p>
             <div class="about-langs">
               <div class="about-lang-item">
                 <span class="about-lang-flag">🇫🇷</span>
-                <div>
-                  <span class="about-lang-name">Je parle français</span>
+                <div class="about-lang-info">
+                  <span class="about-lang-name">Français</span>
+                  <span class="about-lang-bar" data-level="100"></span>
                   <span class="about-lang-level">Natif</span>
                 </div>
               </div>
               <div class="about-lang-item">
                 <span class="about-lang-flag">🇪🇬</span>
-                <div>
-                  <span class="about-lang-name">أنا أتحدث اللغة المصرية</span>
+                <div class="about-lang-info">
+                  <span class="about-lang-name">Arabe égyptien</span>
+                  <span class="about-lang-bar" data-level="100"></span>
                   <span class="about-lang-level">Natif</span>
                 </div>
               </div>
               <div class="about-lang-item">
                 <span class="about-lang-flag">🇬🇧</span>
-                <div>
-                  <span class="about-lang-name">I speak english</span>
+                <div class="about-lang-info">
+                  <span class="about-lang-name">Anglais</span>
+                  <span class="about-lang-bar" data-level="80"></span>
                   <span class="about-lang-level">Professionnel</span>
                 </div>
               </div>
               <div class="about-lang-item">
                 <span class="about-lang-flag">🇩🇪</span>
-                <div>
-                  <span class="about-lang-name">Ich spreche deutsch</span>
+                <div class="about-lang-info">
+                  <span class="about-lang-name">Allemand</span>
+                  <span class="about-lang-bar" data-level="25"></span>
                   <span class="about-lang-level">Notions</span>
                 </div>
               </div>
@@ -304,19 +385,23 @@
             <p class="about-identity-title">En chiffres</p>
             <div class="about-stats">
               <div class="about-stat">
-                <span class="about-stat-number">8+</span>
+                <span class="about-stat-number" data-count="8">0</span>
+                <span class="about-stat-sup">+</span>
                 <span class="about-stat-label">projets UX/UI</span>
               </div>
               <div class="about-stat">
-                <span class="about-stat-number">3</span>
+                <span class="about-stat-number" data-count="3">0</span>
+                <span class="about-stat-sup"></span>
                 <span class="about-stat-label">années de BUT</span>
               </div>
               <div class="about-stat">
-                <span class="about-stat-number">4</span>
+                <span class="about-stat-number" data-count="4">0</span>
+                <span class="about-stat-sup"></span>
                 <span class="about-stat-label">langues</span>
               </div>
               <div class="about-stat">
                 <span class="about-stat-number">∞</span>
+                <span class="about-stat-sup"></span>
                 <span class="about-stat-label">curiosité</span>
               </div>
             </div>
@@ -326,7 +411,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- PROJETS -->
   <section class="projects-cv py-5" id="projects" aria-labelledby="projects-title">

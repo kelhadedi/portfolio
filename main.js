@@ -49,6 +49,158 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeBurger();
 });
 
+// ============================
+// À propos — barres langues + compteurs
+// ============================
+(() => {
+  // Barres de progression langues
+  const langBars = document.querySelectorAll('.about-lang-bar');
+  if (langBars.length) {
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          const level = bar.getAttribute('data-level') || '0';
+          bar.style.setProperty('--lang-level', level + '%');
+          bar.classList.add('is-animated');
+          barObserver.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.5 });
+    langBars.forEach((bar) => barObserver.observe(bar));
+  }
+
+  // Compteurs animés
+  const statNumbers = document.querySelectorAll('.about-stat-number[data-count]');
+  if (statNumbers.length) {
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-count'), 10);
+          const duration = 900;
+          const step = duration / target;
+          let current = 0;
+          const timer = setInterval(() => {
+            current++;
+            el.textContent = current;
+            if (current >= target) clearInterval(timer);
+          }, step);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    statNumbers.forEach((el) => countObserver.observe(el));
+  }
+})();
+
+// ============================
+// Carte France — D3 GeoJSON
+// ============================
+(() => {
+  const VISITED = {
+    "53": { tooltip: "Bretagne · 2e et 3e année de BUT MMI à Lannion" },
+    "52": { tooltip: "Pays de la Loire · Stage Orange Business à Nantes" },
+    "93": { tooltip: "Provence-Alpes-Côte d'Azur · Né à Marseille" },
+    "94": { tooltip: "Corse · 1ère année de BUT MMI" },
+  };
+
+  const svgEl   = document.getElementById("franceSvg");
+  const tooltip = document.getElementById("mapTooltip");
+  const mapWrap = document.querySelector(".travel-france-map-container");
+
+  if (!svgEl || !tooltip || !mapWrap) return;
+
+  const width  = 600;
+  const height = 620;
+
+  const projection = d3.geoConicConformal()
+    .center([2.454071, 46.279229])
+    .scale(2800)
+    .translate([width / 2, height / 2]);
+
+  const pathGen = d3.geoPath().projection(projection);
+
+  // GeoJSON officiel simplifié — régions métropolitaines
+  const GEOJSON_URL = "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions-version-simplifiee.geojson";
+
+  d3.json(GEOJSON_URL).then((data) => {
+    const svg = d3.select("#franceSvg");
+
+    svg.selectAll("path")
+      .data(data.features)
+      .enter()
+      .append("path")
+      .attr("d", pathGen)
+      .attr("class", (d) => {
+        const code = String(d.properties.code);
+        return VISITED[code] ? "fr-region fr-visited" : "fr-region fr-other";
+      })
+      .on("mouseenter", function(event, d) {
+        const code = String(d.properties.code);
+        if (!VISITED[code]) return;
+        tooltip.textContent = VISITED[code].tooltip;
+        tooltip.classList.add("visible");
+      })
+      .on("mousemove", function(event) {
+        const rect = mapWrap.getBoundingClientRect();
+        tooltip.style.left = (event.clientX - rect.left + 14) + "px";
+        tooltip.style.top  = (event.clientY - rect.top  - 40) + "px";
+      })
+      .on("mouseleave", function() {
+        tooltip.classList.remove("visible");
+      });
+
+  }).catch(() => {
+    console.warn("Carte France : GeoJSON non chargé.");
+  });
+})();
+
+// ============================
+// À propos — barres langues + compteurs
+// ============================
+(() => {
+  // Barres langues
+  const langBars = document.querySelectorAll('.about-lang-bar');
+  if (langBars.length) {
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const bar   = entry.target;
+          const level = bar.getAttribute('data-level') || '0';
+          bar.style.setProperty('--lang-level', level + '%');
+          bar.classList.add('is-animated');
+          barObserver.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.5 });
+    langBars.forEach((b) => barObserver.observe(b));
+  }
+
+  // Compteurs animés
+  const statNumbers = document.querySelectorAll('.about-stat-number[data-count]');
+  if (statNumbers.length) {
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el     = entry.target;
+          const target = parseInt(el.getAttribute('data-count'), 10);
+          const step   = Math.ceil(900 / target);
+          let current  = 0;
+          const timer  = setInterval(() => {
+            current++;
+            el.textContent = current;
+            if (current >= target) clearInterval(timer);
+          }, step);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    statNumbers.forEach((el) => countObserver.observe(el));
+  }
+})();
+
+
 
 // ============================
 // Bulle contact ( ? en bas )
