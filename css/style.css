@@ -1764,8 +1764,7 @@ section.home {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
-  position: relative;
+  gap: 0.2rem;
 }
 
 .about-stat-number {
@@ -1949,11 +1948,21 @@ section.home {
   border-radius: 6px;
   pointer-events: none;
   opacity: 0;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 180px;
+  line-height: 1.5;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   transition: opacity 0.15s ease;
   z-index: 10;
+}
+
+/* Sur mobile, réduire encore la largeur max */
+@media (max-width: 576px) {
+  .map-tooltip {
+    max-width: 140px;
+    font-size: 0.62rem;
+  }
 }
 
 .map-tooltip.visible {
