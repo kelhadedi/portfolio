@@ -200,7 +200,15 @@ document.addEventListener('keydown', e => {
   }
 })();
 
-
+document.querySelectorAll('[data-lightbox]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const src = btn.getAttribute('data-lightbox');
+    const lightbox = document.querySelector('.image-lightbox');
+    const img = lightbox.querySelector('img');
+    img.src = src;
+    lightbox.classList.remove('d-none');
+  });
+});
 
 // ============================
 // Bulle contact ( ? en bas )
