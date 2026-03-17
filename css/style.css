@@ -2396,7 +2396,7 @@ p.project-tools img,
 .project-cv-header-row {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 1.5rem;
 }
 
@@ -2415,7 +2415,10 @@ p.project-tools img,
 
 .project-cv-header-right {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .project-cv-header-right img {
@@ -2423,6 +2426,7 @@ p.project-tools img,
   border-radius: var(--r-md);
   object-fit: cover;
   border: 1px solid var(--c-border);
+  max-height: 280px;
 }
 
 /* Zoom image */
