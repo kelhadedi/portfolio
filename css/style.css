@@ -2448,14 +2448,19 @@ p.project-tools img,
 
   .project-cv-header-row {
     grid-template-columns: 1fr;
+    align-items: unset; /* ← reset du stretch desktop */
   }
 
   .project-cv-header-right {
     margin-top: 0.8rem;
+    align-items: unset;   /* ← reset du flex-end desktop */
+    align-self: unset;    /* ← reset du stretch desktop */
   }
 
   .project-cv-header-right img {
     max-width: 100%;
+    max-height: unset;    /* ← reset du max-height desktop */
+    width: 100%;          /* ← pleine largeur */
   }
 
   .project-cv-logo img {
@@ -2467,6 +2472,8 @@ p.project-tools img,
     font-size: 1.3rem;
   }
 }
+
+
 
 
 /* ========================= */
