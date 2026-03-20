@@ -49,27 +49,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeBurger();
 });
 
-// ============================
-// À propos — barres langues + compteurs
-// ============================
 (() => {
-  // Barres de progression langues
-  const langBars = document.querySelectorAll('.about-lang-bar');
-  if (langBars.length) {
-    const barObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const bar = entry.target;
-          const level = bar.getAttribute('data-level') || '0';
-          bar.style.setProperty('--lang-level', level + '%');
-          bar.classList.add('is-animated');
-          barObserver.unobserve(bar);
-        }
-      });
-    }, { threshold: 0.5 });
-    langBars.forEach((bar) => barObserver.observe(bar));
-  }
-
   // Compteurs animés
   const statNumbers = document.querySelectorAll('.about-stat-number[data-count]');
   if (statNumbers.length) {

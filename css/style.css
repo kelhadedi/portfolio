@@ -1,7 +1,6 @@
 /* ============================================================ */
 /*  KARIM EL HADEDI — PORTFOLIO CSS                            */
 /*  Direction artistique : dark luxe, typographie aérée,       */
-/*  micro-interactions soignées, inspiré Aziz Khaldi           */
 /* ============================================================ */
 
 
@@ -195,7 +194,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(3.8rem, 7vw, 5.5rem); /* Taille minimale augmentée pour une meilleure lisibilité */
 }
 
 h3 {
@@ -316,7 +315,7 @@ img {
 
 .heading h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-size: clamp(3.5rem, 6.5vw, 5rem); /* Taille augmentée pour les headings */
   font-weight: 300;
   color: var(--c-text);
   margin-top: var(--space-sm);
@@ -1687,76 +1686,6 @@ section.home {
   border-color: rgba(165, 180, 252, 0.18);
 }
 
-/* ——— Langues avec barre de progression ——— */
-.about-langs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.about-lang-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.about-lang-flag {
-  font-size: 1.2rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.about-lang-info {
-  flex: 1;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 0 0.65rem;
-}
-
-.about-lang-name {
-  font-family: var(--font-body);
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: var(--c-text);
-  white-space: nowrap;
-}
-
-/* Barre de niveau */
-.about-lang-bar {
-  display: block;
-  height: 2px;
-  background: var(--c-border);
-  border-radius: 2px;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-lang-bar::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 0%;
-  background: var(--c-accent);
-  border-radius: 2px;
-  transition: width 1s var(--ease-out);
-}
-
-/* Largeur injectée par JS via data-level */
-.about-lang-bar.is-animated::after {
-  width: var(--lang-level);
-}
-
-.about-lang-level {
-  font-family: var(--font-body);
-  font-size: 0.62rem;
-  color: var(--c-text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  white-space: nowrap;
-}
 
 /* ——— Stats avec compteur ——— */
 .about-stats {
